@@ -8,6 +8,7 @@ import review4 from "../photos/reviews/review4.jpg";
 import review5 from "../photos/reviews/review5.jpg";
 import review6 from "../photos/reviews/review6.jpg";
 import review7 from "../photos/reviews/review7.jpg";
+import review8 from "../photos/reviews/review8.jpg";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -26,9 +27,10 @@ const Review = () => {
     review5,
     review6,
     review7,
+    review8,
   ];
   return (
-    <Row xs={1} md={2} className="g-4">
+    <Row xs={2} md={4} className="g-4">
       {reviewImages.map((image, idx) => (
         <Col key={idx}>
           <Card>
