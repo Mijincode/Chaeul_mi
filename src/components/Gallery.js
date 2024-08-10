@@ -5,6 +5,11 @@ import image2 from "../photos/female/image2.jpg";
 import image3 from "../photos/female/image3.jpg";
 import image4 from "../photos/female/image4.jpg";
 import image5 from "../photos/female/image5.png";
+import maleImage1 from "../photos/male/image1.png";
+import maleImage2 from "../photos/male/image2.png";
+import maleImage3 from "../photos/male/image3.png";
+import maleImage4 from "../photos/male/image4.png";
+import maleImage5 from "../photos/male/image5.png";
 import { withTranslation } from "react-google-multi-lang";
 import "./styles.css";
 import Tab from "react-bootstrap/Tab";
@@ -15,6 +20,13 @@ import Row from "react-bootstrap/Row";
 
 const Gallery = () => {
   const images = [image1, image2, image3, image4, image5];
+  const maleImages = [
+    maleImage1,
+    maleImage2,
+    maleImage3,
+    maleImage4,
+    maleImage5,
+  ];
   return (
     <div>
       <h1>채울_美</h1>
@@ -45,7 +57,20 @@ const Gallery = () => {
         </Tab>
 
         <Tab eventKey="male" title="남자Eyebrow">
-          Tab content for male photos
+          <Row xs={1} md={2} className="g-4">
+            {maleImages.map((image, idx) => (
+              <Col key={idx}>
+                <Card border="light" style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    src={image}
+                    alt="1"
+                    style={{ width: "200px", marginRight: "300px" }}
+                  />
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </Tab>
 
         <Tab eventKey="eyeline" title="아이라인">
