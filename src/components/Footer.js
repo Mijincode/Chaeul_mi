@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import naverLogo from "../photos/naverLogo.png";
 import { withTranslation } from "react-google-multi-lang";
+import ganpan2 from "../photos/ganpan2.jpg";
+
 import "./styles.css";
 
 const Footer = () => (
@@ -17,31 +19,18 @@ const Footer = () => (
     bgColor="light"
     className="mt-4 text-center text-lg-start text-muted"
   >
-    <MDBContainer>
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div className="me-5 d-none d-lg-block">
-          <span className="footer-title">Chaeul_mi</span>
-        </div>
-        <div>
-          <a
-            href="https://www.instagram.com/chaeul_mi/"
-            className="text-reset fw-bold"
-          >
-            <FontAwesomeIcon className="instaIcon" icon={faInstagram} />
-          </a>
-          <a
-            className="text-reset fw-bold"
-            href="https://blog.naver.com/l8238076"
-            aria-label="Naver Blog"
-          >
-            <img src={naverLogo} alt="Naver Logo" className="icon" />
-          </a>
+    <MDBContainer className="footer-container d-flex justify-content-center align-items-center">
+      <section className="p-4">
+        <div className="d-none d-lg-block">
+          <span className="footer-title">
+            <img src={ganpan2} alt="ganpan" className="ganpan" />{" "}
+          </span>
         </div>
       </section>
     </MDBContainer>
 
     <section>
-      <MDBContainer className="mt-5">
+      <MDBContainer className="mt-20">
         <MDBRow>
           <MDBCol md={3} lg={4} xl={3} className="mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">
@@ -62,20 +51,8 @@ const Footer = () => (
               </a>
             </p>
             <p>
-              <p>
-                <a href="faq" className="text-reset">
-                  FAQ
-                </a>
-              </p>
-            </p>
-            <p>
-              <a href="#!" className="text-reset">
-                Privacy Policy
-              </a>
-            </p>
-            <p>
-              <a href="#!" className="text-reset">
-                Terms of Use
+              <a href="faq" className="text-reset">
+                FAQ
               </a>
             </p>
           </MDBCol>
@@ -90,17 +67,23 @@ const Footer = () => (
               <MDBIcon icon="phone" className="me-3" />
               0507-1353-8076
             </p>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-    </section>
+            <p>
+              <a
+                href="https://www.instagram.com/chaeul_mi/"
+                className="text-reset fw-bold"
+              >
+                <FontAwesomeIcon className="instaIcon" icon={faInstagram} />
+              </a>
 
-    <section>
-      <MDBContainer className="mt-5">
-        <MDBRow>
-          <p>
-            <MDBIcon icon="home" className="me-2" />
-          </p>
+              <a
+                className="text-reset fw-bold"
+                href="https://blog.naver.com/l8238076"
+                aria-label="Naver Blog"
+              >
+                <img src={naverLogo} alt="Naver Logo" className="icon" />
+              </a>
+            </p>
+          </MDBCol>
         </MDBRow>
       </MDBContainer>
     </section>
