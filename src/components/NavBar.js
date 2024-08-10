@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 // import logo from "../photos/logo.jpg";
 import logo from "../photos/logo2.jpg";
 import { useTranslation } from "react-google-multi-lang";
@@ -15,6 +16,11 @@ const NavBar = () => {
       <Container className="container">
         <Navbar.Brand as={Link} to="/home">
           <img src={logo} alt="Logo" className="logo" />
+          {/* <img
+            src={ganpan2}
+            alt="ganpan"
+            style={{ width: "200px", borderRadius: "30px" }}
+          /> */}
         </Navbar.Brand>
         <Nav className="nav-link">
           <Nav.Link as={Link} to="/home">
@@ -23,18 +29,18 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/gallery">
             Gallery
           </Nav.Link>
-          <Nav.Link as={Link} to="/booking">
-            Booking
-          </Nav.Link>
           <Nav.Link as={Link} to="/review">
             Review
           </Nav.Link>
           <Nav.Link as={Link} to="/contact">
             Contact
           </Nav.Link>
-          <Nav.Link as={Link} to="/faq">
-            FAQ
+          <Nav.Link as={Link} to="/faqs">
+            FAQS
           </Nav.Link>
+          <Button variant="dark" as={Link} to="/booking">
+            Book Online
+          </Button>
         </Nav>
         <div className="ml-auto language-switcher">
           <img
