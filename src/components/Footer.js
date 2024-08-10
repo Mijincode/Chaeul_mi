@@ -38,21 +38,23 @@ const Footer = () => (
               About US
             </h6>
             <p>
-              We help create a self-guided, multi-model study plan to support
-              student learning that cater to their learning styles.
+              채울미는 개인의 취향과 눈매에 맞추어 1대1 디자인해드립니다. 개인의
+              취향과 눈매에 맞추어 1대1 디자인해드립니다. 저희의 목표는 고객 한
+              분 한 분의 개성과 아름다움을 돋보이게 하여, 자신감을 선사하는
+              결과를 제공하는 것입니다
             </p>
           </MDBCol>
 
           <MDBCol md={3} lg={2} xl={2} className="mx-auto mb-4">
             <h6 className="text-uppercase fw-bold mb-4">Support Recources</h6>
-            <p>
+            {/* <p>
               <a href="#!" className="text-reset">
                 Customer Service
               </a>
-            </p>
+            </p> */}
             <p>
               <a href="faq" className="text-reset">
-                FAQ
+                FAQS
               </a>
             </p>
           </MDBCol>
