@@ -1,0 +1,104 @@
+{
+  "booking": {
+    "title": "Chaeul Beauty Online Reservation Available",
+    "selectDateTime": "Please select your preferred date and time.",
+    "availableHours": "Available hours: 9:30 AM ~ 5:00 PM (Weekend available)."
+  },
+  "contact": {
+    "title": "How to Get Here - Sejong City Naseongdong",
+    "kakaoTalkContact": "KakaoTalk Consultation",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "address": "Sejong City Naseongbuk-do 30",
+    "phone": "0507-1353-8076",
+    "supportResources": "Support Resources"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "aboutUsContent": "Chaeul Beauty provides 1:1 design tailored to individual preferences and eye shapes. Our goal is to highlight each customer's uniqueness and beauty, resulting in confidence and satisfaction.",
+    "supportResources": "Support Resources",
+    "contact": "Contact",
+    "address": "Sejong City Naseongbuk-do 30",
+    "copyright": "© 2024 Copyright: Chaeul Beauty"
+  },
+  "gallery": {
+    "title": "Chaeul Beauty",
+    "description": "1:1 design tailored to individual preferences and eye shapes.",
+    "naturalLook": "Chaeul Beauty aims for a natural look, allowing you to go about your daily life without discomfort immediately after the procedure.",
+    "femaleEyebrow": "Female Eyebrow",
+    "maleEyebrow": "Male Eyebrow",
+    "eye": "Eyeliner & Eyelashes",
+    "lipTattoo": "Lip Tattoo",
+    "scalpTattoo": "Scalp Tattoo",
+    "cleanPedi": "Clean Pedi"
+  },
+  "home": {
+    "welcome": "Welcome to Chaeul Beauty",
+    "sejongSpecialty": "Sejong City Eyebrow Tattoo Specialist",
+    "bookingButton": "Book Now",
+    "about": "About Chaeul Beauty",
+    "introduction": "Founder Mikyung",
+    "beautyShop": "Chaeul Beauty, a premium beauty shop in Sejong City, strives to provide the most sophisticated and elegant beauty services. Our shop is led by beauty expert Mikyung, with over 12 years of experience, and we are committed to enhancing our clients' beauty every day. We stay ahead of the latest trends and techniques as a judge at the Creative International Beauty Association Art Fair in 2022.",
+    "semiPermanentMakeup": "Semi-Permanent Makeup",
+    "eyebrows": "Eyebrows: Embossed Eyebrows, Combo Eyebrows, Sujin Eyebrows",
+    "lips": "Lips",
+    "eyeliner": "Eyeliner",
+    "hairline": "Hairline Density Enhancement",
+    "scalpTattoo": "Scalp Tattoo",
+    "curlPerm": "Curl Perm",
+    "eyelashPerm": "Eyelash Perm",
+    "cleanPediPlanning": "Clean Pedi Planning",
+    "callToAction": "Experience top-level beauty services in a comfortable and welcoming environment. Whether you want to enhance your natural beauty or try something new, Chaeul Beauty will help you shine. We offer personalized solutions based on our rich experience and expertise, ensuring the best results by reflecting the latest techniques and trends. Discover your unique beauty at Chaeul Beauty, where we strive to provide the best service to each customer.",
+    "tradingHours": "Operating Hours: Weekdays/Saturdays 10:00am ~ 18:00pm",
+    "facilityTitle": "Explore Chaeul Beauty"
+  },
+  "navbar": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "review": "Review",
+    "contact": "Contact",
+    "faqs": "FAQs",
+    "bookOnline": "Book Online"
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Do I need to remove my makeup before the procedure?",
+        "answer": "Yes, it is advisable to remove your makeup before the procedure. If makeup residue is left, it can be difficult to accurately assess the condition of the treatment area and achieve the desired results. Additionally, makeup residue may affect skin reactions or recovery after the procedure."
+      },
+      {
+        "question": "Are there any preparations needed for the appointment?",
+        "answer": "No special preparations are needed for the appointment. However, it is recommended to remove makeup before the procedure and ensure your skin is clean on the day of the treatment. Also, it’s a good idea to review any information or precautions related to the procedure beforehand."
+      },
+      {
+        "question": "What should I be cautious about after the procedure?",
+        "answer": "After the procedure, it is important to follow these precautions: avoid using cosmetics, protect the skin, maintain cleanliness, and follow the professional’s instructions."
+      },
+      {
+        "question": "Will there be pain or discomfort after the procedure?",
+        "answer": "There may be some pain or discomfort after the procedure. This can vary depending on the individual’s skin condition and the scope of the procedure, but it generally decreases over time. If the pain is severe or unusual symptoms appear, it is advisable to consult the professional who performed the procedure."
+      },
+      {
+        "question": "How long will it take to see results after the procedure?",
+        "answer": "The results after the procedure can vary depending on the individual’s skin condition and the type of treatment, but generally, you can see the results within a week. Initially, the color or shape may differ, but it will become more natural over time."
+      },
+      {
+        "question": "What is the timing and cost of touch-ups?",
+        "answer": "The timing for touch-ups can vary depending on the individual’s skin condition and the treatment, but it is generally done 4-8 weeks after the initial procedure. The cost varies depending on the type of treatment and the clinic, and some clinics offer packages that include touch-ups. It is best to consult with the professional for detailed costs."
+      },
+      {
+        "question": "Is there pain or side effects during touch-ups?",
+        "answer": "Pain during touch-ups can vary depending on the individual’s skin condition, but it is generally less than the initial procedure. There may be some swelling or pain afterward, but this is usually temporary and decreases over time. If you are concerned about side effects, it is best to consult with the professional beforehand."
+      },
+      {
+        "question": "What are the care instructions after a touch-up?",
+        "answer": "After a touch-up, keep the treatment area clean, avoid using cosmetics, and protect it from direct sunlight. It is important to follow the post-care instructions provided by the professional, and extra caution is needed for the first 1-2 weeks."
+      },
+      {
+        "question": "What happens if I don’t get a touch-up?",
+        "answer": "If you do not get a touch-up, the results of the procedure may naturally change over time. You might experience unwanted changes in color or shape, and the results may be less satisfactory. It is advisable to follow the professional’s advice on whether a touch-up is needed."
+      }
+    ]
+  }
+}
