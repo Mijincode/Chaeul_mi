@@ -1,94 +1,89 @@
-import React from "react";
-// import { useTranslation } from "react-i18next";
-import image1 from "../photos/female/image1.jpg";
-import image2 from "../photos/female/image2.jpg";
-import image3 from "../photos/female/image3.jpg";
-import image4 from "../photos/female/image4.jpg";
-import image5 from "../photos/female/image5.png";
-import maleImage1 from "../photos/male/image1.png";
-import maleImage2 from "../photos/male/image2.png";
-import maleImage3 from "../photos/male/image3.png";
-import maleImage4 from "../photos/male/image4.png";
-import maleImage5 from "../photos/male/image5.png";
-import { withTranslation } from "react-google-multi-lang";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./styles.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Gallery = () => {
-  const images = [image1, image2, image3, image4, image5];
-  const maleImages = [
-    maleImage1,
-    maleImage2,
-    maleImage3,
-    maleImage4,
-    maleImage5,
-  ];
+  const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState("female");
+
+  useEffect(() => {}, [activeTab]);
+
+  const femaleImages = require.context("../photos/female/", true);
+  const maleImages = require.context("../photos/male/", true);
+  const eyeImages = require.context("../photos/eye/", true);
+  const lipsImages = require.context("../photos/lips/", true);
+  const hairImages = require.context("../photos/hair/", true);
+  const feetImages = require.context("../photos/feet/", true);
+
+  const getImages = (context) => context.keys().map(context);
+
+  const femaleList = getImages(femaleImages);
+  const maleList = getImages(maleImages);
+  const eyeList = getImages(eyeImages);
+  const lipsList = getImages(lipsImages);
+  const hairList = getImages(hairImages);
+  const feetList = getImages(feetImages);
+
+  const imageCards = (imageList) => (
+    <div className="gallery-wrapper">
+      <Row xs={2} sm={3} md={4} lg={5} className="gallery-container">
+        {imageList.map((image, index) => (
+          <Col key={index} xs={6} className="mb-3">
+            <Card border="light">
+              <Card.Img
+                variant="top"
+                src={image}
+                alt={`Image ${index + 1}`}
+                className="gallery-image"
+              />
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+
   return (
     <div>
-      <h1>채울_美</h1>
-      <h3>
-        개인의 취향과 눈매에 맞추어 1대1 디자인해드립니다 [눈썹 아이라인 입술
-        헤어라인]
-      </h3>
+      <h1 className="gallery-title">{t("gallery.title")}</h1>
+      <h3 className="gallery-text">{t("gallery.description")}</h3>
+      <p className="gallery-p">{t("gallery.naturalLook")}</p>
+
       <Tabs
-        defaultActiveKey="female"
-        id="uncontrolled-tab-example"
-        className="mb-3"
+        activeKey={activeTab}
+        onSelect={(k) => setActiveTab(k)}
+        className="custom-tabs mb-3"
       >
-        <Tab eventKey="female" title="여자Eyebrow">
-          <Row xs={1} md={2} className="g-4">
-            {images.map((image, idx) => (
-              <Col key={idx}>
-                <Card border="light" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={image}
-                    alt="1"
-                    style={{ width: "200px", marginRight: "300px" }}
-                  />
-                </Card>
-              </Col>
-            ))}
-          </Row>
+        <Tab eventKey="female" title={t("gallery.femaleEyebrow")}>
+          {imageCards(femaleList)}
         </Tab>
 
-        <Tab eventKey="male" title="남자Eyebrow">
-          <Row xs={1} md={2} className="g-4">
-            {maleImages.map((image, idx) => (
-              <Col key={idx}>
-                <Card border="light" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={image}
-                    alt="1"
-                    style={{ width: "200px", marginRight: "300px" }}
-                  />
-                </Card>
-              </Col>
-            ))}
-          </Row>
+        <Tab eventKey="male" title={t("gallery.maleEyebrow")}>
+          {imageCards(maleList)}
         </Tab>
 
-        <Tab eventKey="eyeline" title="아이라인">
-          Tab content for eyeline
+        <Tab eventKey="eye" title={t("gallery.eye")}>
+          {imageCards(eyeList)}
         </Tab>
 
-        <Tab eventKey="lips" title="립타투">
-          Tab content for lips
+        <Tab eventKey="lips" title={t("gallery.lipTattoo")}>
+          {imageCards(lipsList)}
         </Tab>
-        <Tab eventKey="hair" title="두피타투">
-          Tab content for hair
+        <Tab eventKey="hair" title={t("gallery.scalpTattoo")}>
+          {imageCards(hairList)}
         </Tab>
-        <Tab eventKey="feet" title="클린패디">
-          Tab content for hair
+        <Tab eventKey="feet" title={t("gallery.cleanPedi")}>
+          {imageCards(feetList)}
         </Tab>
       </Tabs>
-      <p></p>
     </div>
   );
 };
-export default withTranslation(Gallery);
+
+export default Gallery;
