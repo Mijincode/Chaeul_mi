@@ -13,13 +13,14 @@ const NavBar = () => {
 
   return (
     <Navbar bg="light" expand="lg" className="navbar">
-      <Container>
+      {/* <Container> */}
+      <div className="container">
         <Navbar.Brand as={Link} to="/home">
           <img src={logo} alt="Logo" className="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="navbar-nav">
             <Nav.Link as={Link} to="/home">
               {t("navbar.home")}
             </Nav.Link>
@@ -35,11 +36,11 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/faqs">
               {t("navbar.faqs")}
             </Nav.Link>
-            <Nav.Item>
+            <Nav.Link>
               <Button variant="dark" as={Link} to="/booking">
                 Book Online
               </Button>
-            </Nav.Item>
+            </Nav.Link>
           </Nav>
           <div className="language-switcher">
             <img
@@ -56,7 +57,8 @@ const NavBar = () => {
             />
           </div>
         </Navbar.Collapse>
-      </Container>
+        {/* </Container> */}
+      </div>
     </Navbar>
   );
 };

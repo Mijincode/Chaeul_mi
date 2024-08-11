@@ -1,4 +1,11 @@
 /* NavBar.js */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligns items to space between */
+  flex-wrap: wrap;
+}
+
 .navbar {
   padding: 10px 20px;
   display: flex;
@@ -61,7 +68,7 @@
 
   .nav-link {
     padding-right: 10px;
-    font-size: 14px;
+    font-size: 12px;
     margin-right: 10px;
   }
 
@@ -306,7 +313,6 @@ li {
   margin-bottom: -2px;
 }
 
-/* Gallery.js */
 /* Gallery.js */
 .gallery-wrapper {
   padding: 15px; /* Padding around the gallery */
