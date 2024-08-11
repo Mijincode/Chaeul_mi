@@ -2,61 +2,60 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-// import logo from "../photos/logo.jpg";
 import logo from "../photos/logo2.jpg";
-import { useTranslation } from "react-google-multi-lang";
+import { useTranslation } from "react-i18next";
 import "./styles.css";
-import Austraila from "../photos/australia.png";
+import Australia from "../photos/australia.png";
 import Korea from "../photos/south-korea.png";
 
 const NavBar = () => {
-  const { setLanguage } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   return (
-    <Navbar bg="light" data-bs-theme="light">
-      <Container className="container">
+    <Navbar bg="light" expand="lg" className="navbar">
+      <Container>
         <Navbar.Brand as={Link} to="/home">
           <img src={logo} alt="Logo" className="logo" />
-          {/* <img
-            src={ganpan2}
-            alt="ganpan"
-            style={{ width: "200px", borderRadius: "30px" }}
-          /> */}
         </Navbar.Brand>
-        <Nav className="nav-link">
-          <Nav.Link as={Link} to="/home">
-            Home
-          </Nav.Link>
-          <Nav.Link as={Link} to="/gallery">
-            Gallery
-          </Nav.Link>
-          <Nav.Link as={Link} to="/review">
-            Review
-          </Nav.Link>
-          <Nav.Link as={Link} to="/contact">
-            Contact
-          </Nav.Link>
-          <Nav.Link as={Link} to="/faqs">
-            FAQS
-          </Nav.Link>
-          <Button variant="dark" as={Link} to="/booking">
-            Book Online
-          </Button>
-        </Nav>
-        <div className="ml-auto language-switcher">
-          <img
-            src={Austraila}
-            alt="australian flag"
-            className="flag-icon"
-            onClick={() => setLanguage("en")}
-          />
-
-          <img
-            src={Korea}
-            alt="Korean flag"
-            className="flag-icon"
-            onClick={() => setLanguage("ko")}
-          />
-        </div>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="/home">
+              {t("navbar.home")}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/gallery">
+              {t("navbar.gallery")}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/review">
+              {t("navbar.review")}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contact">
+              {t("navbar.contact")}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/faqs">
+              {t("navbar.faqs")}
+            </Nav.Link>
+            <Nav.Item>
+              <Button variant="dark" as={Link} to="/booking">
+                Book Online
+              </Button>
+            </Nav.Item>
+          </Nav>
+          <div className="language-switcher">
+            <img
+              src={Australia}
+              alt="Australian flag"
+              className="flag-icon"
+              onClick={() => i18n.changeLanguage("en")}
+            />
+            <img
+              src={Korea}
+              alt="Korean flag"
+              className="flag-icon"
+              onClick={() => i18n.changeLanguage("ko")}
+            />
+          </div>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
