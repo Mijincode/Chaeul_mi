@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import review1 from "../photos/reviews/image1.jpg";
 import review2 from "../photos/reviews/image2.jpg";
 import review3 from "../photos/reviews/image3.jpg";
@@ -15,7 +15,7 @@ import Row from "react-bootstrap/Row";
 import "./styles.css";
 
 const Review = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const reviewImages = [
     review1,
