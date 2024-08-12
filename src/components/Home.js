@@ -1,18 +1,17 @@
 import React from "react";
 import mikyung from "../photos/mikyung.jpg";
 import homepage from "../photos/homepage.jpg";
-import inside from "../photos/shop/inside4.jpg";
-import inside8 from "../photos/shop/inside8.jpg";
-import inside5 from "../photos/shop/inside5.jpg";
-import inside9 from "../photos/shop/inside9.jpg";
-import entrance2 from "../photos/shop/entrance2.jpg";
-import work from "../photos/shop/work.jpg";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useTranslation } from "react-i18next";
 import "./styles.css";
 import Button from "react-bootstrap/Button";
+
+const getFacilityImages = require.context("../photos/shop/facility/", true);
+const facilityImages = getFacilityImages.keys().map(getFacilityImages);
+console.log(facilityImages);
 
 const Home = () => {
   const { t } = useTranslation();
@@ -28,11 +27,7 @@ const Home = () => {
           <div>
             <h3 className="homepage-text2">
               {t("home.sejongSpecialty")}{" "}
-              <Button
-                variant="light"
-                href="booking"
-                className="text-reset no-underline"
-              >
+              <Button variant="light" href="booking" className="home-button">
                 {t("home.bookingButton")}
               </Button>
             </h3>
@@ -90,33 +85,25 @@ const Home = () => {
             </Row>
           </Container>
         </div>
+
         <div className="facility-container">
-          <h2 className="facility-images">{t("home.facilityTitle")}</h2>
+          <h2 className="facility-title">{t("home.facilityTitle")}</h2>
 
           <Container>
             <Row>
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={inside5} alt="inside" />
-              </Col>
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={inside} alt="inside" />
-              </Col>
-
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={work} alt="work" />
-              </Col>
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={entrance2} alt="entrance2" />
-              </Col>
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={inside8} alt="inside8" />
-              </Col>
-              <Col xs={12} sm={6} md={4}>
-                <img className="inside" src={inside9} alt="inside9" />
-              </Col>
+              {facilityImages.map((src, index) => (
+                <Col xs={12} sm={6} md={4} key={index}>
+                  <img
+                    className="facility-images"
+                    src={src}
+                    alt={`facility-${index}`}
+                  />
+                </Col>
+              ))}
             </Row>
           </Container>
         </div>
+
         <section>
           <p className="trading-hour">
             {t("home.tradingHours")}{" "}
