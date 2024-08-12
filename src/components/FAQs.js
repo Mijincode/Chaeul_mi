@@ -9,7 +9,7 @@ const FAQS = () => {
 
   return (
     <div className="faq-container">
-      <h3 className="text-uppercase fw-bold mb-4">{t("faq.title")}</h3>
+      <h3 className="faq-title">{t("faq.title")}</h3>
       <Accordion defaultActiveKey="0">
         {t("faq.items", { returnObjects: true }).map((item, index) => (
           <Accordion.Item
