@@ -28,10 +28,12 @@ const Home = () => {
           <div>
             <h3 className="homepage-text2">
               {t("home.sejongSpecialty")}{" "}
-              <Button variant="light">
-                <a href="booking" className="text-reset no-underline">
-                  {t("home.bookingButton")}
-                </a>
+              <Button
+                variant="light"
+                href="booking"
+                className="text-reset no-underline"
+              >
+                {t("home.bookingButton")}
               </Button>
             </h3>
           </div>
@@ -118,10 +120,8 @@ const Home = () => {
         <section>
           <p className="trading-hour">
             {t("home.tradingHours")}{" "}
-            <Button variant="dark" className="bottom-button">
-              <a href="booking" className="text-reset no-underline">
-                {t("home.bookingButton")}
-              </a>
+            <Button variant="dark" className="bottom-button" href="booking">
+              {t("home.bookingButton")}
             </Button>
           </p>
         </section>
