@@ -17,19 +17,14 @@ import "./styles.css";
 const Review = () => {
   // const { t } = useTranslation();
 
-  const reviewImages = [
-    review1,
-    review2,
-    review3,
-    review4,
-    review5,
-    review6,
-    review7,
-    review8,
-  ];
+  const reviewImages = require.context("../photos/reviews/", true);
+  const getReviewImages = () => {
+    return reviewImages.keys().map(reviewImages);
+  };
+  const images = getReviewImages();
   return (
     <Row xs={2} md={4} className="g-4">
-      {reviewImages.map((image, idx) => (
+      {images.map((image, idx) => (
         <Col key={idx}>
           <Card>
             <Card.Body>
