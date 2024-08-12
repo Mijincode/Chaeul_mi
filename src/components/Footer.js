@@ -49,7 +49,7 @@ const Footer = () => {
               </a>
             </p> */}
               <p>
-                <a href="faq" className="text-reset">
+                <a href="faqs" className="text-reset">
                   FAQS
                 </a>
               </p>
