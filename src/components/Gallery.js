@@ -51,9 +51,11 @@ const Gallery = () => {
 
   return (
     <div>
-      <h1 className="gallery-title">{t("gallery.title")}</h1>
-      <h3 className="gallery-text">{t("gallery.description")}</h3>
-      <p className="gallery-p">{t("gallery.naturalLook")}</p>
+      <div className="text-container">
+        <h1 className="gallery-title">{t("gallery.title")}</h1>
+        <h3 className="gallery-text">{t("gallery.description")}</h3>
+        <p className="gallery-p">{t("gallery.naturalLook")}</p>
+      </div>
 
       <Tabs
         activeKey={activeTab}
