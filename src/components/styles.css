@@ -1,16 +1,29 @@
+/* Global Styles */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
 /* NavBar.js */
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Aligns items to space between */
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .navbar {
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; /* Space between logo and other items */
-  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -22,7 +35,7 @@
 
 .nav-link {
   padding-right: 15px;
-  font-size: 20px !important; /* Increased font size */
+  font-size: 20px !important;
   margin-right: 40px;
 }
 
@@ -30,17 +43,17 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: auto; /* Pushes the language switcher to the right */
+  margin-left: auto;
   margin-right: 40px;
 }
 
 .flag-icon {
-  width: 70px; /* Increased size */
-  height: 70px; /* Adjust height to match width */
+  width: 70px;
+  height: 70px;
   border: none;
-  padding: 5px; /* Adjust padding as needed */
+  padding: 5px;
   cursor: pointer;
-  transition: opacity 0.3s; /* Smooth hover effect */
+  transition: opacity 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +64,14 @@
 }
 
 .navbar-toggler {
-  border: none; /* Remove border from toggle button */
+  border: none;
 }
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start */
-    justify-content: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .logo {
@@ -73,12 +86,12 @@
   }
 
   .language-switcher {
-    margin-left: 0; /* Remove margin-left for mobile view */
+    margin-left: 0;
   }
 
   .flag-icon {
-    width: 40px; /* Adjusted size for smaller screens */
-    height: auto; /* Maintain aspect ratio */
+    width: 40px;
+    height: auto;
   }
 }
 
@@ -93,8 +106,8 @@
   }
 
   .flag-icon {
-    width: 30px; /* Adjusted size for extra-small screens */
-    height: auto; /* Maintain aspect ratio */
+    width: 30px;
+    height: auto;
   }
 }
 
@@ -134,10 +147,10 @@
   text-align: center;
   color: white;
   padding: 0 10px;
-  margin-left: 20px;
 }
+
 .homepage-text2 button {
-  margin-left: 20px; /* Adjust the value as needed */
+  margin-left: 20px;
 }
 
 .homepage-text h1,
@@ -189,18 +202,6 @@
   margin-bottom: 10px;
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 10px;
-  text-align: left; /* Align text to the left */
-  margin-right: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
 .message {
   margin: 30px auto;
   max-width: 800px;
@@ -227,7 +228,23 @@ li {
   margin: 20px 0;
 }
 
-/* Responsive Styles */
+.bottom-button {
+  margin-top: 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.instaIcon {
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  margin-bottom: -2px;
+}
+
 @media (max-width: 768px) {
   .homepage-text {
     font-size: 1.5rem;
@@ -276,129 +293,82 @@ li {
   }
 }
 
-.bottom-button {
-  margin-top: 10px;
+/* Gallery.js */
+/* Gallery.js */
+.gallery-wrapper {
+  padding: 15px;
 }
 
-.facility-images {
+.gallery-title {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.inside {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10%;
-  object-fit: cover;
-}
-
-.trading-hour {
-  text-align: center;
-  margin: 30px;
-}
-
-.bottom-button {
-  margin-top: 10px;
-}
-.icon {
-  width: 50px;
-  height: 50px;
-  margin-left: 10px;
-}
-
-.instaIcon {
-  width: 60px;
-  height: 60px;
-  vertical-align: middle;
-  margin-bottom: -2px;
-}
-
-/* Gallery.js */
-.gallery-wrapper {
-  padding: 15px; /* Padding around the gallery */
-}
-
-.gallery-title {
-  text-align: center; /* Center the title */
-  margin-bottom: 20px; /* Space below the title */
-}
-
 .gallery-image {
-  width: 100%; /* Make the image take up the full width of its container */
-  height: 500px; /* Set a fixed height */
-  object-fit: cover; /* Ensure the image covers the entire area without stretching */
-  border-radius: 10px; /* Optional: Adds rounded corners to the images */
+  width: 100%; /* Ensure images fill the container */
+  height: 400px; /* Fixed height for uniformity */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10px;
 }
 
 .gallery-text,
 .gallery-p {
-  text-align: center; /* Center text */
-  margin-bottom: 15px; /* Space below text */
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .gallery-container {
-  margin: 0 auto; /* Center the gallery container */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Responsive columns */
+  gap: 15px; /* Space between images */
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .gallery-title {
-    font-size: 24px; /* Smaller font size for the title */
+    font-size: 24px;
   }
-  @media (min-width: 768px) {
-    .gallery-image {
-      height: 250px; /* Adjust height for larger screens */
-    }
+
+  .gallery-image {
+    height: 150px; /* Adjust height for medium screens */
   }
 
   .gallery-text,
   .gallery-p {
-    font-size: 16px; /* Smaller font size for text */
+    font-size: 16px;
   }
 
   .gallery-wrapper {
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
   }
 
   .gallery-container {
-    margin: 0; /* No margin for smaller screens */
-  }
-
-  .gallery-container .card {
-    margin-bottom: 15px; /* Space below each card */
-  }
-
-  .gallery-container .card img {
-    height: 300px; /* Adjust image height for smaller screens */
+    margin: 0;
   }
 }
 
 @media (max-width: 576px) {
   .gallery-title {
-    font-size: 20px; /* Even smaller font size for the title */
+    font-size: 20px;
   }
 
   .gallery-text,
   .gallery-p {
-    font-size: 14px; /* Even smaller font size for text */
+    font-size: 14px;
   }
 
-  .gallery-container {
-    margin: 0; /* No margin */
-  }
-
-  .gallery-container .card {
-    margin-bottom: 10px; /* Reduced space below each card */
-  }
-
-  .gallery-container .card img {
-    height: 200px; /* Further reduced image height */
+  .gallery-image {
+    height: 120px; /* Adjust height for small screens */
   }
 }
 
-/* review.js */
+/* Review.js */
 .review-images {
   width: 300px;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
   display: flex;
   justify-content: center;
 }
@@ -415,13 +385,13 @@ li {
 }
 
 .map {
-  width: 100%; /* Make map responsive */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  height: auto;
 }
 
-/* FAQ Styles */
+/* FAQ.js */
 .faq-container {
-  max-width: 700px; /* Adjust as needed */
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -434,55 +404,55 @@ li {
 .accordion-body {
   width: 100%;
 }
-.ganpan {
-  width: 130px;
-  border-radius: 30%;
-}
 
-/* Media Queries */
-
-/* For tablets and small desktops */
 @media (max-width: 1024px) {
   .nav-link {
-    padding-right: 10px; /* Reduced padding */
-    font-size: 15px; /* Adjusted font size */
+    padding-right: 10px;
+    font-size: 15px;
     margin-right: 10px;
   }
 
   .faq-container {
-    padding: 0 15px; /* Adjusted padding */
+    padding: 0 15px;
   }
 }
 
-/* For mobile devices */
 @media (max-width: 768px) {
   .nav-link {
-    padding-right: 8px; /* Further reduced padding */
-    font-size: 14px; /* Adjusted font size */
+    padding-right: 8px;
+    font-size: 14px;
     margin-right: 8px;
   }
 
   .faq-container {
-    padding: 0 10px; /* Adjusted padding for smaller screens */
+    padding: 0 10px;
   }
 
   .logo {
-    width: 120px; /* Adjust logo size */
+    width: 120px;
   }
 
   .home-page {
-    height: 500px; /* Adjust height for smaller screens */
+    height: 500px;
   }
 
   .mikyung {
-    height: 400px; /* Adjust height for smaller screens */
+    height: 400px;
   }
 
   .gallery-container {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
   }
 
   .review-col {
-    width: 100%; /* Full width for review columns */
+    width: 100%;
   }
+}
+
+/* Footer.js */
+.ganpan {
+  width: 130px;
+  border-radius: 30%;
+  display: block;
+  margin: 0 auto;
 }
