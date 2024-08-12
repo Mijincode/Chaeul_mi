@@ -9,7 +9,7 @@ import Australia from "../photos/australia.png";
 import Korea from "../photos/south-korea.png";
 
 const NavBar = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <Navbar bg="light" expand="lg" className="navbar">
@@ -22,19 +22,19 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar-nav">
             <Nav.Link as={Link} to="/home">
-              {t("navbar.home")}
+              {/* {t("navbar.home")} */}Home
             </Nav.Link>
             <Nav.Link as={Link} to="/gallery">
-              {t("navbar.gallery")}
+              {/* {t("navbar.gallery")} */}Gallery
             </Nav.Link>
             <Nav.Link as={Link} to="/review">
-              {t("navbar.review")}
+              {/* {t("navbar.review")} */}Review
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
-              {t("navbar.contact")}
+              {/* {t("navbar.contact")} */}Contact
             </Nav.Link>
             <Nav.Link as={Link} to="/faqs">
-              {t("navbar.faqs")}
+              {/* {t("navbar.faqs")} */}FAQS
             </Nav.Link>
             <Nav.Link>
               <Button variant="dark" as={Link} to="/booking">
