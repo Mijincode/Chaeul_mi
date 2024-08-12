@@ -22,11 +22,9 @@ const Footer = () => {
     >
       <MDBContainer className="footer-container d-flex justify-content-center align-items-center">
         <section className="p-4">
-          <div className="d-none d-lg-block">
-            <span className="footer-title">
-              <img src={ganpan} alt="ganpan" className="ganpan" />{" "}
-            </span>
-          </div>
+          <span className="footer-title">
+            <img src={ganpan} alt="ganpan" className="ganpan" />{" "}
+          </span>
         </section>
       </MDBContainer>
 
