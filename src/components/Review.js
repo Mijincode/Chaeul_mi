@@ -15,17 +15,26 @@ const Review = () => {
   };
   const images = getReviewImages();
   return (
-    <Row xs={2} md={4} className="g-4">
-      {images.map((image, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Body>
-              <Card.Img variant="top" src={image} className="review-images" />
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    <div className="review-container">
+      <h3>채울미 후기 </h3>
+      <div className="review-row">
+        <Row xs={2} md={4} className="g-4">
+          {images.map((image, idx) => (
+            <Col key={idx}>
+              <Card>
+                <Card.Body>
+                  <Card.Img
+                    variant="top"
+                    src={image}
+                    className="review-images"
+                  />
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+    </div>
   );
 };
 export default Review;
