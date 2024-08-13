@@ -34,7 +34,7 @@ const Gallery = () => {
     <div className="gallery-wrapper">
       <Row xs={2} sm={3} md={4} lg={5} className="gallery-container">
         {imageList.map((image, index) => (
-          <Col key={index} xs={6} className="mb-3">
+          <Col key={index} xs={6} sm={4} md={3} lg={2} className="mb-3">
             <Card border="light">
               <Card.Img
                 variant="top"

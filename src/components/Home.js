@@ -93,11 +93,13 @@ const Home = () => {
             <Row>
               {facilityImages.map((src, index) => (
                 <Col xs={12} sm={6} md={4} key={index}>
-                  <img
-                    className="facility-images"
-                    src={src}
-                    alt={`facility-${index}`}
-                  />
+                  <div className="facility-image-wrapper">
+                    <img
+                      className="facility-images"
+                      src={src}
+                      alt={`facility-${index}`}
+                    />
+                  </div>
                 </Col>
               ))}
             </Row>

@@ -209,18 +209,26 @@ li {
 
 .facility-container {
   margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap; /* If you have multiple images side by side */
 }
 
-.facility-images {
+.facility-image-wrapper {
+  height: 500px; /* Ensure the wrapper height matches the image height */
+  overflow: hidden; /* Prevent any overflow */
+  margin-bottom: 20px; /* Add some space between rows */
+}
+.facility-title {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.inside {
+.facility-images {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 500px;
+  object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 .trading-hour {
@@ -229,7 +237,7 @@ li {
 }
 
 .bottom-button {
-  margin-top: 10px;
+  margin-left: 20px;
 }
 
 .icon {
@@ -294,14 +302,25 @@ li {
 }
 
 /* Gallery.js */
-/* Gallery.js */
 .gallery-wrapper {
   padding: 15px;
 }
-
-.gallery-title {
+.text-container {
   text-align: center;
   margin-bottom: 20px;
+  margin: 60px;
+  margin-top: 50px;
+}
+.gallery-text,
+.gallery-title {
+  margin: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0 auto;
 }
 
 .gallery-image {
@@ -309,63 +328,75 @@ li {
   height: 400px; /* Fixed height for uniformity */
   object-fit: cover; /* Maintain aspect ratio and cover the container */
   border-radius: 10px;
+  margin-left: 30px;
 }
 
-.gallery-text,
-.gallery-p {
-  text-align: center;
-  margin-bottom: 15px;
+.custom-tabs {
+  width: 100%;
+  overflow-x: auto;
+  margin: 10px;
 }
 
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* Responsive columns */
-  gap: 15px; /* Space between images */
-  margin: 0 auto;
+.custom-tabs .nav-link {
+  white-space: nowrap;
+  padding: 10px;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .gallery-title {
     font-size: 24px;
   }
 
   .gallery-image {
-    height: 150px; /* Adjust height for medium screens */
+    height: 150px;
   }
 
-  .gallery-text,
-  .gallery-p {
+  .gallery-text {
     font-size: 16px;
   }
 
   .gallery-wrapper {
     padding: 10px;
   }
-
-  .gallery-container {
-    margin: 0;
+  .custom-tabs .nav-link {
+    font-size: 0.875rem;
+    padding: 8px;
   }
 }
 
 @media (max-width: 576px) {
   .gallery-title {
-    font-size: 20px;
+    font-size: 10px;
   }
 
-  .gallery-text,
-  .gallery-p {
+  .text-container {
     font-size: 14px;
   }
 
   .gallery-image {
-    height: 120px; /* Adjust height for small screens */
+    height: 120px;
+  }
+
+  .custom-tabs .nav-link {
+    font-size: 0.75rem;
+    padding: 6px;
   }
 }
 
 /* Review.js */
+.review-container {
+  margin-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.review-row {
+  margin-top: 30px;
+  margin: 20px;
+  padding: 20px;
+}
 .review-images {
   width: 300px;
   height: auto;
@@ -390,10 +421,18 @@ li {
 }
 
 /* FAQ.js */
+.faq-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .faq-container {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 15px;
+  margin-top: 50px;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .accordion-item {
