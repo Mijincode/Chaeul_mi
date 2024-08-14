@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
+import "./styles/FAQ.css";
 
 const FAQS = () => {
   const { t } = useTranslation();

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import logo from "../photos/logo2.jpg";
 import { useTranslation } from "react-i18next";
-import "./styles.css";
 import Australia from "../photos/australia.png";
 import Korea from "../photos/south-korea.png";
+import "./styles/NavBar.css";
 
 const NavBar = () => {
   const { i18n } = useTranslation();
@@ -30,6 +30,9 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/review">
               {/* {t("navbar.review")} */}Review
             </Nav.Link>
+            <Nav.Link as={Link} to="/review-phone">
+              {/* {t("navbar.review")} */}Review phone
+            </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               {/* {t("navbar.contact")} */}Contact
             </Nav.Link>
@@ -37,7 +40,12 @@ const NavBar = () => {
               {/* {t("navbar.faqs")} */}FAQS
             </Nav.Link>
             <Nav.Link>
-              <Button variant="dark" as={Link} to="/booking">
+              <Button
+                variant="dark"
+                className="book-button"
+                as={Link}
+                to="/booking"
+              >
                 Book Online
               </Button>
             </Nav.Link>
