@@ -1,0 +1,156 @@
+/* Review.js */
+.review-container {
+  margin-left: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.review-row {
+  margin-top: 30px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for responsiveness */
+  gap: 20px;
+}
+.review-images {
+  width: 100%; /* Make it responsive */
+  max-width: 500px; /* Set a max-width */
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.review-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.review-col {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+}
+
+/* Review-phone.js */
+
+.review-phone {
+  position: relative; /* Position relative for the absolute child to position accordingly */
+  width: 100%; /* Adjust as needed */
+  max-width: 400px; /* Limit the width for consistency */
+  margin: 0 auto; /* Center the container */
+  padding: 0 10px;
+  margin-top: 30px;
+}
+
+.phone {
+  width: 100%; /* Image spans the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+  border: none;
+}
+
+.slide {
+  position: absolute; /* Position relative to the .review-phone container */
+  width: 82%; /* Width relative to the .review-phone container */
+  top: 48%; /* Position it 82% down from the top of .review-phone */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the image by shifting 50% of its own width and height */
+}
+
+.slide-hidden {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%; /* Center the arrows vertically */
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: black;
+  box-shadow: 0px 0px 10px white;
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: -3rem;
+  /* Position the left arrow to the left of the phone */
+}
+
+.arrow-right {
+  right: -3rem; /* Position the right arrow to the right of the phone */
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.indicator {
+  background-color: black;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  margin: 0 0.2rem; /* Spacing between indicators */
+}
+
+.indicator-inactive {
+  background-color: gray;
+}
+
+@media (max-width: 768px) {
+  .review-phone {
+    max-width: 70%; /* Ensure it takes the full width on smaller screens */
+    padding: 0 5px; /* Adjust padding for smaller screens */
+  }
+
+  .review-phone-images {
+    width: 20%; /* Adjust the image size for smaller screens */
+  }
+
+  .slide {
+    width: 78%; /* Adjust the image size for smaller screens */
+    top: 55%; /* Adjust vertical positioning */
+  }
+
+  .arrow {
+    width: 1.5rem; /* Reduce arrow size for smaller screens */
+    height: 1.5rem;
+  }
+
+  .arrow-left {
+    left: -2rem; /* Adjust position for smaller screens */
+  }
+
+  .arrow-right {
+    right: -2rem; /* Adjust position for smaller screens */
+  }
+  .indicators {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .indicators {
+    bottom: 0.3rem; /* Further adjust for very small screens */
+  }
+
+  .indicator {
+    display: none;
+  }
+}
