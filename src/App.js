@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Review from "./components/Review";
 import FAQs from "./components/FAQs";
+import ReviewPhone from "./components/ReviewPhone";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/review" element={<Review />} />
+        <Route path="/review-phone" element={<ReviewPhone />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<FAQs />} />
       </Routes>
