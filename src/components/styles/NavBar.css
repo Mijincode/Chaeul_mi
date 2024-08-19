@@ -1,36 +1,50 @@
-/* NavBar.js */
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .navbar {
+  width: 100%;
   padding: 10px 20px;
   display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.nav-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+  padding-right: 15px;
+  margin: 0 auto;
 }
 
 .logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-right: 60px;
+}
+
+.navbar-link {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .nav-link {
-  padding-right: 15px;
-  font-size: 30px;
-  margin-right: 40px;
+  font-size: 2rem;
+  margin: 0 10px;
+  align-items: center;
 }
 
-.book-button {
-  padding: 10px 20px; /* Adjust padding for better spacing */
-  font-size: 16px; /* Base font size */
+.booking-button {
+  padding: 10px 20px;
+  font-size: 16px;
   border-radius: 5px;
+  margin-left: auto;
+  transition: padding 0.3s ease, font-size 0.3s ease;
+  max-width: 100%;
+  text-align: center;
 }
+
 .language-switcher {
   display: flex;
   align-items: center;
@@ -59,38 +73,46 @@
   border: none;
 }
 
+/* ======================================================================== */
 @media (max-width: 992px) {
   .nav-link {
     font-size: 24px;
-    margin-right: 30px;
   }
 
-  .book-button {
-    padding: 8px 16px; /* Adjust padding for medium screens */
-    font-size: 14px; /* Slightly smaller font size */
+  .booking-button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
 
+/* ============================================================================ */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
   .logo {
     width: 120px;
     height: 120px;
+    margin-left: 30px;
+  }
+  .nav-container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    right: 10px;
+    gap: 0px;
   }
 
   .nav-link {
-    padding-right: 10px;
     font-size: 18px;
-    margin-right: 20px;
   }
-  .book-button {
-    padding: 6px 12px; /* Reduce padding for smaller screens */
-    font-size: 12px; /* Smaller font size */
+
+  .booking-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    width: auto;
+    max-width: 150px;
   }
 
   .language-switcher {
@@ -103,22 +125,22 @@
   }
 }
 
+/* ========================================================================= */
 @media (max-width: 576px) {
   .logo {
     width: 100px;
-    height: 100px;
+    height: 120px;
   }
 
   .nav-link {
     font-size: 14px;
-    margin-right: 10px;
   }
 
-  .book-button {
-    padding: 5px 10px; /* Further reduce padding for very small screens */
-    font-size: 10px; /* Smallest font size */
-    width: 100%; /* Full-width button on very small screens */
-    text-align: center; /* Center-align text in button */
+  .booking-button {
+    padding: 5px 10px;
+    font-size: 8px;
+    width: auto;
+    max-width: 100px;
   }
 
   .flag-icon {

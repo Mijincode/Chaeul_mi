@@ -13,14 +13,16 @@ const NavBar = () => {
 
   return (
     <Navbar bg="light" expand="lg" className="navbar">
-      {/* <Container> */}
-      <div className="container">
+      <div className="nav-container">
         <Navbar.Brand as={Link} to="/home">
           <img src={logo} alt="Logo" className="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="navbar-toggler"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="navbar-nav">
+          <Nav className="navbar-link">
             <Nav.Link as={Link} to="/home">
               {/* {t("navbar.home")} */}Home
             </Nav.Link>
@@ -42,7 +44,7 @@ const NavBar = () => {
             <Nav.Link>
               <Button
                 variant="dark"
-                className="book-button"
+                className="booking-button"
                 as={Link}
                 to="/booking"
               >
@@ -65,7 +67,6 @@ const NavBar = () => {
             />
           </div>
         </Navbar.Collapse>
-        {/* </Container> */}
       </div>
     </Navbar>
   );

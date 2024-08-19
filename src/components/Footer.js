@@ -36,7 +36,7 @@ const Footer = () => {
                 <MDBIcon icon="gem" className="me-3" />
                 {t("footer.aboutUs")}
               </h6>
-              <p class="content">{t("footer.aboutUsContent")}</p>
+              <p class="footer-content">{t("footer.aboutUsContent")}</p>
             </MDBCol>
 
             <MDBCol md={3} lg={2} xl={2} className="mx-auto mb-4">
@@ -49,22 +49,24 @@ const Footer = () => {
               </a>
             </p> */}
               <p>
-                <a href="faqs" className="text-reset">
+                <a href="faqs" className="footer-link text-reset">
                   FAQS
                 </a>
               </p>
             </MDBCol>
 
-            <MDBCol md={4} lg={3} xl={3} className="mx-auto mb-4">
+            <MDBCol md={3} lg={2} xl={2} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p>
-                <MDBIcon icon="home" className="me-2" />
-                {t("footer.address")}
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" />
-                0507-1353-8076
-              </p>
+              <div className="contact-details">
+                <p>
+                  <MDBIcon icon="home" className="me-2 " />
+                  {t("footer.address")}
+                </p>
+                <p>
+                  <MDBIcon icon="phone" className="me-3" />
+                  0507-1353-8076
+                </p>
+              </div>
               <p>
                 <a
                   href="https://www.instagram.com/chaeul_mi/"

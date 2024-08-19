@@ -6,7 +6,6 @@
   margin: 0 auto;
 }
 
-/* Footer Container */
 .footer-container {
   padding: 20px;
 }
@@ -15,14 +14,25 @@
   font-size: 24px;
 }
 
-/* Responsive adjustments */
+.footer-link {
+  font-size: 16px;
+}
+
 @media (max-width: 992px) {
   .footer-title {
     font-size: 20px;
   }
 
   .ganpan {
-    width: 80%;
+    width: 70%;
+  }
+
+  .footer-link {
+    font-size: 12px;
+  }
+
+  .contact-details {
+    font-size: 18px;
   }
 }
 
@@ -39,8 +49,15 @@
     font-size: 14px;
   }
 
-  .text-reset {
-    font-size: 12px;
+  .footer-content {
+    font-size: 14px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contact-details {
+    font-size: 1rem;
   }
 }
 
@@ -50,7 +67,7 @@
   }
 
   .ganpan {
-    width: 40%;
+    width: 30%;
   }
 
   .text-uppercase {
@@ -60,25 +77,26 @@
   .content {
     font-size: 14px;
   }
+
   .text-reset {
     font-size: 10px;
   }
 
+  .footer-link {
+    font-size: 13px;
+  }
+
   .instaIcon,
   .icon {
-    width: 25px;
+    width: 30px;
     height: auto;
   }
 
   .footer-container {
     padding: 10px;
   }
-}
 
-/* Adjustments for icons */
-.icon,
-.instaIcon {
-  width: 30px;
-  height: auto;
-  margin-right: 10px;
+  .contact-details {
+    font-size: 0.8rem;
+  }
 }
