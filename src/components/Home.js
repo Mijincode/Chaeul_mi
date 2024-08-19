@@ -2,8 +2,6 @@ import React from "react";
 import mikyung from "../photos/mikyung.jpg";
 import homepage from "../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { useTranslation } from "react-i18next";
 import Button from "react-bootstrap/Button";
 import "./styles/Home.css";
@@ -36,85 +34,76 @@ const Home = () => {
         {/* About Section */}
         <div className="mikyung-container">
           <h2 className="about">{t("home.about")}</h2>
-          <Row>
-            <Col xs={12} md={4} className="mb-4 mb-md-0">
-              <img className="mikyung" src={mikyung} alt="mikyung" />
-            </Col>
-            <Col xs={12} md={8}>
-              <div className="title">
-                <h4 className="introduction">{t("home.introduction")}</h4>
-                <p className="introduction-mikyung">{t("home.beautyShop")}</p>
-
-                <h4 className="introduction">
-                  {t("home.semiPermanentMakeup")}
-                </h4>
-                <div className="list-container">
-                  <div className="list">
-                    <div className="list-title">
-                      {t("home.semiPermanentMakeup")}
-                    </div>
-                    <ul>
-                      <li>{t("home.eyebrows")}</li>
-                      <li>{t("home.lips")}</li>
-                      <li>{t("home.eyeliner")}</li>
-                      <li>{t("home.hairline")}</li>
-                      <li>{t("home.scalpTattoo")}</li>
-                    </ul>
+          <div className="mikyung-content">
+            <img className="mikyung" src={mikyung} alt="mikyung" />
+            <div className="title">
+              <h4 className="introduction">{t("home.introduction")}</h4>
+              <p className="introduction-mikyung">{t("home.beautyShop")}</p>
+              {/* <h4 className="introduction">{t("home.semiPermanentMakeup")}</h4> */}
+              <div className="list-container">
+                <div className="list">
+                  <div className="list-title">
+                    {t("home.semiPermanentMakeup")}
                   </div>
-                  <div className="list">
-                    <div className="list-title">{t("home.curlPerm")}</div>
-                    <ul>
-                      <li>{t("home.eyelashPerm")}</li>
-                    </ul>
-                  </div>
-                  <div className="list">
-                    <div className="list-title">
-                      {t("home.cleanPediPlanning")}
-                    </div>
-                    <ul>
-                      <li>{t("home.footCallus")}</li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li>{t("home.eyebrows")}</li>
+                    <li>{t("home.lips")}</li>
+                    <li>{t("home.eyeliner")}</li>
+                    <li>{t("home.hairline")}</li>
+                    <li>{t("home.scalpTattoo")}</li>
+                  </ul>
                 </div>
-                <div className="message">
-                  <p className="text-lg">{t("home.callToAction")}</p>
+                <div className="list">
+                  <div className="list-title">{t("home.curlPerm")}</div>
+                  <ul>
+                    <li>{t("home.eyelashPerm")}</li>
+                  </ul>
+                </div>
+                <div className="list">
+                  <div className="list-title">
+                    {t("home.cleanPediPlanning")}
+                  </div>
+                  <ul>
+                    <li>{t("home.footCallus")}</li>
+                  </ul>
                 </div>
               </div>
-            </Col>
-          </Row>
+              <div className="message">
+                <p className="text-lg">{t("home.callToAction")}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Facility Section */}
         <div className="facility-section">
           <h2 className="facility-title">{t("home.facilityTitle")}</h2>
-          <Container>
-            <div className="facility-container">
-              <Row>
-                {facilityImages.map((src, index) => (
-                  <Col xs={12} sm={6} md={4} key={index}>
-                    <div className="facility-image-wrapper">
-                      <img
-                        className="facility-images"
-                        src={src}
-                        alt={`facility-${index}`}
-                      />
-                    </div>
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </Container>
-        </div>
 
-        <section>
-          <p className="trading-hour">
+          <div className="facility-container">
+            {facilityImages.map((src, index) => (
+              <div key={index} className="facility-image-wrapper">
+                <img
+                  className="facility-images"
+                  src={src}
+                  alt={`facility-${index}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+
+      {/* TradingHour Section */}
+      <section className="section-container">
+        <div className="trading-hour">
+          <p>
             {t("home.tradingHours")}{" "}
             <Button variant="dark" className="bottom-button" href="booking">
               {t("home.bookingButton")}
             </Button>
           </p>
-        </section>
-      </Container>
+        </div>
+      </section>
     </section>
   );
 };

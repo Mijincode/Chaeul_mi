@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "./styles.css";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import "./styles/Gallery.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Gallery = () => {
@@ -32,9 +32,9 @@ const Gallery = () => {
 
   const imageCards = (imageList) => (
     <div className="gallery-wrapper">
-      <Row xs={2} sm={3} md={4} lg={5} className="gallery-container">
+      <Row xs={4} sm={4} md={6} className="gallery-container">
         {imageList.map((image, index) => (
-          <Col key={index} xs={6} sm={4} md={3} lg={2} className="mb-3">
+          <Col key={index} className="mb-3">
             <Card border="light">
               <Card.Img
                 variant="top"
