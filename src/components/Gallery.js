@@ -4,7 +4,6 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import "./styles/Gallery.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -32,7 +31,7 @@ const Gallery = () => {
 
   const imageCards = (imageList) => (
     <div className="gallery-wrapper">
-      <Row xs={4} sm={4} md={6} className="gallery-container">
+      <div className="gallery-container">
         {imageList.map((image, index) => (
           <Col key={index} className="mb-3">
             <Card border="light">
@@ -45,16 +44,14 @@ const Gallery = () => {
             </Card>
           </Col>
         ))}
-      </Row>
+      </div>
     </div>
   );
 
   return (
     <div>
       <div className="text-container">
-        <h1 className="gallery-title">{t("gallery.title")}</h1>
-        <h3 className="gallery-text">{t("gallery.description")}</h3>
-        <p className="gallery-p">{t("gallery.naturalLook")}</p>
+        <h3 className="gallery-text">{t("gallery.naturalLook")}</h3>
       </div>
 
       <Tabs
