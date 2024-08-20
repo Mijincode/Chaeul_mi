@@ -6,6 +6,7 @@
 
 .gallery-text {
   font-size: 25px;
+  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
 }
 
 .custom-tabs {
@@ -19,6 +20,7 @@
   white-space: nowrap;
   padding: 10px;
   font-size: 1.3rem;
+  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
 }
 
 .gallery-container {

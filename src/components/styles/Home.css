@@ -123,13 +123,14 @@ li {
 }
 
 .message {
-  margin: 40px auto;
   max-width: 800px;
+  margin-top: 50px;
 }
 
 .facility-title {
   text-align: center;
   margin-bottom: 40px;
+  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
 }
 
 .facility-container {

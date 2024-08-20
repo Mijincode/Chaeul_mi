@@ -34,14 +34,18 @@
   font-size: 1.3rem !important;
   margin: 0 10px;
   align-items: center;
+  font-family: "Apple Chancery, cursive";
+  text-align: center;
 }
 
 .booking-button {
   font-size: 17px !important;
+  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
   border-radius: 5px;
   transition: padding 0.3s ease, font-size 0.3s ease;
   max-width: 100%;
   text-align: center;
+  justify-items: center;
   margin-left: 10px;
 }
 
