@@ -11,12 +11,12 @@
   margin: 20px;
   padding: 20px;
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping for responsiveness */
+  flex-wrap: wrap;
   gap: 20px;
 }
 .review-images {
-  width: 100%; /* Make it responsive */
-  max-width: 500px; /* Set a max-width */
+  width: 100%;
+  max-width: 500px;
   height: auto;
   display: flex;
   justify-content: center;
@@ -38,33 +38,61 @@
   height: auto;
 }
 
+.zoomed-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.zoomed-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
 /* Review-phone.js */
+.star-icon {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: gold;
+  font-size: 25px;
+  margin: 0 2px;
+  margin-bottom: 30px;
+}
 
 .review-phone {
-  position: relative; /* Position relative for the absolute child to position accordingly */
-  width: 100%; /* Adjust as needed */
-  max-width: 400px; /* Limit the width for consistency */
-  margin: 0 auto; /* Center the container */
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   padding: 0 10px;
-  margin-top: 30px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .phone {
-  width: 100%; /* Image spans the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the area without stretching */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border: none;
 }
 
 .slide {
-  position: absolute; /* Position relative to the .review-phone container */
-  width: 82%; /* Width relative to the .review-phone container */
-  top: 48%; /* Position it 82% down from the top of .review-phone */
-  left: 50%; /* Center horizontally */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Center the image by shifting 50% of its own width and height */
+  position: absolute;
+  width: 82%;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .slide-hidden {
@@ -84,11 +112,10 @@
 
 .arrow-left {
   left: -3rem;
-  /* Position the left arrow to the left of the phone */
 }
 
 .arrow-right {
-  right: -3rem; /* Position the right arrow to the right of the phone */
+  right: -3rem;
 }
 
 .indicators {
@@ -107,7 +134,7 @@
   width: 0.5rem;
   border-radius: 100%;
   border: none;
-  margin: 0 0.2rem; /* Spacing between indicators */
+  margin: 0 0.2rem;
 }
 
 .indicator-inactive {
@@ -116,30 +143,30 @@
 
 @media (max-width: 768px) {
   .review-phone {
-    max-width: 70%; /* Ensure it takes the full width on smaller screens */
-    padding: 0 5px; /* Adjust padding for smaller screens */
+    max-width: 70%;
+    padding: 0 5px;
   }
 
   .review-phone-images {
-    width: 20%; /* Adjust the image size for smaller screens */
+    width: 20%;
   }
 
   .slide {
-    width: 78%; /* Adjust the image size for smaller screens */
-    top: 55%; /* Adjust vertical positioning */
+    width: 78%;
+    top: 55%;
   }
 
   .arrow {
-    width: 1.5rem; /* Reduce arrow size for smaller screens */
+    width: 1.5rem;
     height: 1.5rem;
   }
 
   .arrow-left {
-    left: -2rem; /* Adjust position for smaller screens */
+    left: -2rem;
   }
 
   .arrow-right {
-    right: -2rem; /* Adjust position for smaller screens */
+    right: -2rem;
   }
   .indicators {
     display: none;
@@ -147,7 +174,7 @@
 }
 @media (max-width: 480px) {
   .indicators {
-    bottom: 0.3rem; /* Further adjust for very small screens */
+    bottom: 0.3rem;
   }
 
   .indicator {
