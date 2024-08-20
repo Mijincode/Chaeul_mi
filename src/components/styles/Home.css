@@ -45,8 +45,10 @@
   margin: 0;
   font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
 }
+
 .home-button {
   margin-left: 20px;
+  font-size: 20px !important;
 }
 
 .mikyung-container {
@@ -158,19 +160,15 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Darken the background to highlight the image */
-  z-index: 1000; /* High z-index to ensure it overlays other content */
-  cursor: pointer; /* Make it clear the image is clickable to close */
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .zoomed-image {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-radius: 10px;
 }
@@ -179,6 +177,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100px;
   padding: 20px;
 }
@@ -186,13 +185,17 @@ li {
 .trading-hour {
   display: flex;
   font-size: 18px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+.trading-hour-text {
+  margin-bottom: 10px;
+}
+
 .bottom-button {
-  margin-left: 20px;
+  font-size: 20px !important;
 }
 
 .icon {
@@ -218,6 +221,11 @@ li {
     font-size: 1.5rem;
     padding: 0 10px;
     top: 50%;
+  }
+
+  .home-button,
+  .bottom-button {
+    font-size: 14px !important;
   }
 
   .about {
@@ -286,20 +294,20 @@ li {
   }
 
   .facility-images {
-    height: auto; /* Ensure height is automatically adjusted */
+    height: auto;
     width: 100%;
     object-fit: cover;
   }
 
-  .trading-hour p {
-    font-size: 0.75rem;
-    padding: 0 10px;
-    top: 50%;
+  .zoomed-image {
+    max-width: 90vw;
+    max-height: 80vh;
   }
 
-  .bottom-button {
-    margin-left: 10px;
-    font-size: 0.8rem;
+  .trading-hour-text {
+    font-size: 0.78rem !important;
+    padding: 0 10px;
+    top: 50%;
   }
 }
 
@@ -312,10 +320,14 @@ li {
 
   .homepage-text2,
   .introduction-mikyung {
-    bottom: 5%;
+    bottom: 1%;
     font-size: 1rem;
   }
 
+  .home-button {
+    font-size: 12px;
+    margin-top: 10px;
+  }
   .mikyung-content {
     margin-top: 20px;
   }
@@ -367,11 +379,11 @@ li {
   }
 
   .zoomed-image {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 90vw;
+    max-height: 80vh;
   }
 
-  .trading-hour {
+  .trading-hour-text {
     font-size: 0.875rem;
   }
 }

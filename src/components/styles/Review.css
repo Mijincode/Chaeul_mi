@@ -100,7 +100,7 @@
 
 .arrow {
   position: absolute;
-  top: 50%; /* Center the arrows vertically */
+  top: 50%;
   transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
