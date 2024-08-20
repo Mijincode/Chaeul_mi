@@ -33,7 +33,7 @@ const NavBar = () => {
               {/* {t("navbar.review")} */}Review
             </Nav.Link>
             <Nav.Link as={Link} to="/review-phone">
-              {/* {t("navbar.review")} */}Review phone
+              {/* {t("navbar.review")} */}Review2
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               {/* {t("navbar.contact")} */}Contact

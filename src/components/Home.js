@@ -112,7 +112,11 @@ const Home = () => {
                 className="zoomed-image-container"
                 onClick={closeZoomedImage}
               >
-                <img src={zoomedImage} alt="zoomed-image" layout="fill" />
+                <img
+                  className="zoomed-image"
+                  src={zoomedImage}
+                  alt="zoomed-image"
+                />
               </div>
             )}
           </div>
@@ -122,15 +126,17 @@ const Home = () => {
       {/* TradingHour Section */}
       <section className="section-container">
         <div className="trading-hour">
-          <p>{t("home.tradingHours")} </p>
-          <Button
-            variant="dark"
-            as={Link}
-            to="/booking"
-            className="bottom-button"
-          >
-            {t("home.bookingButton")}
-          </Button>
+          <div className="trading-hour-text">{t("home.tradingHours")}</div>
+          <div className="trading-hour-button">
+            <Button
+              variant="dark"
+              as={Link}
+              to="/booking"
+              className="bottom-button"
+            >
+              {t("home.bookingButton")}
+            </Button>
+          </div>
         </div>
       </section>
     </section>
