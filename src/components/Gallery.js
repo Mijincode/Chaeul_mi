@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Gallery = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("female");
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   useEffect(() => {}, [activeTab]);
 
@@ -29,6 +30,13 @@ const Gallery = () => {
   const hairList = getImages(hairImages);
   const feetList = getImages(feetImages);
 
+  const openZoomedImage = (image) => {
+    setZoomedImage(image);
+  };
+  const closeZoomedImage = () => {
+    setZoomedImage(null);
+  };
+
   const imageCards = (imageList) => (
     <div className="gallery-wrapper">
       <div className="gallery-container">
@@ -40,6 +48,7 @@ const Gallery = () => {
                 src={image}
                 alt={`Image ${index + 1}`}
                 className="gallery-image"
+                onClick={() => openZoomedImage(image)}
               />
             </Card>
           </Col>
@@ -81,6 +90,11 @@ const Gallery = () => {
           {imageCards(feetList)}
         </Tab>
       </Tabs>
+      {zoomedImage && (
+        <div className="zoomed-image-container" onClick={closeZoomedImage}>
+          <img src={zoomedImage} alt="zoomed" className="zoomed-image" />
+        </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import mikyung from "../photos/mikyung.jpg";
 import homepage from "../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
@@ -9,10 +9,17 @@ import "./styles/Home.css";
 
 const getFacilityImages = require.context("../photos/shop/facility/", true);
 const facilityImages = getFacilityImages.keys().map(getFacilityImages);
-console.log(facilityImages);
 
 const Home = () => {
   const { t } = useTranslation();
+  const [zoomedImage, setZoomedImage] = useState(null);
+
+  const openZoomedImage = (facilityImages) => {
+    setZoomedImage(facilityImages);
+  };
+  const closeZoomedImage = () => {
+    setZoomedImage(null);
+  };
 
   return (
     <section className="home-section">
@@ -87,14 +94,27 @@ const Home = () => {
 
           <div className="facility-container">
             {facilityImages.map((src, index) => (
-              <div key={index} className="facility-image-wrapper">
+              <div
+                key={index}
+                className="facility-image-wrapper"
+                onClick={() => openZoomedImage(src)}
+              >
                 <img
                   className="facility-images"
                   src={src}
                   alt={`facility-${index}`}
+                  layout="fill"
                 />
               </div>
             ))}
+            {zoomedImage && (
+              <div
+                className="zoomed-image-container"
+                onClick={closeZoomedImage}
+              >
+                <img src={zoomedImage} alt="zoomed-image" layout="fill" />
+              </div>
+            )}
           </div>
         </div>
       </Container>

@@ -149,6 +149,32 @@ li {
   border-radius: 10px;
 }
 
+.zoomed-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Darken the background to highlight the image */
+  z-index: 1000; /* High z-index to ensure it overlays other content */
+  cursor: pointer; /* Make it clear the image is clickable to close */
+}
+
+.zoomed-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
 .section-container {
   display: flex;
   justify-content: center;
@@ -335,6 +361,11 @@ li {
 
   .facility-images {
     height: 150px;
+  }
+
+  .zoomed-image {
+    max-width: 80%;
+    max-height: 80%;
   }
 
   .trading-hour {

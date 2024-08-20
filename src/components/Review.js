@@ -1,21 +1,31 @@
-import React from "react";
-// import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./styles/Review.css";
 
 const Review = () => {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   const reviewImages = require.context("../photos/reviews/", true);
   const getReviewImages = () => {
     return reviewImages.keys().map(reviewImages);
   };
   const images = getReviewImages();
+
+  const openZoomedImage = (images) => {
+    setZoomedImage(images);
+  };
+  const closeZoomedImage = () => {
+    setZoomedImage(null);
+  };
+
   return (
     <div className="review-container">
-      <h3>채울미 후기 </h3>
+      <h3>{t("review.title")}</h3>
+      <p>{t("review.description")}</p>
       <div className="review-row">
         <Row xs={2} md={4} className="g-4">
           {images.map((image, idx) => (
@@ -26,6 +36,7 @@ const Review = () => {
                     variant="top"
                     src={image}
                     className="review-images"
+                    onClick={() => openZoomedImage(image)}
                   />
                 </Card.Body>
               </Card>
@@ -33,6 +44,11 @@ const Review = () => {
           ))}
         </Row>
       </div>
+      {zoomedImage && (
+        <div className="zoomed-image-container" onClick={closeZoomedImage}>
+          <img src={zoomedImage} alt="zoomed" className="zoomed-image" />
+        </div>
+      )}
     </div>
   );
 };
