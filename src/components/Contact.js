@@ -11,15 +11,16 @@ const Contact = () => {
     <div>
       <h3>{t("contact.title")}</h3>
       <img className="map" src={map} alt={t("contact.mapAlt")} />
-      <a
-        href="https://maps.app.goo.gl/CiSc5huQ8eq5L2398"
-        aria-label={t("contact.viewOnGoogleMaps")}
-      >
-        {t("contact.viewOnGoogleMaps")}
-      </a>
-
-      <p className="me-3">
-        {t("contact.kakaoTalkContact")}
+      <div>
+        <a
+          href="https://maps.app.goo.gl/CiSc5huQ8eq5L2398"
+          aria-label={t("contact.viewOnGoogleMaps")}
+        >
+          {t("contact.viewOnGoogleMaps")}
+        </a>
+      </div>
+      <div>
+        <p className="me-3">{t("contact.kakaoTalkContact")} </p>
         <a
           className="text-reset fw-bold"
           href="https://open.kakao.com/o/sJVFkuT"
@@ -31,7 +32,7 @@ const Contact = () => {
             className="icon"
           />
         </a>
-      </p>
+      </div>
     </div>
   );
 };
