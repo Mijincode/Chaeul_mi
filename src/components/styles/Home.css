@@ -65,7 +65,7 @@
   width: 100%;
   height: auto;
   max-width: 300px;
-  border-radius: 10%;
+  border-radius: 2rem;
   object-fit: contain;
   margin-right: 15px;
   overflow: hidden;
@@ -131,7 +131,7 @@ li {
 }
 
 .facility-container {
-  gap: 10px;
+  gap: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -243,6 +243,7 @@ li {
     max-width: 80%;
     border-radius: 2rem;
     margin-right: 0px;
+    height: auto;
   }
 
   .introduction {
@@ -280,12 +281,14 @@ li {
   }
 
   .facility-image-wrapper {
-    width: calc(49% - 10px);
+    width: calc(50% - 10px);
     margin-bottom: 20px;
   }
 
   .facility-images {
-    height: 200px;
+    height: auto; /* Ensure height is automatically adjusted */
+    width: 100%;
+    object-fit: cover;
   }
 
   .trading-hour p {
@@ -322,7 +325,7 @@ li {
   }
   .mikyung {
     max-width: 60%;
-    border-radius: 10%;
+    border-radius: 1rem;
   }
 
   .introduction {
@@ -356,7 +359,7 @@ li {
   }
 
   .facility-image-wrapper {
-    width: 100%;
+    width: calc(50% - 10px);
   }
 
   .facility-images {
