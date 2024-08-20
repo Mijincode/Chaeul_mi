@@ -1,36 +1,13 @@
 {
-  "booking": {
-    "title": "Chaeul Beauty Online Reservation Available",
-    "selectDateTime": "Please select your preferred date and time.",
-    "availableHours": "Available hours: 9:30 AM ~ 5:00 PM (Weekend available)."
-  },
-  "contact": {
-    "title": "How to Get Here - Sejong City Naseongdong",
-    "kakaoTalkContact": "KakaoTalk Consultation",
-    "viewOnGoogleMaps": "View on Google Maps",
-    "address": "Sejong City Naseongbuk-do 30",
-    "phone": "0507-1353-8076",
-    "supportResources": "Support Resources"
-  },
-  "footer": {
-    "aboutUs": "About Us",
-    "aboutUsContent": "Chaeul Beauty provides 1:1 design tailored to individual preferences and eye shapes. Our goal is to highlight each customer's uniqueness and beauty, resulting in confidence and satisfaction.",
-    "supportResources": "Support Resources",
+  "navbar": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "review": "Review",
     "contact": "Contact",
-    "address": "Sejong City Naseongbuk-do 30",
-    "copyright": "© 2024 Copyright: Chaeul Beauty"
+    "faqs": "FAQs",
+    "bookOnline": "Book Online"
   },
-  "gallery": {
-    "title": "Chaeul Beauty",
-    "description": "1:1 design tailored to individual preferences and eye shapes.",
-    "naturalLook": "Chaeul Beauty aims for a natural look.",
-    "femaleEyebrow": "Female Eyebrow",
-    "maleEyebrow": "Male Eyebrow",
-    "eye": "Eyeliner & Eyelashes",
-    "lipTattoo": "Lip Tattoo",
-    "scalpTattoo": "Scalp Tattoo",
-    "cleanPedi": "Clean Pedi"
-  },
+
   "home": {
     "welcome": "Welcome to Chaeul Beauty",
     "sejongSpecialty": "Sejong City Eyebrow Tattoo Specialist",
@@ -52,13 +29,46 @@
     "tradingHours": "Operating Hours: Weekdays/Saturdays 10:00am ~ 18:00pm",
     "facilityTitle": "Explore Chaeul Beauty"
   },
-  "navbar": {
-    "home": "Home",
-    "gallery": "Gallery",
-    "review": "Review",
+
+  "gallery": {
+    "title": "Chaeul Beauty",
+    "description": "1:1 design tailored to individual preferences and eye shapes.",
+    "naturalLook": "Chaeul Beauty aims for a natural look",
+    "femaleEyebrow": "Female Eyebrow",
+    "maleEyebrow": "Male Eyebrow",
+    "eye": "Eyeliner & Eyelashes",
+    "lipTattoo": "Lip Tattoo",
+    "scalpTattoo": "Scalp Tattoo",
+    "cleanPedi": "Clean Pedi"
+  },
+
+  "review": {
+    "title": "Chaeul Beauty",
+    "description": "Reviews from satisfied customers are valuable"
+  },
+
+  "contact": {
+    "title": "How to Get Here - Sejong City Naseongdong",
+    "kakaoTalkContact": "KakaoTalk Consultation",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "address": "Sejong City Naseongbuk-do 30",
+    "phone": "0507-1353-8076",
+    "supportResources": "Support Resources"
+  },
+
+  "booking": {
+    "title": "Chaeul Beauty Online Reservation Available",
+    "selectDateTime": "Please select your preferred date and time.",
+    "availableHours": "Available hours: 9:30 AM ~ 5:00 PM (Weekend available)."
+  },
+
+  "footer": {
+    "aboutUs": "About Us",
+    "aboutUsContent": "Chaeul Beauty provides 1:1 design tailored to individual preferences and eye shapes. Our goal is to highlight each customer's uniqueness and beauty, resulting in confidence and satisfaction.",
+    "supportResources": "Support Resources",
     "contact": "Contact",
-    "faqs": "FAQs",
-    "bookOnline": "Book Online"
+    "address": "Sejong City Naseongbuk-do 30",
+    "copyright": "© 2024 Copyright: Chaeul Beauty"
   },
 
   "faq": {
