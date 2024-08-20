@@ -27,7 +27,7 @@ const ReviewPhone = () => {
 
   return (
     <div className="review-phone">
-      <h5>{t("review.description")}</h5>
+      <h5 className="review-valuable">{t("review.description")}</h5>
       <div className="star-icon">
         {[...Array(5)].map((_, index) => (
           <FontAwesomeIcon icon={faStar} />
