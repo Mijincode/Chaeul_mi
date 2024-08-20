@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
 import "./styles/Gallery.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -38,22 +36,17 @@ const Gallery = () => {
   };
 
   const imageCards = (imageList) => (
-    <div className="gallery-wrapper">
-      <div className="gallery-container">
-        {imageList.map((image, index) => (
-          <Col key={index} className="mb-3">
-            <Card border="light">
-              <Card.Img
-                variant="top"
-                src={image}
-                alt={`Image ${index + 1}`}
-                className="gallery-image"
-                onClick={() => openZoomedImage(image)}
-              />
-            </Card>
-          </Col>
-        ))}
-      </div>
+    <div className="gallery-container">
+      {imageList.map((image, index) => (
+        <div key={index} className="gallery-wrapper">
+          <img
+            src={image}
+            alt={`Gallery item  ${index + 1}`}
+            className="gallery-image"
+            onClick={() => openZoomedImage(image)}
+          />
+        </div>
+      ))}
     </div>
   );
 
