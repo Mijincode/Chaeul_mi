@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import phone from "../photos/phone1.jpg";
+import { useTranslation } from "react-i18next";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./styles/Review.css";
 
 const reviewImages = require.context("../photos/review-phone", true);
@@ -10,6 +13,7 @@ const getReviewImages = () => {
 };
 
 const ReviewPhone = () => {
+  const { t } = useTranslation();
   const images = getReviewImages();
   const [slide, setSlide] = useState(0);
 
@@ -23,6 +27,13 @@ const ReviewPhone = () => {
 
   return (
     <div className="review-phone">
+      <h5>{t("review.description")}</h5>
+      <div className="star-icon">
+        {[...Array(5)].map((_, index) => (
+          <FontAwesomeIcon icon={faStar} />
+        ))}
+      </div>
+
       <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} />
       <Container>
         <img src={phone} alt="phone" className="phone" />
