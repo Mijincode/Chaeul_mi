@@ -4,6 +4,7 @@ import homepage from "../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
 import { useTranslation } from "react-i18next";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import "./styles/Home.css";
 
 const getFacilityImages = require.context("../photos/shop/facility/", true);
@@ -25,7 +26,12 @@ const Home = () => {
           <div>
             <h3 className="homepage-text2">
               {t("home.sejongSpecialty")}
-              <Button variant="light" href="booking" className="home-button">
+              <Button
+                variant="light"
+                as={Link}
+                to="/booking"
+                className="home-button"
+              >
                 {t("home.bookingButton")}
               </Button>
             </h3>
@@ -96,12 +102,15 @@ const Home = () => {
       {/* TradingHour Section */}
       <section className="section-container">
         <div className="trading-hour">
-          <p>
-            {t("home.tradingHours")}{" "}
-            <Button variant="dark" className="bottom-button" href="booking">
-              {t("home.bookingButton")}
-            </Button>
-          </p>
+          <p>{t("home.tradingHours")} </p>
+          <Button
+            variant="dark"
+            as={Link}
+            to="/booking"
+            className="bottom-button"
+          >
+            {t("home.bookingButton")}
+          </Button>
         </div>
       </section>
     </section>
