@@ -1,1 +1,10 @@
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.booking-title {
+  margin-top: 40px;
+}
