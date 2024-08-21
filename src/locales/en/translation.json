@@ -57,7 +57,7 @@
   },
 
   "booking": {
-    "title": "Chaeul Beauty Online Reservation Available",
+    "title": "Online Reservation Available",
     "selectDateTime": "Please select your preferred date and time.",
     "availableHours": "Available hours: 9:30 AM ~ 5:00 PM (Weekend available)."
   },
