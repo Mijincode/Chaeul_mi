@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import phone from "../photos/phone1.jpg";
 import { useTranslation } from "react-i18next";
-// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
@@ -41,7 +41,7 @@ const ReviewPhone = () => {
         ))}
       </div>
 
-      {/* <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} /> */}
+      <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} />
       <div className="phone-frame" {...handler}>
         <img src={phone} alt="phone" className="phone" />
         {images.map((image, idx) => (
@@ -53,11 +53,11 @@ const ReviewPhone = () => {
           />
         ))}
       </div>
-      {/* <BsArrowRightCircleFill
+      <BsArrowRightCircleFill
         className="arrow arrow-right"
         onClick={nextSlide}
-      /> */}
-      {/* <span className="indicators">
+      />
+      <span className="indicators">
         {images.map((_, index) => {
           return (
             <button
@@ -69,7 +69,7 @@ const ReviewPhone = () => {
             ></button>
           );
         })}
-      </span> */}
+      </span>
     </div>
   );
 };
