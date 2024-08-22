@@ -5,7 +5,7 @@ import Gallery from "./components/Gallery";
 import Booking from "./components/Booking";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
-import Review from "./components/Review";
+// import Review from "./components/Review";
 import FAQs from "./components/FAQs";
 import ReviewPhone from "./components/ReviewPhone";
 
@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/booking" element={<Booking />} />
-        <Route path="/review" element={<Review />} />
+        {/* <Route path="/review" element={<Review />} /> */}
         <Route path="/review-phone" element={<ReviewPhone />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<FAQs />} />
