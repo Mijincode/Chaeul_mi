@@ -29,11 +29,11 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/gallery">
               {/* {t("navbar.gallery")} */}Gallery
             </Nav.Link>
-            <Nav.Link as={Link} to="/review">
-              {/* {t("navbar.review")} */}Review
-            </Nav.Link>
+            {/* <Nav.Link as={Link} to="/review">
+              {t("navbar.review")}Review
+            </Nav.Link> */}
             <Nav.Link as={Link} to="/review-phone">
-              {/* {t("navbar.review")} */}Review2
+              {/* {t("navbar.review")} */}Reviews
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               {/* {t("navbar.contact")} */}Contact
