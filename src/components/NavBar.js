@@ -41,30 +41,32 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/faqs">
               {/* {t("navbar.faqs")} */}FAQS
             </Nav.Link>
+            <Nav.Link>
+              <Button
+                variant="dark"
+                className="booking-button"
+                as={Link}
+                to="/booking"
+              >
+                Book Online
+              </Button>
+            </Nav.Link>
 
-            <Button
-              variant="dark"
-              className="booking-button"
-              as={Link}
-              to="/booking"
-            >
-              Book Online
-            </Button>
+            <div className="language-switcher">
+              <img
+                src={Australia}
+                alt="Australian flag"
+                className="flag-icon"
+                onClick={() => i18n.changeLanguage("en")}
+              />
+              <img
+                src={Korea}
+                alt="Korean flag"
+                className="flag-icon"
+                onClick={() => i18n.changeLanguage("ko")}
+              />
+            </div>
           </Nav>
-          <div className="language-switcher">
-            <img
-              src={Australia}
-              alt="Australian flag"
-              className="flag-icon"
-              onClick={() => i18n.changeLanguage("en")}
-            />
-            <img
-              src={Korea}
-              alt="Korean flag"
-              className="flag-icon"
-              onClick={() => i18n.changeLanguage("ko")}
-            />
-          </div>
         </Navbar.Collapse>
       </div>
     </Navbar>

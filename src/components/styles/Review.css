@@ -92,7 +92,7 @@
 
 .slide {
   position: absolute;
-  width: 82%;
+  width: 88%;
   top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -165,7 +165,7 @@
   }
 
   .slide {
-    width: 78%;
+    width: 89%;
     top: 55%;
   }
 
