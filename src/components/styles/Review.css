@@ -61,6 +61,7 @@
 /* Review-phone.js */
 .review-valuable {
   font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
+  font-weight: bold;
 }
 
 .star-icon {
@@ -145,6 +146,7 @@
 }
 
 /* =================================================================== */
+
 @media (max-width: 768px) {
   .review-phone {
     max-width: 70%;
@@ -157,7 +159,7 @@
   }
 
   .star-icon {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .review-phone-images {
@@ -170,8 +172,7 @@
   }
 
   .arrow {
-    width: 1.5rem;
-    height: 1.5rem;
+    display: none;
   }
 
   .arrow-left {
