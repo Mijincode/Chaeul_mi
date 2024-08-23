@@ -48,11 +48,13 @@
   },
 
   "contact": {
-    "title": "오시는 길 - 세종시 나성동",
+    "title": "찾아 오시는 길 ",
     "kakaoTalkContact": "카카오 상담문의",
     "viewOnGoogleMaps": "Google Maps에서 보기",
-    "address": "세종시 나성북도 30",
-    "phone": "0507-1353-8076",
+    "address": "주소",
+    "chaeulmi-address": "세종시 나성북도 30 A동 331호",
+    "chaeulmi-phone": "상담 전화",
+    "phone-number": "0507-1353-8076",
     "supportResources": "지원 리소스"
   },
 
