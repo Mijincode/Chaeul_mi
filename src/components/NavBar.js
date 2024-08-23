@@ -42,14 +42,14 @@ const NavBar = () => {
               {/* {t("navbar.faqs")} */}FAQS
             </Nav.Link>
 
-            <Button
+            <button
               variant="dark"
               className="booking-button"
               as={Link}
               to="/booking"
             >
               Book Online
-            </Button>
+            </button>
 
             <div className="language-switcher">
               <img
