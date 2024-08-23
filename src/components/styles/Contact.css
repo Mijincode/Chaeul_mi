@@ -1,36 +1,50 @@
 .contact-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 10px;
+  margin-left: 30px;
 }
+
 .contact-title {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 30px;
 }
 
-.map {
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-}
-
 .naver-map {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80%;
+  height: auto;
+  padding: 20px;
 }
 
-.kakao-container {
+.googleMap-container {
+  text-align: center;
+  width: 80%;
+  height: 800px; /* Default height for desktop */
+  margin: 20px 0;
+}
+
+.contact-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  text-align: center;
 }
 
 .kakao-link {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 10px;
+  background-color: #363636;
+  color: #ffffff;
+  border-color: #363636;
+  padding: 5px 5px;
+  margin-top: 20px;
 }
 
 .kakao-link p {
@@ -40,4 +54,65 @@
 .icon {
   width: 50px;
   height: 50px;
+  border-color: #e5e7eb;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #363636;
+  color: #ffffff;
+  border-color: #363636;
+  padding: 5px 5px;
+  margin-top: 20px;
+}
+
+.contact-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  background-color: #363636;
+  color: #ffffff;
+  border-color: #363636;
+  padding: 5px 5px;
+  margin-top: 20px;
+}
+
+/* ============================================================================================== */
+@media (max-width: 768px) {
+  .contact-container {
+    margin-left: 20px;
+  }
+  .googleMap-container {
+    height: 300px; /* Adjust height for mobile screens */
+    width: 80%;
+  }
+
+  .contact-title {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+}
+/* ============================================================================================== */
+@media (max-width: 576px) {
+  .googleMap-container {
+    height: 200px; /* Further adjustment for very small screens */
+    width: 70%;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .address {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .kakaotalk {
+    font-size: 14px;
+  }
 }
