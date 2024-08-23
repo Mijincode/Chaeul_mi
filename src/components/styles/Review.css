@@ -171,10 +171,6 @@
     top: 55%;
   }
 
-  .arrow {
-    display: none;
-  }
-
   .arrow-left {
     left: -2rem;
   }
