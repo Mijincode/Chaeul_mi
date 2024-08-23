@@ -5,6 +5,7 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
+
 import "./styles/Review.css";
 
 const reviewImages = require.context("../photos/review-phone", true);
@@ -16,13 +17,22 @@ const ReviewPhone = () => {
   const { t } = useTranslation();
   const images = getReviewImages();
   const [slide, setSlide] = useState(0);
+  const [swipeClass, setSwipeClass] = useState(0);
 
   const nextSlide = () => {
-    setSlide(slide === images.length - 1 ? 0 : slide + 1);
+    setSwipeClass("swipe-left");
+    setTimeout(() => {
+      setSlide(slide === images.length - 1 ? 0 : slide + 1);
+      setSwipeClass("");
+    }, 300);
   };
 
   const prevSlide = () => {
-    setSlide(slide === 0 ? images.length - 1 : slide - 1);
+    setSwipeClass("swipe-right");
+    setTimeout(() => {
+      setSlide(slide === 0 ? images.length - 1 : slide - 1);
+      setSwipeClass("");
+    }, 300);
   };
 
   const handler = useSwipeable({
@@ -37,12 +47,12 @@ const ReviewPhone = () => {
       <h5 className="review-valuable">{t("review.description")}</h5>
       <div className="star-icon">
         {[...Array(5)].map((_, index) => (
-          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} key={index} />
         ))}
       </div>
 
-      <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} />
-      <div className="phone-frame" {...handler}>
+      {/* <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} /> */}
+      <div {...handler} className={`phone-frame ${swipeClass}`}>
         <img src={phone} alt="phone" className="phone" />
         {images.map((image, idx) => (
           <img
@@ -53,10 +63,10 @@ const ReviewPhone = () => {
           />
         ))}
       </div>
-      <BsArrowRightCircleFill
+      {/* <BsArrowRightCircleFill
         className="arrow arrow-right"
         onClick={nextSlide}
-      />
+      /> */}
       <span className="indicators">
         {images.map((_, index) => {
           return (
