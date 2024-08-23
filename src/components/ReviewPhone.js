@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import phone from "../photos/phone1.jpg";
 import { useTranslation } from "react-i18next";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
