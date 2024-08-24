@@ -10,7 +10,7 @@ import "./styles/Contact.css";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [map, setMap] = useState(null);
+
   const [zoomedImage, setZoomedImage] = useState(null);
 
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -31,9 +31,7 @@ const Contact = () => {
     map.setZoom(7);
   }, []);
 
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null);
-  }, []);
+  const onUnmount = React.useCallback(function callback() {}, []);
 
   const openZoomedImage = (image) => {
     setZoomedImage(image);
