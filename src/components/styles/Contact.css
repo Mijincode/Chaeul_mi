@@ -14,14 +14,14 @@
 }
 
 .naver-map {
-  max-width: 80%;
+  max-width: 90%;
   height: auto;
   padding: 20px;
 }
 
 .googleMap-container {
   text-align: center;
-  width: 80%;
+  width: 60%;
   height: 800px; /* Default height for desktop */
   margin: 20px 0;
 }
@@ -87,7 +87,7 @@
   }
   .googleMap-container {
     height: 300px; /* Adjust height for mobile screens */
-    width: 80%;
+    width: 100%;
   }
 
   .contact-title {
@@ -100,7 +100,7 @@
 @media (max-width: 576px) {
   .googleMap-container {
     height: 200px; /* Further adjustment for very small screens */
-    width: 70%;
+    width: 90%;
   }
 
   .icon {
