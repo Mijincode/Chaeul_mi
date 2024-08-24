@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 import logo from "../photos/logo2.jpg";
 import { useTranslation } from "react-i18next";
 import Australia from "../photos/australia.png";
@@ -41,14 +42,14 @@ const NavBar = () => {
               {/* {t("navbar.faqs")} */}FAQS
             </Nav.Link>
 
-            <button
+            <Button
               variant="dark"
               className="booking-button"
               as={Link}
               to="/booking"
             >
               Book Online
-            </button>
+            </Button>
 
             <div className="language-switcher">
               <img
