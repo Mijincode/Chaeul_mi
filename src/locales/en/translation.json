@@ -50,7 +50,9 @@
 
   "contact": {
     "title": "How to Get Here - Sejong City Naseongdong",
-    "kakaoTalkContact": "KakaoTalk Consultation",
+    "consultation": "Consultation",
+    "kakaoTalk": "카카오",
+    "kakaoTalkContact": "KakaoTalk",
     "viewOnGoogleMaps": "View on Google Maps",
     "address": "Address",
     "chaeulmi-address": "Sejong City Naseongbuk-do 30",
