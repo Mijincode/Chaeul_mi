@@ -30,27 +30,26 @@
 }
 
 .nav-link {
-  font-size: 1.5rem !important;
+  font-size: 1.3rem !important;
   margin: 0 30px;
   align-items: center;
   font-family: "Apple Chancery, cursive";
 }
 
 .booking-button {
-  font-size: 17px !important;
   font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
-  padding-top: 2px;
   border-radius: 5px;
   margin-left: 10px;
   background-color: black;
   color: white;
-  line-height: 1.2;
+  height: 2.5rem;
+  margin-top: 5px;
 }
 
 .language-switcher {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .flag-icon {
@@ -79,6 +78,12 @@
   .nav-link {
     font-size: 24px;
   }
+  .booking-button {
+    font-size: 20px !important;
+    max-width: 20%;
+    padding: 20px;
+    margin-left: 25px;
+  }
 }
 
 /* ============================================================================ */
@@ -105,10 +110,11 @@
   }
 
   .booking-button {
-    font-size: 14px !important;
-    width: auto;
-    max-width: 100%;
-    margin-left: 20px;
+    font-size: 13px !important;
+    max-width: 60%;
+    padding: 20px;
+    margin-left: 25px;
+    text-align: start;
   }
 
   .flag-icon {
@@ -130,8 +136,8 @@
 
   .booking-button {
     font-size: 8px;
-    width: auto;
-    max-width: 60%;
+    max-width: 61%;
+    height: 2rem;
   }
 
   .flag-icon {
