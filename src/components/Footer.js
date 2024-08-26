@@ -84,7 +84,11 @@ const Footer = () => {
                     href="https://blog.naver.com/l8238076"
                     aria-label="Naver Blog"
                   >
-                    <img src={naverLogo} alt="Naver Logo" className="icon" />
+                    <img
+                      src={naverLogo}
+                      alt="Naver Logo"
+                      className="naver-icon"
+                    />
                   </a>
                 </p>
               </div>
