@@ -5,12 +5,13 @@
   box-sizing: border-box;
   padding: 10px;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
 }
 
 .slide-container {
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .slide-item {
@@ -33,21 +34,13 @@
   height: 400px;
 }
 
+.location-dot {
+  margin-right: 10px;
+}
 .contact-title {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 30px;
-}
-
-.map-name {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.naver-map {
-  max-width: 70%;
-  height: auto;
-  padding: 20px;
 }
 
 .googleMap-container {
@@ -59,12 +52,32 @@
 
 .consultation {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  margin-top: 30px;
+  text-align: left;
+  flex-direction: row;
+  width: 50%;
+  margin: 40px auto 10px;
+  gap: 30px;
+}
+
+.consultation-left,
+.consultation-right {
+  flex: 1;
+  min-width: 300px; /* Ensures each side has a minimum width */
+}
+
+.consultation-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.consultation-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .kakao-link {
@@ -72,14 +85,17 @@
   align-items: center;
 }
 
-.kakao-link p {
-  margin: 0;
+.home-tradingHours-time {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .icon {
   width: 50px;
   height: 50px;
   border-color: #e5e7eb;
+  margin-left: 5px;
 }
 
 .address {
@@ -92,10 +108,7 @@
 .contact-phone {
   display: flex;
   align-items: center;
-  gap: 8px;
   margin-bottom: 10px;
-
-  padding: 5px 5px;
 }
 
 /* ============================================================================================== */
@@ -107,25 +120,14 @@
     margin: 10px 10px;
   }
 
-  .map-name {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  .naver-map-title {
-    font-size: 14px;
-  }
-  .naver-map {
-    max-width: 100%;
-  }
-
   .googleMap-container {
     width: 90%;
     height: 700px;
     margin-top: 0;
   }
 
-  .consultation {
-    margin-top: 10px;
+  .chaeulmi-address {
+    font-size: 16px;
   }
 
   .contact-title {
@@ -133,8 +135,34 @@
     margin-bottom: 15px;
     font-size: 16px;
   }
+
+  .consultation {
+    width: 80%;
+    margin: 10px auto 10px;
+    gap: 0px;
+  }
+
+  .consultation-left {
+    flex: 1;
+    min-width: 180px;
+    margin-left: 20px;
+    align-items: center;
+  }
+
+  .consultation-right {
+    flex: 2;
+    min-width: 80%;
+    margin-left: 10px;
+  }
+
+  .consultation-right {
+    gap: 0px;
+  }
+
+  .texts,
   .contact-phone {
     font-size: 16px;
+    margin-bottom: 0;
   }
 }
 /* ============================================================================================== */
@@ -142,6 +170,10 @@
   .slide-image {
     height: 100px;
     border: 2px solid #ddd;
+  }
+
+  .chaeulmi-address {
+    font-size: 14px;
   }
 
   .googleMap-container {
@@ -158,10 +190,18 @@
     font-size: 14px;
   }
 
-  .contact-phone {
-    font-size: 14px;
+  .consultation {
+    width: 100%;
   }
+
+  .consultation-left {
+    min-width: 80px;
+  }
+
+  .texts,
+  .contact-phone,
   .kakaotalk {
     font-size: 14px;
+    margin-bottom: -20px;
   }
 }
