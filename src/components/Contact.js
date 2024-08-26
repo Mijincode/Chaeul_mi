@@ -53,11 +53,10 @@ const Contact = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Number of images to show at a time
+    slidesToShow: 4,
     slidesToScroll: 1,
-    infinite: true, // Number of images to scroll at a time
-    autoplay: true, // Optional: auto-slide
-    autoplaySpeed: 3000, // Optional: speed of auto-slide
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   return (
