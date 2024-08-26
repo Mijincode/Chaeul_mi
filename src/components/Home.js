@@ -126,7 +126,9 @@ const Home = () => {
       {/* TradingHour Section */}
       <section className="section-container">
         <div className="trading-hour">
-          <div className="trading-hour-text">{t("home.tradingHours")}</div>
+          <div className="trading-hour-text">
+            {t("home.tradingHours")} {t("home.tradingHours-time")}
+          </div>
           <div className="trading-hour-button">
             <Button
               variant="dark"

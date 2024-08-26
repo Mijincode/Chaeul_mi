@@ -26,7 +26,8 @@
     "cleanPediPlanning": "Clean Pedi Planning",
     "footCallus": "Foot Callus Care",
     "callToAction": "Experience top-level beauty services in a comfortable and welcoming environment. Whether you want to enhance your natural beauty or try something new, Chaeul Beauty will help you shine. We offer personalized solutions based on our rich experience and expertise, ensuring the best results by reflecting the latest techniques and trends. Discover your unique beauty at Chaeul Beauty, where we strive to provide the best service to each customer.",
-    "tradingHours": "Operating Hours: Weekdays/Saturdays 10:00am ~ 18:00pm",
+    "tradingHours": "Operating Hours:",
+    "tradingHours-time": "Weekdays/Saturdays 10:00am ~ 18:00pm",
     "facilityTitle": "Explore Chaeul Beauty"
   },
 
