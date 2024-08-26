@@ -1,10 +1,36 @@
 .contact-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
   padding: 10px;
-  margin-left: 30px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.slide-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slide-item {
+  position: relative;
+  padding: 0 15px;
+}
+
+.slide-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: 2px solid #000;
+  outline-offset: -5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.threeD-map {
+  height: 400px;
 }
 
 .contact-title {
@@ -13,38 +39,37 @@
   margin-bottom: 30px;
 }
 
+.map-name {
+  text-align: center;
+  margin-top: 40px;
+}
+
 .naver-map {
-  max-width: 90%;
+  max-width: 70%;
   height: auto;
   padding: 20px;
 }
 
 .googleMap-container {
   text-align: center;
-  width: 60%;
-  height: 800px; /* Default height for desktop */
+  width: 67%;
+  height: 600px;
   margin: 20px 0;
 }
 
-.contact-container {
+.consultation {
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
 }
 
 .kakao-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  background-color: #363636;
-  color: #ffffff;
-  border-color: #363636;
-  padding: 5px 5px;
-  margin-top: 20px;
 }
 
 .kakao-link p {
@@ -60,10 +85,6 @@
 .address {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #363636;
-  color: #ffffff;
-  border-color: #363636;
   padding: 5px 5px;
   margin-top: 20px;
 }
@@ -73,21 +94,38 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
-  background-color: #363636;
-  color: #ffffff;
-  border-color: #363636;
+
   padding: 5px 5px;
-  margin-top: 20px;
 }
 
 /* ============================================================================================== */
 @media (max-width: 768px) {
-  .contact-container {
-    margin-left: 20px;
-  }
-  .googleMap-container {
-    height: 300px; /* Adjust height for mobile screens */
+  .slide-image {
     width: 100%;
+    height: 200px;
+    border: 2px solid #ddd;
+    margin: 10px 10px;
+  }
+
+  .map-name {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .naver-map-title {
+    font-size: 14px;
+  }
+  .naver-map {
+    max-width: 100%;
+  }
+
+  .googleMap-container {
+    width: 90%;
+    height: 700px;
+    margin-top: 0;
+  }
+
+  .consultation {
+    margin-top: 10px;
   }
 
   .contact-title {
@@ -95,12 +133,20 @@
     margin-bottom: 15px;
     font-size: 16px;
   }
+  .contact-phone {
+    font-size: 16px;
+  }
 }
 /* ============================================================================================== */
 @media (max-width: 576px) {
+  .slide-image {
+    height: 100px;
+    border: 2px solid #ddd;
+  }
+
   .googleMap-container {
-    height: 200px; /* Further adjustment for very small screens */
-    width: 90%;
+    width: 80%;
+    height: 120px;
   }
 
   .icon {
@@ -109,9 +155,12 @@
   }
 
   .address {
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 14px;
   }
 
+  .contact-phone {
+    font-size: 14px;
+  }
   .kakaotalk {
     font-size: 14px;
   }
