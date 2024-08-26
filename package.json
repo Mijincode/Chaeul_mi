@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@google-cloud/translate": "^8.3.0",
+    "@googlemaps/markerclusterer": "^2.5.3",
     "@react-google-maps/api": "^2.19.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -30,6 +31,7 @@
     "react-slick": "^0.30.2",
     "react-swipeable": "^7.0.1",
     "slick-carousel": "^1.8.1",
+    "video-react": "^0.16.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
