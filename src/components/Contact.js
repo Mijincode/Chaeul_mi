@@ -1,16 +1,26 @@
 import React, { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import NaverMap from "../photos/map.png";
+// import NaverMap from "../photos/map.png";
 import kakaotalk from "../photos/kakao-talk1.png";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import { AdvancedMarker } from "@vis.gl/react-google-maps";
 import { Pin } from "@vis.gl/react-google-maps";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "./styles/Contact.css";
 
+const directions = require.context("../photos/directions", true);
+
+const getDirectionsImages = () => {
+  return directions.keys().map(directions);
+};
+
 const Contact = () => {
   const { t } = useTranslation();
-
+  const images = getDirectionsImages();
   const [zoomedImage, setZoomedImage] = useState(null);
 
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -40,23 +50,52 @@ const Contact = () => {
     setZoomedImage(null);
   };
 
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4, // Number of images to show at a time
+    slidesToScroll: 1,
+    infinite: true, // Number of images to scroll at a time
+    autoplay: true, // Optional: auto-slide
+    autoplaySpeed: 3000, // Optional: speed of auto-slide
+  };
+
   return (
     <div className="contact-container">
       <h3 className="contact-title">{t("contact.title")}</h3>
-
-      <div className="map-name"> Naver Map</div>
-      <img
-        className="naver-map"
-        src={NaverMap}
-        alt="Naver Map"
-        onClick={() => openZoomedImage(NaverMap)}
-      />
+      <div className="slide-container">
+        <Slider {...settings}>
+          {images.map((image, idx) => (
+            <img
+              key={idx}
+              src={image}
+              alt={`direction-${idx}`}
+              className="slide-image"
+              onClick={() => openZoomedImage(image)}
+            />
+          ))}
+        </Slider>
+      </div>
+      <div className="map-name">
+        <h5 className="naver-map-title">
+          <ul>
+            <li>{t("contact.chaeulmi-address")}</li>
+            <li> {t("home.tradingHours-time")} </li>
+          </ul>
+        </h5>
+        {/* <img
+          className="naver-map"
+          src={NaverMap}
+          alt="Naver Map"
+          onClick={() => openZoomedImage(NaverMap)}
+        /> */}
+      </div>
       <div className="googleMap-container">
-        <div className="map-name"> Google Map</div>
+        {/* <h5 className="map-name"> Google Map</h5> */}
         {isLoaded ? (
           <GoogleMap
             center={center}
-            Zoom={15}
+            Zoom={7}
             onLoad={onLoad}
             onUnmount={onUnmount}
             zIndex="modal"
@@ -82,7 +121,8 @@ const Contact = () => {
           <div>Loading...</div> // Optional: Display a loading message
         )}
       </div>
-      <div className="contact-container">
+
+      <div className="consultation">
         <div className="kakao-link">
           <p className="kakaotalk">{t("contact.kakaoTalkContact")} </p>
 
@@ -98,11 +138,7 @@ const Contact = () => {
             />
           </a>
         </div>
-        <div className="address">
-          <p>
-            {t("contact.address")} : {t("contact.chaeulmi-address")}
-          </p>
-        </div>
+
         <div className="contact-phone">
           {" "}
           {t("contact.chaeulmi-phone")}: {t("contact.phone-number")}{" "}
