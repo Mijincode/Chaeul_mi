@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import phone from "../photos/phone1.jpg";
 import { useTranslation } from "react-i18next";
 // import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
+import swipeGif from "../photos/buy1.gif";
 
 import "./styles/Review.css";
+import { use } from "i18next";
 
 const reviewImages = require.context("../photos/review-phone", true);
 const getReviewImages = () => {
@@ -18,6 +20,7 @@ const ReviewPhone = () => {
   const images = getReviewImages();
   const [slide, setSlide] = useState(0);
   const [swipeClass, setSwipeClass] = useState(0);
+  const [showSwipeGif, setShowSwipeGif] = useState(true);
 
   const nextSlide = () => {
     setSwipeClass("swipe-left");
@@ -41,6 +44,13 @@ const ReviewPhone = () => {
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSwipeGif(false); // Hide the GIF after 3 seconds
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="review-phone">
@@ -67,6 +77,23 @@ const ReviewPhone = () => {
         className="arrow arrow-right"
         onClick={nextSlide}
       /> */}
+      <div className="swipe-container">
+        {showSwipeGif && (
+          <img
+            src={swipeGif}
+            alt="Swipe to navigate"
+            className="swipe-gesture"
+            style={{
+              position: "absolute",
+              bottom: "20%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "300px",
+              zIndex: 10,
+            }}
+          />
+        )}{" "}
+      </div>
       <span className="indicators">
         {images.map((_, index) => {
           return (
