@@ -18,7 +18,7 @@ const Contact = () => {
   const [zoomedImage, setZoomedImage] = useState(null);
 
   const center = { lat: 36.48883849333951, lng: 127.26052669020419 };
-  const zoom = 7;
+  const zoom = 15;
   const marker = { key: "chaeulmi" };
 
   const openZoomedImage = (image) => {
@@ -30,7 +30,7 @@ const Contact = () => {
 
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
