@@ -8,7 +8,6 @@ import { useSwipeable } from "react-swipeable";
 import swipeGif from "../photos/buy1.gif";
 
 import "./styles/Review.css";
-import { use } from "i18next";
 
 const reviewImages = require.context("../photos/review-phone", true);
 const getReviewImages = () => {
