@@ -174,7 +174,7 @@
 
   .swipe-gesture {
     position: absolute;
-    bottom: 35% !important;
+    bottom: 0% !important;
     left: 50%;
     max-width: 70%;
   }

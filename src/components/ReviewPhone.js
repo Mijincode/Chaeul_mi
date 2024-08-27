@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
-import swipeGif from "../photos/buy1.gif";
+import swipeGif from "../photos/buy2.gif";
 
 import "./styles/Review.css";
 
@@ -84,7 +84,7 @@ const ReviewPhone = () => {
             className="swipe-gesture"
             style={{
               position: "absolute",
-              bottom: "30%",
+              bottom: "0%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "300px",
