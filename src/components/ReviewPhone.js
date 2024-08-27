@@ -46,7 +46,7 @@ const ReviewPhone = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowSwipeGif(false); // Hide the GIF after 3 seconds
+      setShowSwipeGif(false);
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
