@@ -47,7 +47,7 @@ const ReviewPhone = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSwipeGif(false); // Hide the GIF after 3 seconds
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -84,7 +84,7 @@ const ReviewPhone = () => {
             className="swipe-gesture"
             style={{
               position: "absolute",
-              bottom: "20%",
+              bottom: "30%",
               left: "50%",
               transform: "translateX(-50%)",
               width: "300px",
