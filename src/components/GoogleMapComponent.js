@@ -41,7 +41,13 @@ const GoogleMapComponent = ({ center, zoom, marker }) => {
             mapTypeControl: false,
           }}
         >
-          <AdvancedMarker key={marker.key} position={center} title="채울미">
+          <AdvancedMarker
+            position={marker.position}
+            title={marker.title}
+            options={{
+              map: center,
+            }}
+          >
             <Pin
               background={"#FBBC04"}
               glyphColor={"#000"}
@@ -50,7 +56,7 @@ const GoogleMapComponent = ({ center, zoom, marker }) => {
           </AdvancedMarker>
         </GoogleMap>
       ) : (
-        <div>Loading...</div> // Optional: Display a loading message
+        <div>Loading...</div>
       )}
     </div>
   );
