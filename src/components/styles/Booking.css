@@ -3,8 +3,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
 .booking-title {
   margin-top: 40px;
+}
+
+.disabled-day {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #c0c0c0; /* Gray text color */
+  pointer-events: none; /* Disable click events */
+}
+
+.timepicker-container {
+  display: flex;
+  flex-direction: column;
+}
+.calendar-timepicker-container {
+  margin-top: 20px;
+}
+
+.time-picker-submit-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  width: 100px;
+  margin-top: 10px;
+}
+
+.submit-form {
+  margin: 0;
+}
+
+.custom-datepicker {
+  width: 200px;
+}
+
+/* ============================================================================================== */
+@media (max-width: 768px) {
+  .booking-container h1 {
+    font-size: 18px;
+  }
+
+  .booking-container p {
+    font-size: 14px;
+  }
+
+  .calendar-timepicker-container {
+    width: 90%;
+  }
+
+  .time-picker-submit-container {
+    font-size: 14px;
+  }
+}
+
+/* ============================================================================================== */
+@media (max-width: 576px) {
 }
