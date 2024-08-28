@@ -146,15 +146,15 @@
   }
 
   .navbar-toggler {
-    position: fixed; /* Fix the position */
-    top: 50px; /* Adjust top position as needed */
-    left: 85%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to truly center */
-    z-index: 1000; /* Ensure it stays on top */
+    position: absolute;
+    top: 50px;
+    left: 85%;
+    transform: translateX(-50%);
+    z-index: 1000;
   }
 
   .navbar-collapse.show + .navbar-toggler {
-    width: 100%; /* Full width when nav-links are open */
+    width: 100%;
     justify-content: end;
   }
 }
