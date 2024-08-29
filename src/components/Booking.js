@@ -11,9 +11,8 @@ import "./styles/Booking.css";
 const Booking = () => {
   const { t } = useTranslation();
   const [selectedDate, setSelectedDate] = useState(null);
-  // const [startDate, setStartDate] = useState(new Date());
   const [startDate, setStartDate] = useState(
-    setHours(setMinutes(new Date(), 30), 9)
+    setHours(setMinutes(new Date(), 0), 10)
   );
 
   const filterDate = (date) => {
@@ -22,52 +21,93 @@ const Booking = () => {
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
-    setStartDate(setHours(setMinutes(date, 30), 9));
+    setStartDate(setHours(setMinutes(date, 0), 10));
   };
 
   const tileClassName = ({ date }) => {
     return date.getDay() === 0 ? "disabled-day" : null;
   };
 
+  const getMinTime = (day) => {
+    switch (day) {
+      case 2:
+      case 5:
+        return setHours(setMinutes(new Date(), 0), 10);
+      default:
+        return setHours(setMinutes(new Date(), 0), 10);
+    }
+  };
+
+  const getMaxTime = (day) => {
+    switch (day) {
+      case 2:
+      case 5:
+        return setHours(setMinutes(new Date(), 0), 19);
+      default:
+        return setHours(setMinutes(new Date(), 0), 16);
+    }
+  };
+
+  const getAvaliableTimes = () => {
+    if (!selectedDate) return { minTime: startDate, maxTime: startDate };
+
+    const day = selectedDate.getDay();
+    return {
+      minTime: getMinTime(day),
+      maxTime: getMaxTime(day),
+    };
+  };
+
+  const { minTime, maxTime } = getAvaliableTimes();
+
   return (
     <div className="booking-container">
       <h1 className="booking-title">{t("booking.title")}</h1>
-      <p>{t("booking.selectDateTime")}</p>
-      <p>{t("booking.availableHours")}</p>
+      <div className="booking-available">
+        <p className="booking-hours-label">| {t("booking.availableHours")}</p>
+        <ul className="booking-hours-list">
+          <li className="booking-hours">{t("booking.availableHoursFive")}</li>
+          <li className="booking-hours">{t("booking.availableHoursSeven")}</li>
+        </ul>
+      </div>
+
+      <p className="booking-date"> {t("booking.selectDate")}</p>
       <div className="calendar-timepicker-container">
         <div className="calendar-container">
           <Calendar
             onClickDay={handleDateClick}
             value={selectedDate}
             tileClassName={tileClassName}
+            className="custom-calendar"
           />
         </div>
+
+        {selectedDate && (
+          <p className="booking-time">{t("booking.selectTime")}</p>
+        )}
+
         <div className="timepicker-container">
-          {selectedDate && !filterDate(selectedDate) ? (
-            <p>Sundays are not available for booking.</p>
-          ) : (
-            selectedDate && (
-              <div className="time-picker-submit-container">
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                  showTimeSelect
-                  showTimeSelectOnly
-                  timeIntervals={30}
-                  timeCaption="Time"
-                  required
-                  filterDate={filterDate}
-                  form="external-form"
-                  dateFormat="MMMM d, yyyy h:mm aa"
-                  minTime={setHours(setMinutes(new Date(), 30), 9)}
-                  maxTime={setHours(setMinutes(new Date(), 0), 17)}
-                  className="custom-datepicker"
-                />
-                <form id="external-form">
-                  <input type="submit" />
-                </form>
-              </div>
-            )
+          {selectedDate && (
+            <div className="time-picker-submit-container">
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={30}
+                timeCaption="Time"
+                required
+                filterDate={filterDate}
+                form="external-form"
+                dateFormat="MMMM d, yyyy h:mm aa"
+                minTime={minTime}
+                maxTime={maxTime}
+                className="custom-datepicker"
+              />
+              <form id="external-form">
+                <input type="submit" />
+              </form>
+            </div>
           )}
         </div>
       </div>
