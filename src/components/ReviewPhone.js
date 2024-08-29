@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
 import swipeGif from "../photos/buy2.gif";
-
 import "./styles/Review.css";
 
 const reviewImages = require.context("../photos/review-phone", true);
@@ -87,7 +86,7 @@ const ReviewPhone = () => {
               bottom: "0%",
               left: "50%",
               transform: "translateX(-50%)",
-              width: "300px",
+              width: "200px",
               zIndex: 10,
             }}
           />
