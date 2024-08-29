@@ -111,7 +111,7 @@
   text-align: center;
 }
 
-ul {
+.lists {
   list-style-type: disc;
   padding-left: 20px;
   margin-bottom: 10px;
@@ -119,7 +119,7 @@ ul {
   margin-right: 20px;
 }
 
-li {
+.list-item {
   margin-bottom: 8px;
 }
 
@@ -179,26 +179,41 @@ li {
 }
 
 .section-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100px;
   padding: 20px;
+  width: 30%;
+  margin: 0 auto;
 }
 
 .trading-hour {
   display: flex;
-  font-size: 18px;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  width: 100%;
   text-align: center;
 }
 
 .trading-hour-text {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 
+.trading-hour-left {
+  flex: 1;
+}
+
+.trading-hour-right {
+  flex: 2;
+  text-align: left;
+}
+
+.trading-hour-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
 .bottom-button {
   font-size: 20px !important;
   width: 120%;
@@ -276,11 +291,11 @@ li {
     max-width: 100%;
   }
 
-  ul {
+  .lists {
     padding-left: 15px;
   }
 
-  li {
+  .list-item {
     font-size: 0.9rem;
   }
   .message {
@@ -310,10 +325,28 @@ li {
     max-height: 80vh;
   }
 
+  .section-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .trading-hour-left {
+    flex: 0.5;
+  }
+
+  .trading-hour-right {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+  }
+
   .trading-hour-text {
     font-size: 0.78rem !important;
-    padding: 0 10px;
-    top: 50%;
+    margin-left: 30px;
+  }
+
+  .trading-hour-button {
+    margin-top: 0;
   }
 }
 
@@ -366,11 +399,11 @@ li {
     max-width: 100%;
   }
 
-  ul {
+  .lists {
     padding-left: 10px;
   }
 
-  li {
+  .list-item {
     font-size: 0.8rem;
   }
 

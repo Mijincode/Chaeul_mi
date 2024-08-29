@@ -58,12 +58,12 @@ const Home = () => {
                   <div className="list-title">
                     {t("home.semiPermanentMakeup")}
                   </div>
-                  <ul>
-                    <li>{t("home.eyebrows")}</li>
-                    <li>{t("home.lips")}</li>
-                    <li>{t("home.eyeliner")}</li>
-                    <li>{t("home.hairline")}</li>
-                    <li>{t("home.scalpTattoo")}</li>
+                  <ul className="lists">
+                    <li className="list-item">{t("home.eyebrows")}</li>
+                    <li className="list-item"> {t("home.lips")}</li>
+                    <li className="list-item">{t("home.eyeliner")}</li>
+                    <li className="list-item">{t("home.hairline")}</li>
+                    <li className="list-item">{t("home.scalpTattoo")}</li>
                   </ul>
                 </div>
                 <div className="list">
@@ -127,7 +127,11 @@ const Home = () => {
       <section className="section-container">
         <div className="trading-hour">
           <div className="trading-hour-text">
-            {t("home.tradingHours")} {t("home.tradingHours-time")}
+            <div className="trading-hour-left">{t("home.tradingHours")}</div>
+            <ul className="trading-hour-right">
+              <li>{t("booking.availableHoursFive")}</li>
+              <li>{t("booking.availableHoursSeven")}</li>
+            </ul>
           </div>
           <div className="trading-hour-button">
             <Button
