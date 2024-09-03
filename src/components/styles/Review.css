@@ -59,6 +59,15 @@
   font-weight: bold;
 }
 
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.rating-number {
+  margin-right: 10px;
+}
+
 .star-icon {
   display: flex;
   justify-content: center;
@@ -160,6 +169,10 @@
   .review-valuable,
   .star-icon {
     font-size: 14px;
+  }
+
+  .rating-number {
+    font-size: 16px;
   }
 
   .star-icon {
