@@ -53,12 +53,14 @@ const ReviewPhone = () => {
   return (
     <div className="review-phone">
       <h5 className="review-valuable">{t("review.description")}</h5>
-      <div className="star-icon">
-        {[...Array(5)].map((_, index) => (
-          <FontAwesomeIcon icon={faStar} key={index} />
-        ))}
+      <div className="rating">
+        <h5 className="rating-number">5.0 </h5>
+        <div className="star-icon">
+          {[...Array(5)].map((_, index) => (
+            <FontAwesomeIcon icon={faStar} key={index} />
+          ))}
+        </div>
       </div>
-
       {/* <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} /> */}
       <div {...handler} className={`phone-frame ${swipeClass}`}>
         <img src={phone} alt="phone" className="phone" />
