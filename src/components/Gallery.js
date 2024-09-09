@@ -3,12 +3,14 @@ import { useTranslation } from "react-i18next";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import "./styles/Gallery.css";
+import { useSwipeable } from "react-swipeable";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Gallery = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("female");
   const [zoomedImage, setZoomedImage] = useState(null);
+  const [zoomedIndex, setZoomedIndex] = useState(null);
 
   useEffect(() => {}, [activeTab]);
 
@@ -28,12 +30,54 @@ const Gallery = () => {
   const hairList = getImages(hairImages);
   const feetList = getImages(feetImages);
 
-  const openZoomedImage = (image) => {
+  const getImageList = () => {
+    switch (activeTab) {
+      case "female":
+        return femaleList;
+      case "male":
+        return maleList;
+      case "eye":
+        return eyeImages;
+      case "lips":
+        return lipsList;
+      case "hair":
+        return hairList;
+      case "feet":
+        return feetList;
+      default:
+        return [];
+    }
+  };
+
+  const openZoomedImage = (image, index) => {
     setZoomedImage(image);
+    setZoomedIndex(index);
   };
   const closeZoomedImage = () => {
     setZoomedImage(null);
+    setZoomedIndex(null);
   };
+
+  const nextSlide = () => {
+    const images = getImageList();
+    const nextIndex = zoomedIndex + 1 >= images.length ? 0 : zoomedIndex + 1;
+    setZoomedImage(images[nextIndex]);
+    setZoomedIndex(nextIndex);
+  };
+
+  const prevSlide = () => {
+    const images = getImageList();
+    const nextIndex = zoomedIndex - 1 >= images.length ? 0 : zoomedIndex - 1;
+    setZoomedImage(images[nextIndex]);
+    setZoomedIndex(nextIndex);
+  };
+
+  const swipeableHandler = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
 
   const imageCards = (imageList) => (
     <div className="gallery-container">
@@ -43,7 +87,7 @@ const Gallery = () => {
             src={image}
             alt={`Gallery item  ${index + 1}`}
             className="gallery-image"
-            onClick={() => openZoomedImage(image)}
+            onClick={() => openZoomedImage(image, index)}
           />
         </div>
       ))}
@@ -83,9 +127,28 @@ const Gallery = () => {
           {imageCards(feetList)}
         </Tab>
       </Tabs>
+
       {zoomedImage && (
-        <div className="zoomed-image-container" onClick={closeZoomedImage}>
+        <div className="zoomed-image-container" {...swipeableHandler}>
+          <button
+            className="zoomed-button zoomed-button-prev"
+            onClick={prevSlide}
+          >
+            &lt;
+          </button>
           <img src={zoomedImage} alt="zoomed" className="zoomed-image" />
+          <button
+            className="zoomed-button zoomed-button-next"
+            onClick={nextSlide}
+          >
+            &gt;
+          </button>
+          <button
+            className="zoomed-button zoomed-button-close"
+            onClick={closeZoomedImage}
+          >
+            ×
+          </button>
         </div>
       )}
     </div>

@@ -14,7 +14,7 @@
   width: 100%;
   overflow-x: auto;
   margin: 10px auto;
-  white-space: nowrap; /* Prevent wrapping */
+  white-space: nowrap;
 }
 
 .custom-tabs .nav-link {
@@ -46,24 +46,53 @@
 }
 
 .zoomed-image-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .zoomed-image {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 90%;
+  max-height: 80%;
   object-fit: contain;
-  border-radius: 10px;
+}
+
+.zoomed-button {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.zoomed-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.zoomed-button-prev {
+  left: 10px;
+}
+
+.zoomed-button-next {
+  right: 30px;
+}
+
+.zoomed-button-close {
+  top: 30px;
+  right: 30px;
+  color: black;
 }
 
 /* ============================================================================================== */
@@ -90,6 +119,16 @@
 
   .custom-tabs {
     margin-left: 5px;
+  }
+
+  .zoomed-button-next {
+    right: 10px;
+  }
+
+  .zoomed-button-close {
+    top: 100px;
+    right: 30px;
+    color: black;
   }
 }
 
