@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Gallery from "./components/Gallery";
-import Booking from "./components/Booking";
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
+import NavBar from "./components/frontend/NavBar";
+import Home from "./components/frontend/Home";
+import Gallery from "./components/frontend/Gallery";
+import Booking from "./components/frontend/Booking";
+import Footer from "./components/frontend/Footer";
+import Contact from "./components/frontend/Contact";
 // import Review from "./components/Review";
-import FAQs from "./components/FAQs";
-import ReviewPhone from "./components/ReviewPhone";
+import FAQs from "./components/frontend/FAQs";
+import ReviewPhone from "./components/frontend/ReviewPhone";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
