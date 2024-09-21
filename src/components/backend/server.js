@@ -7,30 +7,25 @@ const twilio = require("twilio");
 const app = express();
 const port = 3001;
 
-// Use CORS middleware
 app.use(
   cors({
-    origin: "http://localhost:3000", // Adjust this to match your React app's URL
+    origin: "http://localhost:3000",
   })
 );
 
 app.use(bodyParser.json());
 
-// Load environment variables
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
-// Initialize Twilio client
 const client = twilio(accountSid, authToken);
 
-// In-memory store for booked times (use a database in production)
 let bookedTimes = [];
 
 app.post("/booking", (req, res) => {
   const { clientPhoneNumber, ownerPhoneNumber, date, time } = req.body;
 
-  // Validate phone numbers and other data
   if (!clientPhoneNumber || !ownerPhoneNumber || !date || !time) {
     return res.status(400).send("Missing parameters in the request");
   }
