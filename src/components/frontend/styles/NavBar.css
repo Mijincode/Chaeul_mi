@@ -1,0 +1,160 @@
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.nav-container {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.navbar-link {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 20px;
+  padding-right: 10px;
+}
+
+.nav-link {
+  font-size: 1.3rem !important;
+  margin: 0 30px;
+  align-items: center;
+  font-family: "Apple Chancery, cursive";
+}
+
+.booking-button {
+  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  height: 2.5rem;
+  margin-top: 5px;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.flag-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.flag-icon:hover {
+  opacity: 0.8;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* ======================================================================== */
+@media (max-width: 992px) {
+  .nav-link {
+    font-size: 24px;
+  }
+  .booking-button {
+    font-size: 20px !important;
+    max-width: 20%;
+    padding: 20px;
+    margin-left: 25px;
+  }
+}
+
+/* ============================================================================ */
+@media (max-width: 768px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+  }
+  .nav-container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    right: 10px;
+    gap: 0px;
+  }
+
+  .nav-link {
+    font-size: 16px !important;
+  }
+
+  .booking-button {
+    font-size: 13px !important;
+    max-width: 60%;
+    padding: 20px;
+    margin-left: 25px;
+    text-align: start;
+  }
+
+  .flag-icon {
+    width: 50px;
+    height: auto;
+  }
+}
+
+/* ========================================================================= */
+@media (max-width: 576px) {
+  .logo {
+    width: 100px;
+    height: 120px;
+  }
+
+  .nav-link {
+    font-size: 14px !important;
+  }
+
+  .booking-button {
+    font-size: 8px;
+    max-width: 61%;
+    height: 2rem;
+  }
+
+  .flag-icon {
+    width: 50px;
+    height: auto;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 50px;
+    left: 85%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show + .navbar-toggler {
+    width: 100%;
+    justify-content: end;
+  }
+}

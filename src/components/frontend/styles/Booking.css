@@ -1,0 +1,229 @@
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 30px; /* Add margin to ensure space for footer */
+  box-sizing: border-box;
+}
+
+.booking-title {
+  margin-top: 40px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.booking-available {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.booking-hours-label {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.booking-hours-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 2;
+  margin: 0;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+
+.booking-hours-list li {
+  margin-bottom: 5px;
+}
+
+.disabled-day {
+  background-color: #f0f0f0;
+  color: #c0c0c0;
+  pointer-events: none;
+}
+
+.booking-date {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.booking-time {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.custom-calendar {
+  /* Set the width and height to make the calendar larger */
+  width: 100% !important; /* Make the calendar take full width of its container */
+  max-width: 700px; /* Adjust max-width as needed */
+  font-size: 1.3rem;
+}
+
+.react-calendar__tile {
+  padding: 10px; /* Adjust padding if needed */
+}
+
+.timepicker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.calendar-timepicker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.time-picker-submit-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align children horizontally */
+  gap: 10px; /* Space between elements */
+  margin-top: 10px;
+  width: 100%; /* Ensure full width */
+}
+
+.custom-datepicker {
+  width: 270px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure full width for form elements */
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box; /* Ensure padding/border are included in the width */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Style for input field */
+.form-group input {
+  width: 40%; /* Ensure input takes full width */
+  padding: 8px; /* Add padding for better readability */
+  font-size: 1.2rem; /* Adjust font size */
+}
+
+/* Style for submit button */
+.booking-submit {
+  padding: 10px 20px; /* Add padding for button */
+  font-size: 1.2rem; /* Adjust font size */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.booking-submit:hover {
+  background-color: #0056b3; /* Darken button color on hover */
+}
+/* ============================================================================================== */
+@media (max-width: 768px) {
+  .booking-container,
+  .booking-hours-list,
+  .custom-calendar {
+    font-size: 1rem;
+  }
+
+  .booking-title {
+    font-size: 1.5rem;
+  }
+  .booking-date {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .booking-available {
+    width: 100%;
+  }
+
+  .booking-hours-label {
+    margin-left: 5px;
+    font-size: 0.95rem;
+  }
+
+  .booking-time {
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .custom-datepicker {
+    width: 220px;
+  }
+
+  .time-picker-submit-container {
+    gap: 8px; /* Adjust gap on smaller screens */
+  }
+  .form-group input {
+    width: 70%; /* Ensure input takes full width */
+    font-size: 1rem; /* Adjust font size */
+  }
+}
+/* ============================================================================================== */
+@media (max-width: 576px) {
+  .calendar-timepicker-container {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  .booking-container {
+    padding: 10px;
+  }
+  .booking-hours-label {
+    flex: 0.8;
+  }
+  .booking-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .booking-available {
+    margin-bottom: 5px;
+  }
+
+  .booking-time,
+  .booking-date,
+  .custom-calendar,
+  .booking-hours-label,
+  .booking-hours {
+    font-size: 0.9rem;
+  }
+
+  .custom-datepicker {
+    width: 220px;
+    font-size: 0.9rem;
+  }
+  .time-picker-submit-container {
+    gap: 5px; /* Further adjust gap on very small screens */
+  }
+
+  .form-group input {
+    font-size: 0.9rem; /* Adjust font size on smaller screens */
+    height: 33px;
+  }
+
+  .booking-submit {
+    font-size: 1rem; /* Adjust font size on smaller screens */
+  }
+}
