@@ -67,7 +67,9 @@
     "selectTime": "Please select your preferred time",
     "availableHours": "Available hours:",
     "availableHoursFive": "Mon, Tue, Thu, Sat - 10:00 AM ~ 4:00 PM",
-    "availableHoursSeven": "Wed, Fri - 10:00 AM ~ 7:00 PM"
+    "availableHoursSeven": "Wed, Fri - 10:00 AM ~ 7:00 PM",
+    "phoneNumber": "Contact Number",
+    "leavePhoneNumber": "Enter your phone number"
   },
 
   "footer": {
