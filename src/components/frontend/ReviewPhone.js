@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import phone from "../../photos/phone1.jpg";
 import { useTranslation } from "react-i18next";
-// import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useSwipeable } from "react-swipeable";
@@ -61,7 +61,7 @@ const ReviewPhone = () => {
           ))}
         </div>
       </div>
-      {/* <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} /> */}
+      <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} />
       <div {...handler} className={`phone-frame ${swipeClass}`}>
         <img src={phone} alt="phone" className="phone" />
         {images.map((image, idx) => (
@@ -73,10 +73,10 @@ const ReviewPhone = () => {
           />
         ))}
       </div>
-      {/* <BsArrowRightCircleFill
+      <BsArrowRightCircleFill
         className="arrow arrow-right"
         onClick={nextSlide}
-      /> */}
+      />
       <div className="swipe-container">
         {showSwipeGif && (
           <img
