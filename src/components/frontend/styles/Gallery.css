@@ -159,4 +159,8 @@
     font-size: 0.75rem;
     padding: 4px;
   }
+  .zoomed-button-prev,
+  .zoomed-button-next {
+    display: none;
+  }
 }
