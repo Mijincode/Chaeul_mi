@@ -18,20 +18,6 @@ const Booking = () => {
 
   const [clientPhoneNumber, setClientPhoneNumber] = useState("");
   const [ownerPhoneNumber] = useState("+61411214602");
-  const [bookedTimes, setBookedTimes] = useState([]);
-
-  useEffect(() => {
-    // Fetch booked times from server
-    fetch("http://localhost:3001/booked-times")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setBookedTimes(data))
-      .catch((error) => console.error("Error fetching booked times:", error));
-  }, []);
 
   const filterDate = (date) => {
     return date.getDay() !== 0;
@@ -72,14 +58,6 @@ const Booking = () => {
     }
   };
 
-  const isTimeBooked = (time) => {
-    const timeStr = time.toLocaleTimeString();
-    return bookedTimes.some(
-      (booked) =>
-        booked.date === selectedDate.toDateString() && booked.time === timeStr
-    );
-  };
-
   const getAvaliableTimes = () => {
     if (!selectedDate) return { minTime: startDate, maxTime: startDate };
 
@@ -112,13 +90,6 @@ const Booking = () => {
       .then((data) => {
         alert(data);
         window.location.reload();
-        setBookedTimes((prevTimes) => [
-          ...prevTimes,
-          {
-            date: selectedDate.toDateString(),
-            time: startDate.toLocaleTimeString(),
-          },
-        ]);
       })
       .catch((error) => console.error("Error:", error));
   };
@@ -167,7 +138,6 @@ const Booking = () => {
                 minTime={minTime}
                 maxTime={maxTime}
                 className="custom-datepicker"
-                filterTime={(time) => !isTimeBooked(time)}
               />
               {selectedTime && (
                 <div className="form-group">

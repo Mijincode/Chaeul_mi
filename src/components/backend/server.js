@@ -62,10 +62,6 @@ app.post("/booking", (req, res) => {
   res.status(200).send("예약이 완료되었습니다.");
 });
 
-app.get("/booked-times", (req, res) => {
-  res.json(bookedTimes);
-});
-
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
