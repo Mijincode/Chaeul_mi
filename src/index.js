@@ -9,10 +9,7 @@ import { APIProvider } from "@vis.gl/react-google-maps";
 import i18n from "./i18n";
 import { I18nextProvider } from "react-i18next";
 
-console.log("Google Maps API Key:", process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// console.log("DEBUG - env", process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY);
 root.render(
   <React.StrictMode>
     <APIProvider
