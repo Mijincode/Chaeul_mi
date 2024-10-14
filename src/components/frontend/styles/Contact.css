@@ -30,10 +30,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.threeD-map {
-  height: 400px;
-}
-
 .location-dot {
   margin-right: 10px;
 }
@@ -64,7 +60,7 @@
 .consultation-left,
 .consultation-right {
   flex: 1;
-  min-width: 300px; /* Ensures each side has a minimum width */
+  min-width: 300px;
 }
 
 .consultation-left {
@@ -195,6 +191,9 @@
 
   .consultation-left {
     min-width: 80px;
+  }
+  .consultation-right {
+    font-size: 14px;
   }
 
   .texts,

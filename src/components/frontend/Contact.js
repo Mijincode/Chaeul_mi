@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-// import NaverMap from "../photos/map.png";
-
 import kakaotalk from "../../photos/kakao-talk1.png";
 import GoogleMapComponent from "./GoogleMapComponent";
 import Slider from "react-slick";
@@ -69,12 +67,6 @@ const Contact = () => {
             <li> {t("home.tradingHours-time")}</li>
           </div>
         </div>
-        {/* <img
-          className="naver-map"
-          src={NaverMap}
-          alt="Naver Map"
-          onClick={() => openZoomedImage(NaverMap)}
-        /> */}
       </div>
       <div className="consultation">
         <div className="consultation-left">
