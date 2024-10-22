@@ -12,7 +12,6 @@ const GoogleMapComponent = ({ center, zoom }) => {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const mapId = process.env.REACT_APP_MAP_ID;
   const mapRef = useRef(null);
-  const [isMarkerAvailable, setIsMarkerAvailable] = useState(false);
   const [loadError, setLoadError] = useState(null);
 
   const { isLoaded: apiLoaded, loadError: apiLoadError } = useJsApiLoader({
@@ -34,7 +33,6 @@ const GoogleMapComponent = ({ center, zoom }) => {
       const checkMarkerAvailability = () => {
         if (window.google?.maps?.marker?.AdvancedMarkerElement) {
           console.log("AdvancedMarkerElement is available");
-          setIsMarkerAvailable(true);
           initializeMarker();
         } else {
           console.error("AdvancedMarkerElement is not available. Retrying...");
@@ -58,7 +56,7 @@ const GoogleMapComponent = ({ center, zoom }) => {
     markerContent.style.fontSize = "20px";
     markerContent.style.fontBold = "20px";
 
-    markerContent.innerHTML = "📍"; // Marker icon
+    markerContent.innerHTML = "📍";
 
     const markerInstance = new window.google.maps.marker.AdvancedMarkerElement({
       map: mapRef.current,
@@ -94,7 +92,7 @@ const GoogleMapComponent = ({ center, zoom }) => {
 
   const onUnmount = useCallback(() => {
     mapRef.current = null;
-  }, []);
+  }, [mapId, initializeMarker]);
 
   if (loadError) {
     return <div>Error Loading Google Maps: {loadError.message}</div>;
