@@ -8,7 +8,7 @@ const marker = {
 
 const libraries = ["places", "marker"];
 
-const GoogleMapComponent = ({ center, zoom }) => {
+const GoogleMapComponent = React.memo(({ center, zoom }) => {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const mapId = process.env.REACT_APP_MAP_ID;
   const mapRef = useRef(null);
@@ -39,7 +39,6 @@ const GoogleMapComponent = ({ center, zoom }) => {
     markerContent.style.alignItems = "center";
     markerContent.style.justifyContent = "center";
     markerContent.style.fontSize = "20px";
-
     markerContent.innerHTML = "📍";
 
     const markerInstance = new window.google.maps.marker.AdvancedMarkerElement({
@@ -56,6 +55,12 @@ const GoogleMapComponent = ({ center, zoom }) => {
         "Failed to create marker. Ensure AdvancedMarkerElement is loaded correctly."
       );
     }
+
+    return () => {
+      if (markerInstance) {
+        markerInstance.setMap(null);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -82,14 +87,12 @@ const GoogleMapComponent = ({ center, zoom }) => {
         new window.google.maps.LatLng(36.48927693178, 127.260521)
       );
 
-      map.setOptions({
-        mapId: mapId,
-      });
+      map.setOptions({ mapId });
 
       map.fitBounds(bounds);
-      initializeMarker(); // Safe to call here
+      initializeMarker();
     },
-    [mapId, initializeMarker] // Stable dependency
+    [mapId, initializeMarker]
   );
 
   const onUnmount = useCallback(() => {
@@ -108,19 +111,14 @@ const GoogleMapComponent = ({ center, zoom }) => {
           zoom={zoom}
           onLoad={onLoad}
           onUnmount={onUnmount}
-          mapContainerStyle={{
-            width: "100%",
-            height: "100%",
-          }}
-          options={{
-            mapTypeControl: false,
-          }}
+          mapContainerStyle={{ width: "100%", height: "100%" }}
+          options={{ mapTypeControl: false }}
         />
       ) : (
         <div>Loading...</div>
       )}
     </div>
   );
-};
+});
 
 export default GoogleMapComponent;
