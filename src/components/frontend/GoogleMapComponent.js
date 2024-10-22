@@ -12,6 +12,7 @@ const GoogleMapComponent = ({ center, zoom }) => {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const mapId = process.env.REACT_APP_MAP_ID;
   const mapRef = useRef(null);
+  const [isMarkerAvailable, setIsMarkerAvailable] = useState(false);
   const [loadError, setLoadError] = useState(null);
 
   const { isLoaded: apiLoaded, loadError: apiLoadError } = useJsApiLoader({
@@ -74,25 +75,28 @@ const GoogleMapComponent = ({ center, zoom }) => {
     }
   };
 
-  const onLoad = useCallback((map) => {
-    mapRef.current = map;
+  const onLoad = useCallback(
+    (map) => {
+      mapRef.current = map;
 
-    const bounds = new window.google.maps.LatLngBounds(
-      new window.google.maps.LatLng(36.485945, 127.2602414),
-      new window.google.maps.LatLng(36.48927693178, 127.260521)
-    );
+      const bounds = new window.google.maps.LatLngBounds(
+        new window.google.maps.LatLng(36.485945, 127.2602414),
+        new window.google.maps.LatLng(36.48927693178, 127.260521)
+      );
 
-    map.setOptions({
-      mapId: mapId,
-    });
+      map.setOptions({
+        mapId: mapId,
+      });
 
-    map.fitBounds(bounds);
-    initializeMarker();
-  }, []);
+      map.fitBounds(bounds);
+      initializeMarker();
+    },
+    [mapId, initializeMarker]
+  );
 
   const onUnmount = useCallback(() => {
     mapRef.current = null;
-  }, [mapId, initializeMarker]);
+  }, []);
 
   if (loadError) {
     return <div>Error Loading Google Maps: {loadError.message}</div>;
