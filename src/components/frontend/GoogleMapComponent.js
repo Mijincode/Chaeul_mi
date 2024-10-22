@@ -29,45 +29,45 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   }, [apiLoadError]);
 
   const initializeMarker = useCallback(() => {
-    const markerContent = document.createElement("div");
-    markerContent.style.width = "30px";
-    markerContent.style.height = "30px";
-    markerContent.style.backgroundColor = "#FBBC04";
-    markerContent.style.border = "3px solid #000";
-    markerContent.style.borderRadius = "50%";
-    markerContent.style.display = "flex";
-    markerContent.style.alignItems = "center";
-    markerContent.style.justifyContent = "center";
-    markerContent.style.fontSize = "20px";
-    markerContent.innerHTML = "📍";
+    if (mapRef.current && window.google?.maps?.marker?.AdvancedMarkerElement) {
+      const markerContent = document.createElement("div");
+      markerContent.style.width = "30px";
+      markerContent.style.height = "30px";
+      markerContent.style.backgroundColor = "#FBBC04";
+      markerContent.style.border = "3px solid #000";
+      markerContent.style.borderRadius = "50%";
+      markerContent.style.display = "flex";
+      markerContent.style.alignItems = "center";
+      markerContent.style.justifyContent = "center";
+      markerContent.style.fontSize = "20px";
+      markerContent.innerHTML = "📍";
 
-    const markerInstance = new window.google.maps.marker.AdvancedMarkerElement({
-      map: mapRef.current,
-      position: marker.position,
-      title: marker.title,
-      content: markerContent,
-    });
+      const markerInstance =
+        new window.google.maps.marker.AdvancedMarkerElement({
+          map: mapRef.current,
+          position: marker.position,
+          title: marker.title,
+          content: markerContent,
+        });
 
-    if (markerInstance) {
       console.log("Marker created at position:", marker.position);
+
+      return () => {
+        if (markerInstance) {
+          markerInstance.setMap(null);
+        }
+      };
     } else {
       console.error(
-        "Failed to create marker. Ensure AdvancedMarkerElement is loaded correctly."
+        "AdvancedMarkerElement is not available. Cannot initialize marker."
       );
     }
-
-    return () => {
-      if (markerInstance) {
-        markerInstance.setMap(null);
-      }
-    };
   }, []);
 
   useEffect(() => {
     if (apiLoaded) {
       const checkMarkerAvailability = () => {
         if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-          console.log("AdvancedMarkerElement is available");
           initializeMarker();
         } else {
           console.error("AdvancedMarkerElement is not available. Retrying...");
@@ -88,7 +88,6 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
       );
 
       map.setOptions({ mapId });
-
       map.fitBounds(bounds);
       initializeMarker();
     },
