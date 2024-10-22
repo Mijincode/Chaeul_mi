@@ -12,7 +12,6 @@ const GoogleMapComponent = ({ center, zoom }) => {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const mapId = process.env.REACT_APP_MAP_ID;
   const mapRef = useRef(null);
-  const [isMarkerAvailable, setIsMarkerAvailable] = useState(false);
   const [loadError, setLoadError] = useState(null);
 
   const { isLoaded: apiLoaded, loadError: apiLoadError } = useJsApiLoader({
@@ -29,22 +28,7 @@ const GoogleMapComponent = ({ center, zoom }) => {
     }
   }, [apiLoadError]);
 
-  useEffect(() => {
-    if (apiLoaded) {
-      const checkMarkerAvailability = () => {
-        if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-          console.log("AdvancedMarkerElement is available");
-          initializeMarker();
-        } else {
-          console.error("AdvancedMarkerElement is not available. Retrying...");
-          setTimeout(checkMarkerAvailability, 1000);
-        }
-      };
-      checkMarkerAvailability();
-    }
-  }, [apiLoaded]);
-
-  const initializeMarker = () => {
+  const initializeMarker = useCallback(() => {
     const markerContent = document.createElement("div");
     markerContent.style.width = "30px";
     markerContent.style.height = "30px";
@@ -55,7 +39,6 @@ const GoogleMapComponent = ({ center, zoom }) => {
     markerContent.style.alignItems = "center";
     markerContent.style.justifyContent = "center";
     markerContent.style.fontSize = "20px";
-    markerContent.style.fontBold = "20px";
 
     markerContent.innerHTML = "📍";
 
@@ -73,7 +56,22 @@ const GoogleMapComponent = ({ center, zoom }) => {
         "Failed to create marker. Ensure AdvancedMarkerElement is loaded correctly."
       );
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (apiLoaded) {
+      const checkMarkerAvailability = () => {
+        if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+          console.log("AdvancedMarkerElement is available");
+          initializeMarker();
+        } else {
+          console.error("AdvancedMarkerElement is not available. Retrying...");
+          setTimeout(checkMarkerAvailability, 1000);
+        }
+      };
+      checkMarkerAvailability();
+    }
+  }, [apiLoaded, initializeMarker]);
 
   const onLoad = useCallback(
     (map) => {
@@ -89,9 +87,9 @@ const GoogleMapComponent = ({ center, zoom }) => {
       });
 
       map.fitBounds(bounds);
-      initializeMarker();
+      initializeMarker(); // Safe to call here
     },
-    [mapId, initializeMarker]
+    [mapId, initializeMarker] // Stable dependency
   );
 
   const onUnmount = useCallback(() => {
