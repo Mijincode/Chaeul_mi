@@ -63,7 +63,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
       );
       setTimeout(checkMarkerAvailability, 1000);
     }
-  }, [checkMarkerAvailability]);
+  }, []);
 
   // useEffect(() => {
   //   if (apiLoaded) {
@@ -78,6 +78,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   //     checkMarkerAvailability();
   //   }
   // }, [apiLoaded, initializeMarker]);
+
   const checkMarkerAvailability = useCallback(() => {
     if (window.google?.maps?.marker?.AdvancedMarkerElement) {
       initializeMarker();
@@ -102,7 +103,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
 
       checkMarkerAvailability();
     },
-    [mapId, initializeMarker, checkMarkerAvailability]
+    [mapId, checkMarkerAvailability]
   );
 
   const onUnmount = useCallback(() => {
