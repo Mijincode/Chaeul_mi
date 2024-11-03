@@ -89,7 +89,17 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
 
       map.setOptions({ mapId });
       map.fitBounds(bounds);
-      initializeMarker();
+
+      if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+        initializeMarker();
+      } else {
+        console.error("AdvancedMarkerElement is not available. Retrying...");
+        setTimeout(() => {
+          if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+            initializeMarker();
+          }
+        }, 1000);
+      }
     },
     [mapId, initializeMarker]
   );
@@ -112,6 +122,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
           onUnmount={onUnmount}
           mapContainerStyle={{ width: "100%", height: "100%" }}
           options={{ mapTypeControl: false }}
+          mapId={mapId}
         />
       ) : (
         <div>Loading...</div>
