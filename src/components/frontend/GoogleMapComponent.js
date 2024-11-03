@@ -61,26 +61,36 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
       console.error(
         "AdvancedMarkerElement is not available. Cannot initialize marker."
       );
+      setTimeout(checkMarkerAvailability, 1000);
     }
   }, []);
 
-  useEffect(() => {
-    if (apiLoaded) {
-      const checkMarkerAvailability = () => {
-        if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-          initializeMarker();
-        } else {
-          console.error("AdvancedMarkerElement is not available. Retrying...");
-          setTimeout(checkMarkerAvailability, 1000);
-        }
-      };
-      checkMarkerAvailability();
+  // useEffect(() => {
+  //   if (apiLoaded) {
+  //     const checkMarkerAvailability = () => {
+  //       if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+  //         initializeMarker();
+  //       } else {
+  //         console.error("AdvancedMarkerElement is not available. Retrying...");
+  //         setTimeout(checkMarkerAvailability, 1000);
+  //       }
+  //     };
+  //     checkMarkerAvailability();
+  //   }
+  // }, [apiLoaded, initializeMarker]);
+  const checkMarkerAvailability = useCallback(() => {
+    if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+      initializeMarker();
+    } else {
+      console.error("AdvancedMarkerElement is not available. Retrying...");
+      setTimeout(checkMarkerAvailability, 1000); // Retry every second
     }
-  }, [apiLoaded, initializeMarker]);
+  }, [initializeMarker]);
 
   const onLoad = useCallback(
     (map) => {
       mapRef.current = map;
+      console.log("Map ID on Load:", mapId);
 
       const bounds = new window.google.maps.LatLngBounds(
         new window.google.maps.LatLng(36.485945, 127.2602414),
@@ -90,16 +100,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
       map.setOptions({ mapId });
       map.fitBounds(bounds);
 
-      if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-        initializeMarker();
-      } else {
-        console.error("AdvancedMarkerElement is not available. Retrying...");
-        setTimeout(() => {
-          if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-            initializeMarker();
-          }
-        }, 1000);
-      }
+      checkMarkerAvailability();
     },
     [mapId, initializeMarker]
   );
@@ -111,6 +112,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   if (loadError) {
     return <div>Error Loading Google Maps: {loadError.message}</div>;
   }
+  console.log("Map ID before return:", mapId);
 
   return (
     <div className="googleMap-container">
