@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
-const marker = {
+const markerPosition = {
   position: { lat: 36.4885989846369, lng: 127.2605191550169 },
   title: "My Marker",
 };
@@ -13,6 +13,8 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   const mapId = process.env.REACT_APP_MAP_ID;
   const mapRef = useRef(null);
   const [loadError, setLoadError] = useState(null);
+  const [markerInitialized, setMarkerInitialized] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   const { isLoaded: apiLoaded, loadError: apiLoadError } = useJsApiLoader({
     id: "google-map-script",
@@ -31,62 +33,60 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   const initializeMarker = useCallback(() => {
     if (mapRef.current && window.google?.maps?.marker?.AdvancedMarkerElement) {
       const markerContent = document.createElement("div");
-      markerContent.style.width = "30px";
-      markerContent.style.height = "30px";
-      markerContent.style.backgroundColor = "#FBBC04";
-      markerContent.style.border = "3px solid #000";
-      markerContent.style.borderRadius = "50%";
-      markerContent.style.display = "flex";
-      markerContent.style.alignItems = "center";
-      markerContent.style.justifyContent = "center";
-      markerContent.style.fontSize = "20px";
+      markerContent.style.cssText = `
+      width: 30px;
+      height: 30px;
+      background-color: #FBBC04;
+      border: 3px solid #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      `;
       markerContent.innerHTML = "📍";
 
       const markerInstance =
         new window.google.maps.marker.AdvancedMarkerElement({
           map: mapRef.current,
-          position: marker.position,
-          title: marker.title,
+          position: markerPosition.position,
+          title: markerPosition.title,
           content: markerContent,
         });
 
-      console.log("Marker created at position:", marker.position);
+      console.log(
+        "AdvancedMarkerElement created at position:",
+        markerPosition.position
+      );
+      setMarkerInitialized(true);
 
       return () => {
         if (markerInstance) {
           markerInstance.setMap(null);
         }
       };
-    } else {
-      console.error(
-        "AdvancedMarkerElement is not available. Cannot initialize marker."
+    } else if (retryCount < 5) {
+      setRetryCount((prev) => prev + 1);
+      console.warn(
+        `AdvancedMarkerElement is not available. Retrying...(${
+          retryCount + 1
+        }/5)`
       );
-      setTimeout(checkMarkerAvailability, 1000);
+      setTimeout(initializeMarker, Math.pow(2, retryCount) * 1000);
     }
-  }, []);
+  }, [retryCount]);
 
-  // useEffect(() => {
-  //   if (apiLoaded) {
-  //     const checkMarkerAvailability = () => {
-  //       if (window.google?.maps?.marker?.AdvancedMarkerElement) {
-  //         initializeMarker();
-  //       } else {
-  //         console.error("AdvancedMarkerElement is not available. Retrying...");
-  //         setTimeout(checkMarkerAvailability, 1000);
-  //       }
-  //     };
-  //     checkMarkerAvailability();
+  // const checkMarkerAvailability = useCallback(() => {
+  //   if (!markerInitialized && retryCount < 5) {
+  //     initializeMarker();
   //   }
-  // }, [apiLoaded, initializeMarker]);
+  // }, [initializeMarker, markerInitialized, retryCount]);
 
-  const checkMarkerAvailability = useCallback(() => {
-    if (window.google?.maps?.marker?.AdvancedMarkerElement) {
+  useEffect(() => {
+    if (apiLoaded && !markerInitialized) {
       initializeMarker();
-    } else {
-      console.error("AdvancedMarkerElement is not available. Retrying...");
-      setTimeout(checkMarkerAvailability, 1000);
     }
-  }, [initializeMarker]);
+  }, [apiLoaded, initializeMarker, markerInitialized]);
 
   const onLoad = useCallback(
     (map) => {
@@ -101,9 +101,10 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
       map.setOptions({ mapId });
       map.fitBounds(bounds);
 
-      checkMarkerAvailability();
+      if (!markerInitialized) initializeMarker();
     },
-    [mapId, checkMarkerAvailability]
+
+    [initializeMarker, mapId, markerInitialized]
   );
 
   const onUnmount = useCallback(() => {
@@ -113,6 +114,7 @@ const GoogleMapComponent = React.memo(({ center, zoom }) => {
   if (loadError) {
     return <div>Error Loading Google Maps: {loadError.message}</div>;
   }
+
   console.log("Map ID before return:", mapId);
 
   return (
