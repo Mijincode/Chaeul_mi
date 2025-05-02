@@ -87,6 +87,7 @@ const Gallery = () => {
             src={image}
             alt={`Gallery item  ${index + 1}`}
             className="gallery-image"
+            loading="lazy"
             onClick={() => openZoomedImage(image, index)}
           />
         </div>

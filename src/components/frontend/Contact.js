@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import kakaotalk from "../../photos/kakao-talk1.png";
-import GoogleMapComponent from "./GoogleMapComponent";
+// import GoogleMapComponent from "./GoogleMapComponent";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import markerImage from "../../photos/marker.png";
 import "./styles/Contact.css";
 
 const directions = require.context("../../photos/directions", true);
@@ -57,7 +58,36 @@ const Contact = () => {
           ))}
         </Slider>
       </div>
-      <GoogleMapComponent center={center} zoom={zoom} marker={marker} />
+      <div
+        style={{
+          position: "relative",
+          width: "80%",
+          height: "450px",
+          margin: "0 auto",
+        }}
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1069.2141608253135!2d127.26046764010509!3d36.48833163187254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sau!4v1746147346091!5m2!1sen!2sau"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <img
+          src={markerImage}
+          alt="marker"
+          style={{
+            position: "absolute",
+            top: "36%",
+            left: "52%",
+            transform: "translate(-50%, -100%)",
+            width: "30px",
+          }}
+        />
+      </div>
+      {/* <GoogleMapComponent center={center} zoom={zoom} marker={marker} /> */}
       <div className="consultation">
         <div className="consultation-left">
           <h4 className="texts">| {t("home.tradingHours")} </h4>
