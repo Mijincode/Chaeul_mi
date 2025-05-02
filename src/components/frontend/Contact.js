@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import kakaotalk from "../../photos/kakao-talk1.png";
-// import GoogleMapComponent from "./GoogleMapComponent";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,10 +15,6 @@ const getDirectionsImages = directions.keys().map(directions);
 const Contact = () => {
   const { t } = useTranslation();
   const [zoomedImage, setZoomedImage] = useState(null);
-
-  const center = { lat: 36.48883849333951, lng: 127.26052669020419 };
-  const zoom = 15;
-  const marker = { key: "chaeulmi" };
 
   const openZoomedImage = (image) => {
     setZoomedImage(image);
@@ -74,6 +69,7 @@ const Contact = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Google Map location"
         ></iframe>
         <img
           src={markerImage}
@@ -87,7 +83,6 @@ const Contact = () => {
           }}
         />
       </div>
-      {/* <GoogleMapComponent center={center} zoom={zoom} marker={marker} /> */}
       <div className="consultation">
         <div className="consultation-left">
           <h4 className="texts">| {t("home.tradingHours")} </h4>
