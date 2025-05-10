@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import mikyung from "../../photos/Mikyung.jpg";
+import mikyung from "../../photos/founder.jpg";
 import homepage from "../../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
 import { useTranslation } from "react-i18next";
