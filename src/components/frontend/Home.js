@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import mikyung from "../../photos/mikyung.jpg";
+import mikyung from "../../photos/Mikyung.jpg";
 import homepage from "../../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
 import { useTranslation } from "react-i18next";
@@ -47,7 +47,7 @@ const Home = () => {
         <h2 className="about">{t("home.about")}</h2>
         <div className="mikyung-container">
           <div className="mikyung-content">
-            {/* <img className="mikyung" src={mikyung} alt="mikyung" /> */}
+            <img className="mikyung" src={mikyung} alt="mikyung" />
             <div className="title">
               <h4 className="introduction">{t("home.introduction")}</h4>
               <p className="introduction-mikyung">{t("home.beautyShop")}</p>
