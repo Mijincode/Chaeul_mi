@@ -46,7 +46,7 @@ const NavBar = () => {
               variant="dark"
               className="booking-button"
               href="https://open.kakao.com/o/sJVFkuT"
-              target="_blank" // Optional: This ensures the link opens in a new tab
+              target="_blank"
             >
               Chat with Us
             </Button>

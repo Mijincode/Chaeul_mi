@@ -4,7 +4,6 @@ import homepage from "../../photos/homepage2.jpg";
 import Container from "react-bootstrap/Container";
 import { useTranslation } from "react-i18next";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import "./styles/Home.css";
 
 const getFacilityImages = require.context("../../photos/shop/facility/", true);
