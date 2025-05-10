@@ -65,10 +65,6 @@ const Footer = () => {
                   <MDBIcon icon="home" className="me-2 " />
                   {t("footer.address")}
                 </p>
-                <p>
-                  <MDBIcon icon="phone" className="me-3" />
-                  0507-1353-8076
-                </p>
               </div>
               <div>
                 <p>
