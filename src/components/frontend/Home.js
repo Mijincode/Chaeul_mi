@@ -44,10 +44,10 @@ const Home = () => {
           </div>
         </div>
         {/* About Section */}
+        <h2 className="about">{t("home.about")}</h2>
         <div className="mikyung-container">
-          <h2 className="about">{t("home.about")}</h2>
           <div className="mikyung-content">
-            <img className="mikyung" src={mikyung} alt="mikyung" />
+            {/* <img className="mikyung" src={mikyung} alt="mikyung" /> */}
             <div className="title">
               <h4 className="introduction">{t("home.introduction")}</h4>
               <p className="introduction-mikyung">{t("home.beautyShop")}</p>
@@ -65,12 +65,12 @@ const Home = () => {
                     <li className="list-item">{t("home.scalpTattoo")}</li>
                   </ul>
                 </div>
-                <div className="list">
+                {/* <div className="list">
                   <div className="list-title">{t("home.curlPerm")}</div>
                   <ul>
                     <li>{t("home.eyelashPerm")}</li>
                   </ul>
-                </div>
+                </div> */}
                 <div className="list">
                   <div className="list-title">
                     {t("home.cleanPediPlanning")}
