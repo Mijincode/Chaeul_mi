@@ -18,8 +18,6 @@ const Gallery = () => {
   const maleImages = require.context("../../photos/male/", true);
   const eyeImages = require.context("../../photos/eye/", true);
   const lipsImages = require.context("../../photos/lips/", true);
-  const hairImages = require.context("../../photos/hair/", true);
-  const feetImages = require.context("../../photos/feet/", true);
 
   const getImages = (context) => context.keys().map(context);
 
@@ -27,8 +25,6 @@ const Gallery = () => {
   const maleList = getImages(maleImages);
   const eyeList = getImages(eyeImages);
   const lipsList = getImages(lipsImages);
-  const hairList = getImages(hairImages);
-  const feetList = getImages(feetImages);
 
   const getImageList = () => {
     switch (activeTab) {
@@ -40,10 +36,6 @@ const Gallery = () => {
         return eyeImages;
       case "lips":
         return lipsList;
-      case "hair":
-        return hairList;
-      case "feet":
-        return feetList;
       default:
         return [];
     }
@@ -120,12 +112,6 @@ const Gallery = () => {
 
         <Tab eventKey="lips" title={t("gallery.lipTattoo")}>
           {imageCards(lipsList)}
-        </Tab>
-        <Tab eventKey="hair" title={t("gallery.scalpTattoo")}>
-          {imageCards(hairList)}
-        </Tab>
-        <Tab eventKey="feet" title={t("gallery.cleanPedi")}>
-          {imageCards(feetList)}
         </Tab>
       </Tabs>
 

@@ -71,14 +71,14 @@ const Home = () => {
                     <li>{t("home.eyelashPerm")}</li>
                   </ul>
                 </div> */}
-                <div className="list">
+                {/* <div className="list">
                   <div className="list-title">
                     {t("home.cleanPediPlanning")}
                   </div>
                   <ul>
                     <li>{t("home.footCallus")}</li>
                   </ul>
-                </div>
+                </div> */}
               </div>
               <div className="message">
                 <p className="text-lg">{t("home.callToAction")}</p>
