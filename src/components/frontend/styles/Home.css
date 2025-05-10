@@ -299,10 +299,6 @@
     max-width: 100%;
   }
 
-  .lists {
-    max-width: calc(50% - 30px);
-  }
-
   .list-item {
     font-size: 0.9rem;
   }
@@ -387,7 +383,7 @@
   }
 
   .mikyung {
-    max-width: 60%;
+    max-width: 80%;
     border-radius: 1rem;
   }
 
