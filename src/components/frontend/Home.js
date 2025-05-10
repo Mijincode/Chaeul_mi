@@ -35,8 +35,8 @@ const Home = () => {
               {t("home.sejongSpecialty")}
               <Button
                 variant="light"
-                as={Link}
-                to="/booking"
+                href="https://open.kakao.com/o/sJVFkuT"
+                target="_blank"
                 className="home-button"
               >
                 {t("home.bookingButton")}
@@ -136,8 +136,8 @@ const Home = () => {
           <div className="trading-hour-button">
             <Button
               variant="dark"
-              as={Link}
-              to="/booking"
+              href="https://open.kakao.com/o/sJVFkuT"
+              target="_blank" // Optional: This ensures the link opens in a new tab
               className="bottom-button"
             >
               {t("home.bookingButton")}

@@ -45,10 +45,10 @@ const NavBar = () => {
             <Button
               variant="dark"
               className="booking-button"
-              as={Link}
-              to="/booking"
+              href="https://open.kakao.com/o/sJVFkuT"
+              target="_blank" // Optional: This ensures the link opens in a new tab
             >
-              Book Online
+              Chat with Us
             </Button>
 
             <div className="language-switcher">
