@@ -16,7 +16,7 @@
     "introduction": "Founder Mikyung",
     "beautyShop": "Chaeul Beauty, a premium beauty shop in Sejong City, strives to provide the most sophisticated and elegant beauty services. Our shop is led by beauty expert Mikyung, with over 12 years of experience, and we are committed to enhancing our clients' beauty every day. We stay ahead of the latest trends and techniques as a judge at the Creative International Beauty Association Art Fair in 2022.",
     "semiPermanentMakeup": "Semi-Permanent Makeup",
-    "eyebrows": "Eyebrows: Embossed, Combo, Sujin",
+    "eyebrows": "Eyebrows: Embossed, Combo, Suji",
     "lips": "Lips",
     "eyeliner": "Eyeliner",
     "hairline": "Hairline Density Enhancement",
@@ -57,7 +57,16 @@
     "address": "Address",
     "chaeulmi-address": "Sejong City Naseongbuk-do 30",
     "chaeulmi-phone": "Consultation Call",
-    "supportResources": "Support Resources"
+    "supportResources": "Support Resources",
+    "tradingHours": "Operating Hours",
+    "monday": "Monday:",
+    "tuesday": "Tuesday:",
+    "wednesday": "Wednesday:",
+    "thursday": "Thursday:",
+    "friday": "Friday:",
+    "saturday": "Saturday:",
+    "tenToFour": "10:00am - 4:00pm",
+    "tenToSeven": "10:00am - 7:00pm"
   },
 
   "booking": {
