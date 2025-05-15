@@ -56,7 +56,16 @@
     "address": "주소",
     "chaeulmi-address": "세종시 나성북로 30 A동 331호",
     "chaeulmi-phone": "상담 전화",
-    "supportResources": "지원 리소스"
+    "supportResources": "지원 리소스",
+    "tradingHours": "운영시간",
+    "monday": "월요일:",
+    "tuesday": "화요일:",
+    "wednesday": "수요일:",
+    "thursday": "목요일:",
+    "friday": "금요일:",
+    "saturday": "토요일",
+    "tenToFour": "10:00am - 4:00pm",
+    "tenToSeven": "10:00am - 7:00pm"
   },
 
   "booking": {
