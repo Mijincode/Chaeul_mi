@@ -1,30 +1,44 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import "./styles/Gallery.css";
 import { useSwipeable } from "react-swipeable";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/Gallery.css";
 
 const Gallery = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+  console.log(location.search);
+
   const [activeTab, setActiveTab] = useState("female");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const [zoomedImage, setZoomedImage] = useState(null);
   const [zoomedIndex, setZoomedIndex] = useState(null);
 
-  useEffect(() => {}, [activeTab]);
+  // Step 1: Check tab in URL on initial render
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const tabFromURL = params.get("tab");
 
-  const femaleImages = require.context("../../photos/female/", true);
-  const maleImages = require.context("../../photos/male/", true);
-  const eyeImages = require.context("../../photos/eye/", true);
-  const lipsImages = require.context("../../photos/lips/", true);
+    console.log("📌 tabFromURL =", tabFromURL); // Debug log
 
+    if (["female", "male", "eye", "lips"].includes(tabFromURL)) {
+      setActiveTab(tabFromURL);
+    }
+  }, [location.search]);
+
+  // Step 2: Load images
   const getImages = (context) => context.keys().map(context);
-
-  const femaleList = getImages(femaleImages);
-  const maleList = getImages(maleImages);
-  const eyeList = getImages(eyeImages);
-  const lipsList = getImages(lipsImages);
+  const femaleList = getImages(require.context("../../photos/female", true));
+  const maleList = getImages(require.context("../../photos/male", true));
+  const eyeList = getImages(require.context("../../photos/eye", true));
+  const lipsList = getImages(require.context("../../photos/lips", true));
 
   const getImageList = () => {
     switch (activeTab) {
@@ -33,11 +47,11 @@ const Gallery = () => {
       case "male":
         return maleList;
       case "eye":
-        return eyeImages;
+        return eyeList;
       case "lips":
         return lipsList;
       default:
-        return [];
+        return femaleList;
     }
   };
 
@@ -45,6 +59,7 @@ const Gallery = () => {
     setZoomedImage(image);
     setZoomedIndex(index);
   };
+
   const closeZoomedImage = () => {
     setZoomedImage(null);
     setZoomedIndex(null);
@@ -52,14 +67,14 @@ const Gallery = () => {
 
   const nextSlide = () => {
     const images = getImageList();
-    const nextIndex = zoomedIndex + 1 >= images.length ? 0 : zoomedIndex + 1;
+    const nextIndex = (zoomedIndex + 1) % images.length;
     setZoomedImage(images[nextIndex]);
     setZoomedIndex(nextIndex);
   };
 
   const prevSlide = () => {
     const images = getImageList();
-    const nextIndex = zoomedIndex - 1 >= images.length ? 0 : zoomedIndex - 1;
+    const nextIndex = (zoomedIndex - 1 + images.length) % images.length;
     setZoomedImage(images[nextIndex]);
     setZoomedIndex(nextIndex);
   };
@@ -77,7 +92,7 @@ const Gallery = () => {
         <div key={index} className="gallery-wrapper">
           <img
             src={image}
-            alt={`Gallery item  ${index + 1}`}
+            alt={`Gallery item ${index + 1}`}
             className="gallery-image"
             loading="lazy"
             onClick={() => openZoomedImage(image, index)}
@@ -101,15 +116,12 @@ const Gallery = () => {
         <Tab eventKey="female" title={t("gallery.femaleEyebrow")}>
           {imageCards(femaleList)}
         </Tab>
-
         <Tab eventKey="male" title={t("gallery.maleEyebrow")}>
           {imageCards(maleList)}
         </Tab>
-
         <Tab eventKey="eye" title={t("gallery.eye")}>
           {imageCards(eyeList)}
         </Tab>
-
         <Tab eventKey="lips" title={t("gallery.lipTattoo")}>
           {imageCards(lipsList)}
         </Tab>
