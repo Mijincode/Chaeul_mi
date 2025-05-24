@@ -1,0 +1,82 @@
+.home-container {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.about {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.mikyung-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mikyung-content {
+  max-width: 1200px;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mikyung {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.text-content {
+  flex: 1;
+  text-align: left;
+  min-width: 260px;
+}
+
+.introduction {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.introduction-mikyung {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.message .text-lg {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mikyung-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .mikyung {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+}
