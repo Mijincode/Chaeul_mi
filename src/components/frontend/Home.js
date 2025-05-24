@@ -1,151 +1,140 @@
-import React, { useState } from "react";
-import mikyung from "../../photos/founder.jpg";
-import homepage from "../../photos/homepage2.jpg";
-import Container from "react-bootstrap/Container";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Button from "react-bootstrap/Button";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Eyebrows from "../../photos/eyebrows.png";
+import Eyeliner from "../../photos/eyeliner.png";
+import Lips from "../../photos/lips.png";
+import Hairline from "../../photos/hairline.png";
+import logo from "../../photos/logo6.png";
+import Hero1 from "../../photos/hero1.png";
+import Hero2 from "../../photos/hero1-2.png";
+import Hero3 from "../../photos/hero3.png";
+import Hero4 from "../../photos/hero4.png";
+import Hero5 from "../../photos/hero5.png";
 import "./styles/Home.css";
 
-const getFacilityImages = require.context("../../photos/shop/facility/", true);
-const facilityImages = getFacilityImages.keys().map(getFacilityImages);
-
-const Home = () => {
+const Home2 = () => {
   const { t } = useTranslation();
-  const [zoomedImage, setZoomedImage] = useState(null);
 
-  const openZoomedImage = (facilityImages) => {
-    setZoomedImage(facilityImages);
+  const services = [
+    {
+      name: t("home.eyebrows.name"),
+      description: t("home.eyebrows.description"),
+      image: Eyebrows,
+    },
+    {
+      name: t("home.eyeliner.name"),
+      description: t("home.eyeliner.description"),
+      image: Eyeliner,
+    },
+    {
+      name: t("home.lips.name"),
+      description: t("home.lips.description"),
+      image: Lips,
+    },
+    {
+      name: t("home.hairline.name"),
+      description: t("home.hairline.description"),
+      image: Hairline,
+    },
+  ];
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  const navigate = useNavigate();
+
+  const categoryMap = {
+    Eyebrows: "female",
+    Eyeliner: "eye",
+    Lips: "lips",
+    Hairline: "male",
   };
-  const closeZoomedImage = () => {
-    setZoomedImage(null);
+
+  const handleViewGallery = (tabKey) => {
+    const mappedTab = categoryMap[tabKey] || "female";
+    console.log("Navigating to tab:", mappedTab);
+    navigate(`/gallery?tab=${mappedTab}`);
   };
 
   return (
-    <section className="home-section">
-      <Container className="home-container">
-        {/* Homepage Section */}
-        <div className="homepage-wrapper">
-          <img className="homepage" src={homepage} alt="home" />
-          <div className="homepage-text">
-            <h1>{t("home.welcome")}</h1>
-          </div>
-          <div>
-            <h3 className="homepage-text2">
-              {t("home.sejongSpecialty")}
-              <Button
-                variant="light"
-                href="https://open.kakao.com/o/sJVFkuT"
-                target="_blank"
-                className="home-button"
-              >
-                {t("home.bookingButton")}
-              </Button>
-            </h3>
-          </div>
-        </div>
-        {/* About Section */}
-        <h2 className="about">{t("home.about")}</h2>
-        <div className="mikyung-container">
-          <div className="mikyung-content">
-            <img className="mikyung" src={mikyung} alt="mikyung" />
-            <div className="title">
-              <h4 className="introduction">{t("home.introduction")}</h4>
-              <p className="introduction-mikyung">{t("home.beautyShop")}</p>
-              {/* <h4 className="introduction">{t("home.semiPermanentMakeup")}</h4> */}
-              <div className="list-container">
-                <div className="list">
-                  <div className="list-title">
-                    {t("home.semiPermanentMakeup")}
-                  </div>
-                  <ul className="lists">
-                    <li className="list-item">{t("home.eyebrows")}</li>
-                    <li className="list-item"> {t("home.lips")}</li>
-                    <li className="list-item">{t("home.eyeliner")}</li>
-                    <li className="list-item">{t("home.hairline")}</li>
-                    <li className="list-item">{t("home.scalpTattoo")}</li>
-                  </ul>
-                </div>
-                {/* <div className="list">
-                  <div className="list-title">{t("home.curlPerm")}</div>
-                  <ul>
-                    <li>{t("home.eyelashPerm")}</li>
-                  </ul>
-                </div> */}
-                {/* <div className="list">
-                  <div className="list-title">
-                    {t("home.cleanPediPlanning")}
-                  </div>
-                  <ul>
-                    <li>{t("home.footCallus")}</li>
-                  </ul>
-                </div> */}
-              </div>
-              <div className="message">
-                <p className="text-lg">{t("home.callToAction")}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Facility Section */}
-        <div className="facility-section">
-          <h2 className="facility-title">{t("home.facilityTitle")}</h2>
-
-          <div className="facility-container">
-            {facilityImages.map((src, index) => (
-              <div
-                key={index}
-                className="facility-image-wrapper"
-                onClick={() => openZoomedImage(src)}
-              >
-                <img
-                  className="facility-images"
-                  src={src}
-                  alt={`facility-${index}`}
-                  layout="fill"
-                />
-              </div>
-            ))}
-            {zoomedImage && (
-              <div
-                className="zoomed-image-container"
-                onClick={closeZoomedImage}
-              >
-                <img
-                  className="zoomed-image"
-                  src={zoomedImage}
-                  alt="zoomed-image"
-                />
-              </div>
-            )}
-          </div>
-        </div>
-      </Container>
-
-      {/* TradingHour Section */}
-      <section className="section-container">
-        <div className="trading-hour">
-          <div className="trading-hour-text">
-            <div className="trading-hour-left">{t("home.tradingHours")}</div>
-            <ul className="trading-hour-right">
-              <li>{t("booking.availableHoursFive")}</li>
-              <li>{t("booking.availableHoursSeven")}</li>
-            </ul>
-          </div>
-          <div className="trading-hour-button">
-            <Button
-              variant="dark"
-              href="https://open.kakao.com/o/sJVFkuT"
-              target="_blank" // Optional: This ensures the link opens in a new tab
-              className="bottom-button"
-            >
-              {t("home.bookingButton")}
-            </Button>
+    <div className="homepage-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-container">
+          <div className="hero-grid">
+            <img src={Hero1} alt="A" className="grid-item item-a" />
+            <img src={Hero2} alt="B" className="grid-item item-b" />
+            <img src={Hero3} alt="C" className="grid-item item-c" />
+            <img src={Hero4} alt="D" className="grid-item item-d" />
+            <img src={Hero5} alt="E" className="grid-item item-e" />
           </div>
         </div>
       </section>
-    </section>
+
+      {/* Brand Section */}
+      <section className="brand-section">
+        <div className="brand-logo-centered">
+          <img src={logo} alt="Logo" className="circular-logo" />
+        </div>
+        <div className="brand-info">
+          <h2 className="brand-title">{t("home.title")}</h2>
+          <p className="brand-subtitle">{t("home.subtitle")}</p>
+          <div className="brand-description">
+            <p className="brand-description-title">
+              {t("home.description.title")}
+            </p>
+            <p className="brand-description-body">
+              {t("home.description.body")}
+            </p>
+            <p className="brand-description-body">
+              {t("home.description.sub.body")}
+            </p>
+            <p className="brand-description-end">{t("home.description.end")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="services-section">
+        <h2 className="services-title">{t("home.semiPermanentMakeup")}</h2>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <motion.div
+              ref={ref}
+              key={index}
+              className="service-item"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <img
+                src={service.image}
+                alt={service.name}
+                className="service-image"
+              />
+              <h3 className="service-name">{service.name}</h3>
+              {service.description && (
+                <ul className="service-description">
+                  {service.description.split(" / ").map((line, idx) => (
+                    <li key={idx}>{line}</li>
+                  ))}
+                </ul>
+              )}
+              <button
+                className="learn-more-btn"
+                onClick={() => handleViewGallery(service.name)}
+              >
+                View Gallery
+              </button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
-export default Home;
+export default Home2;

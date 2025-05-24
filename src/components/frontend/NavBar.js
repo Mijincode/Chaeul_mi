@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-// import logo from "../../photos/logo2.jpg";
 import logo from "../../photos/logoNavbar.png";
 import { useTranslation } from "react-i18next";
 import Australia from "../../photos/australia.png";
@@ -30,9 +27,6 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/home">
               {/* {t("navbar.home")} */}
               {t("navbar.home")}
-            </Nav.Link>
-            <Nav.Link as={Link} to="/home2">
-              {/* {t("navbar.home")} */}Home2
             </Nav.Link>
             <Nav.Link as={Link} to="/gallery">
               {/* {t("navbar.gallery")} */} {t("navbar.gallery")}

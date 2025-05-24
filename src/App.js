@@ -8,7 +8,7 @@ import Contact from "./components/frontend/Contact";
 // import Review from "./components/Review";
 import FAQs from "./components/frontend/FAQs";
 import ReviewPhone from "./components/frontend/ReviewPhone";
-
+import AboutUs from "./components/frontend/AboutUs";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
@@ -22,6 +22,7 @@ export default function App() {
         <Route path="/booking" element={<Booking />} />
         {/* <Route path="/review" element={<Review />} /> */}
         <Route path="/review-phone" element={<ReviewPhone />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<FAQs />} />
       </Routes>
