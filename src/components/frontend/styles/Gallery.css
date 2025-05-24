@@ -1,3 +1,7 @@
+.container {
+  padding: 0 20px;
+}
+
 .text-container {
   text-align: center;
   margin-bottom: 60px;
@@ -15,14 +19,16 @@
   overflow-x: auto;
   margin: 10px auto;
   white-space: nowrap;
+  padding: 0 20px;
 }
 
 .custom-tabs .nav-link {
-  display: flex;
+  display: inline-block;
   white-space: nowrap;
   font-size: 1.3rem;
   padding: 10px;
   font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
+  margin: 0 10px;
 }
 
 .gallery-container {
@@ -30,6 +36,8 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-start;
+  padding: 0 20px;
+  justify-content: center;
 }
 
 .gallery-wrapper {
@@ -43,6 +51,13 @@
   height: 430px;
   object-fit: cover;
   border-radius: 10%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .zoomed-image-container {
@@ -82,16 +97,16 @@
 }
 
 .zoomed-button-prev {
-  left: 10px;
+  left: 150px;
 }
 
 .zoomed-button-next {
-  right: 30px;
+  right: 150px;
 }
 
 .zoomed-button-close {
-  top: 30px;
-  right: 30px;
+  top: 50px;
+  right: 130px;
   color: black;
 }
 
@@ -114,11 +129,11 @@
     font-size: 20px;
   }
   .custom-tabs .nav-link {
-    margin: 0px 0px;
+    margin: 0px 6px;
   }
 
   .custom-tabs {
-    margin-left: 5px;
+    padding: 0 10px;
   }
 
   .zoomed-button-next {
