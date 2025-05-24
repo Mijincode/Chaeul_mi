@@ -1,68 +1,87 @@
 .navbar {
   width: 100%;
-  padding: 10px 20px;
+  background-color: #f2e1d9;
+  padding: 12px 24px;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  z-index: 999;
+  position: relative;
 }
 
 .nav-container {
-  max-width: 1500px;
   width: 100%;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: 0 auto;
+  gap: 1rem;
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  display: block;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
 }
 
 .navbar-link {
   display: flex;
+  align-items: center;
+
+  gap: 24px;
+  flex-wrap: wrap;
   flex-grow: 1;
-  margin-left: 20px;
-  padding-right: 10px;
+  justify-content: center;
 }
 
 .nav-link {
-  font-size: 1.3rem !important;
-  margin: 0 30px;
-  align-items: center;
-  font-family: "Apple Chancery, cursive";
+  font-size: 1.25rem !important;
+
+  color: #333 !important;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 400 !important;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+  text-decoration: underline;
 }
 
 .booking-button {
-  font-family: "Noto Sans KR", "Nanum Gothic", "Malgun Gothic", sans-serif;
-  border-radius: 5px;
-  margin-left: 10px;
-  background-color: black;
+  background-color: #b3816d; /* Rich blush-tan tone */
   color: white;
-  height: 2.5rem;
-  margin-top: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.brand-button:hover {
+  background-color: #a06e5f !important;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0px 6px 16px rgba(179, 129, 109, 0.5);
 }
 
 .language-switcher {
   display: flex;
   align-items: center;
-  margin-left: 150px;
+  gap: 0.5rem;
 }
 
 .flag-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 30%;
-  border: none;
-  padding: 3px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   cursor: pointer;
   transition: opacity 0.3s;
-  display: flex;
-  justify-content: flex-end;
-  align-items: end;
 }
 
 .flag-icon:hover {
@@ -71,92 +90,73 @@
 
 .navbar-toggler {
   border: none;
+  background: transparent;
 }
 
-/* ======================================================================== */
+/* ====================== Responsive ====================== */
+
 @media (max-width: 992px) {
   .nav-link {
-    font-size: 24px;
+    font-size: 1rem;
   }
+
   .booking-button {
-    font-size: 20px !important;
-    max-width: 20%;
-    padding: 20px;
-    margin-left: 25px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 }
 
-/* ============================================================================ */
 @media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .logo {
     width: 120px;
-    height: 120px;
-    margin-left: 30px;
-  }
-  .nav-container {
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    position: relative;
-    right: 10px;
-    gap: 0px;
+    margin-bottom: 1rem;
   }
 
-  .nav-link {
-    font-size: 16px !important;
+  .navbar-link {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 12px;
   }
 
   .booking-button {
-    font-size: 13px !important;
-    max-width: 60%;
-    padding: 20px;
-    margin-left: 25px;
-    text-align: start;
+    width: 100%;
+    max-width: 200px;
   }
+
   .language-switcher {
-    margin-left: 25px;
+    justify-content: center;
   }
+
   .flag-icon {
-    width: 50px;
-    height: auto;
+    width: 36px;
+    height: 36px;
   }
 }
 
-/* ========================================================================= */
 @media (max-width: 576px) {
   .logo {
     width: 100px;
-    height: 120px;
-  }
-
-  .nav-link {
-    font-size: 14px !important;
   }
 
   .booking-button {
-    font-size: 8px;
-    max-width: 61%;
-    height: 2rem;
+    font-size: 0.8rem;
   }
 
   .flag-icon {
-    width: 50px;
-    height: auto;
+    width: 32px;
+    height: 32px;
   }
 
   .navbar-toggler {
     position: absolute;
-    top: 50px;
-    left: 85%;
-    transform: translateX(-50%);
-    z-index: 1000;
-  }
-
-  .navbar-collapse.show + .navbar-toggler {
-    width: 100%;
-    justify-content: end;
+    top: 1.5rem;
+    right: 1rem;
   }
 }
