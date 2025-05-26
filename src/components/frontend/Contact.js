@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import markerImage from "../../photos/marker.png";
 import "./styles/Contact.css";
-import GoogleMapComponent from "./GoogleMapComponent";
 
 const directions = require.context("../../photos/directions", true);
 const getDirectionsImages = directions.keys().map(directions);
