@@ -123,12 +123,21 @@ const Home2 = () => {
                   ))}
                 </ul>
               )}
-              <button
+              {/* <button
                 className="learn-more-btn"
                 onClick={() => handleViewGallery(service.name)}
               >
                 View Gallery
-              </button>
+              </button> */}
+
+              <motion.button
+                className="learn-more-btn"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleViewGallery(service.name)}
+              >
+                View Gallery
+              </motion.button>
             </motion.div>
           ))}
         </div>
