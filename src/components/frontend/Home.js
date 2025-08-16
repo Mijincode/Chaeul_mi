@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+
 // import Eyebrows from "../../photos/ServiceEyebrow.png";
 // import Eyeliner from "../../photos/ServiceEyeliner.png";
 // import Lips from "../../photos/ServiceLip.png";
@@ -49,9 +48,6 @@ const Home2 = () => {
       transition: { duration: 0.45, delay: i * 0.08, ease: "easeOut" },
     }),
   };
-
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
 
   const navigate = useNavigate();
 
