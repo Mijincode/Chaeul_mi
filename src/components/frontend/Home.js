@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Eyebrows from "../../photos/ServiceEyebrow.png";
-import Eyeliner from "../../photos/ServiceEyeliner.png";
-import Lips from "../../photos/ServiceLip.png";
+// import Eyebrows from "../../photos/ServiceEyebrow.png";
+// import Eyeliner from "../../photos/ServiceEyeliner.png";
+// import Lips from "../../photos/ServiceLip.png";
 // import Hairline from "../../photos/hairline.png";
 import logo from "../../photos/logo6.png";
 import Hero1 from "../../photos/hero1.png";
@@ -22,17 +22,17 @@ const Home2 = () => {
     {
       name: t("home.eyebrows.name"),
       description: t("home.eyebrows.description"),
-      image: Eyebrows,
+      // image: Eyebrows,
     },
     {
       name: t("home.eyeliner.name"),
       description: t("home.eyeliner.description"),
-      image: Eyeliner,
+      // image: Eyeliner,
     },
     {
       name: t("home.lips.name"),
       description: t("home.lips.description"),
-      image: Lips,
+      // image: Lips,
     },
     // {
     //   name: t("home.hairline.name"),
