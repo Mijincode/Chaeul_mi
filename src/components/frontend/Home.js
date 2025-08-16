@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Eyebrows from "../../photos/eyebrows.png";
-import Eyeliner from "../../photos/eyeliner.png";
-import Lips from "../../photos/lips.png";
-import Hairline from "../../photos/hairline.png";
+import Eyebrows from "../../photos/ServiceEyebrow.png";
+import Eyeliner from "../../photos/ServiceEyeliner.png";
+import Lips from "../../photos/ServiceLip.png";
+// import Hairline from "../../photos/hairline.png";
 import logo from "../../photos/logo6.png";
 import Hero1 from "../../photos/hero1.png";
 import Hero2 from "../../photos/hero1-2.png";
@@ -34,12 +34,21 @@ const Home2 = () => {
       description: t("home.lips.description"),
       image: Lips,
     },
-    {
-      name: t("home.hairline.name"),
-      description: t("home.hairline.description"),
-      image: Hairline,
-    },
+    // {
+    //   name: t("home.hairline.name"),
+    //   description: t("home.hairline.description"),
+    //   image: Hairline,
+    // },
   ];
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 18 },
+    show: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, delay: i * 0.08, ease: "easeOut" },
+    }),
+  };
 
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -98,45 +107,41 @@ const Home2 = () => {
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section className="services-section wrap">
         <h2 className="services-title">{t("home.semiPermanentMakeup")}</h2>
+
         <div className="services-grid">
           {services.map((service, index) => (
             <motion.div
-              ref={ref}
-              key={index}
+              key={service.name}
               className="service-item"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              custom={index}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
             >
-              <img
-                src={service.image}
-                alt={service.name}
-                className="service-image"
-              />
+              {/* If you want images back in, un-comment next lines */}
+              {/* <img src={service.image} alt={service.name} className="service-image" loading="lazy" /> */}
+
               <h3 className="service-name">{service.name}</h3>
+
               {service.description && (
                 <ul className="service-description">
-                  {service.description.split(" / ").map((line, idx) => (
-                    <li key={idx}>{line}</li>
+                  {service.description.split(" / ").map((line) => (
+                    <li key={line}>{line}</li>
                   ))}
                 </ul>
               )}
-              {/* <button
-                className="learn-more-btn"
-                onClick={() => handleViewGallery(service.name)}
-              >
-                View Gallery
-              </button> */}
 
               <motion.button
                 className="learn-more-btn"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => handleViewGallery(service.name)}
+                aria-label={`View ${service.name} gallery`}
               >
-                View Gallery
+                {t("common.viewGallery", "View Gallery")}
               </motion.button>
             </motion.div>
           ))}
