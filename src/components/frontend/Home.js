@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 // import Eyebrows from "../../photos/ServiceEyebrow.png";
 // import Eyeliner from "../../photos/ServiceEyeliner.png";
@@ -117,9 +118,6 @@ const Home2 = () => {
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {/* If you want images back in, un-comment next lines */}
-              {/* <img src={service.image} alt={service.name} className="service-image" loading="lazy" /> */}
-
               <h3 className="service-name">{service.name}</h3>
 
               {service.description && (
