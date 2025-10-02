@@ -12,6 +12,7 @@
 
   "home": {
     "welcome": "채울 美에 오신 것을 환영합니다",
+
     "sejongSpecialty": "세종시 눈썹 문신 전문샵",
     "bookingButton": "상담하기",
     "about": "About 채울 美",
@@ -39,10 +40,9 @@
     "tradingHours-time": "평일/토요일 10:00am ~ 18:00pm",
     "facilityTitle": "채울 미 둘러 보기",
     "title": "채울 美",
-    "subtitle": "있는 그대로의 아름다움을 더욱 아름답게!",
-    "description.title": "채울 뷰티는 아름다움은 만들어지는 것이 아니라 드러나는 것이라고 믿습니다.",
-    "description.body": "'채울 美'는 '아름다움을 채우다'라는 뜻으로, 당신의 자연스러운 매력을 부드럽게 강조한다는 철학을 담고 있습니다. ",
-    "description.sub.body": "섬세하게 표현된 눈썹과 생기 있는 입술, 풍성해 보이는 헤어라인까지,반영구 아트로 당신을 더 빛나게 합니다.",
+    "subtitle": "자연스러움 위에 품격을 더합니다!",
+    "description.title": "채울美의 정교한 테크닉으로, 가까이서 더 아름다운 디테일을 완성하세요.",
+    "description.body": "섬세하게 표현된 눈썹과 생기 있는 입술, 풍성해 보이는 헤어라인까지,반영구 아트로 당신을 더 빛나게 합니다.",
     "description.end": "우아하게. 자연스럽게. 당신답게!"
   },
 
