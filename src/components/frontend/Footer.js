@@ -4,7 +4,6 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import naverLogo from "../../photos/naverLogo.png";
-import ganpan from "../../photos/ganpan2.png";
 import logo from "../../photos/logo10.png";
 import logo2 from "../../photos/logoNavbar.png";
 import "./styles/Footer.css";
