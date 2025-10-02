@@ -1,11 +1,60 @@
 .navbar {
   width: 100%;
-  /* background-color: #f2e1d9; */
+  background-color: #131212;
   padding: 12px 24px;
   display: flex;
   justify-content: center;
   z-index: 999;
   position: relative;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+}
+
+.navbar .navbar-toggler {
+  border: 0;
+  padding: 8px;
+  color: #e4e4e4;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4);
+}
+
+.navbar .navbar-toggler-icon {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  background-image: none !important;
+  display: inline-block;
+}
+.navbar .navbar-toggler-icon::before,
+.navbar .navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+}
+.navbar .navbar-toggler-icon::before {
+  top: -7px;
+}
+.navbar .navbar-toggler-icon::after {
+  top: 7px;
+}
+
+/* optional: animate to "X" when open */
+.navbar[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+.navbar[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-container {
@@ -19,9 +68,9 @@
   gap: 1rem;
 }
 
-.logo {
+.brand-logo {
   display: block;
-  width: 160px;
+  width: 120px;
   height: auto;
   object-fit: contain;
 }
@@ -39,33 +88,33 @@
 .nav-link {
   font-size: 1.2rem !important;
 
-  color: #333 !important;
+  /* color: #333 !important; */
+  color: rgb(228, 228, 228) !important;
   text-decoration: none;
   transition: color 0.2s;
   font-weight: 400 !important;
 }
 
 .nav-link:hover {
-  color: #000 !important;
+  color: #ffffff !important;
   text-decoration: underline;
 }
 
 .booking-button {
-  background-color: #b3816d; /* Rich blush-tan tone */
-  color: white;
+  background-color: #eab648;
+  color: rgb(55, 54, 54);
   font-size: 1.25rem;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   transition: background-color 0.3s ease;
   border: none;
-  box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4);
+  /* box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4); */
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .brand-button:hover {
-  background-color: #a06e5f !important;
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0px 6px 16px rgba(179, 129, 109, 0.5);
 }
@@ -74,12 +123,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-left: 80px;
 }
 
 .flag-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
   cursor: pointer;
   transition: opacity 0.3s;
 }
@@ -99,35 +149,77 @@
   .nav-link {
     font-size: 1rem;
   }
-
-  .booking-button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+  .nav-collapse {
+    background: #131212;
+    padding: 10px 0 16px;
+    border-top: 1px solid #262626;
   }
+  .navbar-link {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .nav-link {
+    font-size: 1.05rem;
+  }
+  .booking-button {
+    width: 90%;
+    max-width: 240px;
+  }
+  .language-switcher {
+    margin-left: 0;
+    justify-content: center;
+    padding-top: 8px;
+  }
+}
+.booking-button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
   }
 
-  .logo {
+  .brand-logo {
     width: 120px;
-    margin-bottom: 1rem;
+    height: auto;
   }
 
   .navbar-link {
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0;
+    margin: 8px 0 0;
     gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .navbar .navbar-toggler {
+    display: inline-flex;
+    position: static;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .nav-collapse {
+    width: 100%;
+
+    background: #131212;
+    padding: 12px 0 16px;
+    border-top: 1px solid #262626;
   }
 
   .booking-button {
-    width: 100%;
-    max-width: 200px;
+    width: 90%;
+    max-width: 230px;
+    height: 44px;
   }
 
   .language-switcher {
@@ -141,12 +233,19 @@
 }
 
 @media (max-width: 576px) {
-  .logo {
-    width: 100px;
+  .brand-logo {
+    width: 104px;
+  }
+
+  .navbar .navbar-toggler {
+    position: static;
+    right: auto;
+    top: auto;
   }
 
   .booking-button {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   .flag-icon {

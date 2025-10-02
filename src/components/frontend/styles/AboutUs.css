@@ -5,6 +5,7 @@
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: initial;
 }
 
 .homepage-wrapper {
@@ -273,7 +274,7 @@
 .text-content {
   flex: 1;
   text-align: left;
-  min-width: 260px;
+  margin-inline: auto;
 }
 
 .introduction {
@@ -288,13 +289,6 @@
   color: #666;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-}
-
-.message .text-lg {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #222;
-  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -359,72 +353,72 @@
   .list-item {
     font-size: 0.9rem;
   }
-  .message {
-    font-size: 1rem;
-    margin-top: 10px;
-    justify-content: space-between;
-  }
-
-  .facility-title {
-    text-align: center;
-    margin-bottom: 0x;
-  }
-
-  .facility-image-wrapper {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-  }
-
-  .facility-images {
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .zoomed-image {
-    max-width: 90vw;
-    max-height: 80vh;
-  }
-
-  .section-container {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .trading-hour-left {
-    flex: 0.5;
-  }
-
-  .trading-hour-right {
-    flex: 2;
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  .trading-hour-text {
-    font-size: 0.78rem !important;
-    margin-left: 30px;
-  }
-
-  .trading-hour-button {
-    margin-top: 0;
-  }
-
-  .mikyung-content {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .mikyung {
-    width: 100%;
-    max-width: 320px;
-  }
 
   .text-content {
-    text-align: center;
+    text-align: left;
   }
 }
+
+/* Make sure paragraphs have no odd side margins */
+.text-content p {
+  margin: 0 0 1rem;
+}
+.facility-title {
+  text-align: center;
+  margin-bottom: 0x;
+}
+
+.facility-image-wrapper {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.facility-images {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.zoomed-image {
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.section-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.trading-hour-left {
+  flex: 0.5;
+}
+
+.trading-hour-right {
+  flex: 2;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.trading-hour-text {
+  font-size: 0.78rem !important;
+  margin-left: 30px;
+}
+
+.trading-hour-button {
+  margin-top: 0;
+}
+
+.mikyung-content {
+  flex-direction: column;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.mikyung {
+  width: 100%;
+  max-width: 320px;
+}
+
 @media (max-width: 576px) {
   .homepage-text {
     font-size: 1.5rem;
@@ -476,12 +470,6 @@
 
   .list-item {
     font-size: 0.8rem;
-  }
-
-  .message {
-    margin-top: 40px;
-    font-size: 0.9rem;
-    padding: 0 10px;
   }
 
   .facility-image-wrapper {
