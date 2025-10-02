@@ -5,6 +5,7 @@ import kakaotalk from "../../photos/kakao-talk1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import markerImage from "../../photos/marker.png";
+import facility from "../../photos/shop/entrance.png";
 import "./styles/Contact.css";
 
 const directions = require.context("../../photos/directions", true);
@@ -13,17 +14,6 @@ const getDirectionsImages = directions.keys().map(directions);
 const Contact = () => {
   const { t } = useTranslation();
   const [zoomedImage, setZoomedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % getDirectionsImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? getDirectionsImages.length - 1 : prev - 1
-    );
-  };
 
   const openZoomedImage = (image) => setZoomedImage(image);
   const closeZoomedImage = () => setZoomedImage(null);
@@ -31,31 +21,7 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <h3 className="contact-title">{t("contact.title")}</h3>
-
-      <div className="custom-slider">
-        <button className="arrow left" onClick={prevImage}>
-          ‹
-        </button>
-        <div className="slider-wrapper">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentIndex}
-              src={getDirectionsImages[currentIndex]}
-              alt={`slide-${currentIndex}`}
-              className="animated-slide-image"
-              onClick={() => openZoomedImage(getDirectionsImages[currentIndex])}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.6 }}
-            />
-          </AnimatePresence>
-        </div>
-        <button className="arrow right" onClick={nextImage}>
-          ›
-        </button>
-      </div>
-
+      <img className="facility" src={facility} alt="facility" />
       <div className="location-hours">
         <div className="map-container">
           <h5 className="address-title">

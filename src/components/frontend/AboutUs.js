@@ -28,24 +28,9 @@ const AboutUs = () => {
             <div className="text-content">
               <h4 className="introduction">{t("home.introduction")}</h4>
               <p className="introduction-mikyung">{t("home.beautyShop")}</p>
-              <div className="message">
-                <p>{t("home.callToAction")}</p>
-              </div>
+
+              <p className="introduction-mikyung">{t("home.callToAction")}</p>
             </div>
-            {/* <div className="list-container">
-              <div className="list">
-                <div className="list-title">
-                  {t("home.semiPermanentMakeup")}
-                </div>
-                <ul className="lists">
-                  <li className="list-item">{t("home.eyebrows")}</li>
-                  <li className="list-item">{t("home.lips")}</li>
-                  <li className="list-item">{t("home.eyeliner")}</li>
-                  <li className="list-item">{t("home.hairline")}</li>
-                  <li className="list-item">{t("home.scalpTattoo")}</li>
-                </ul>
-              </div>
-            </div> */}
           </div>
         </div>
 
