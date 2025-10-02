@@ -2,17 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import logo from "../../photos/logoNavbar.png";
+import image3 from "../../photos/shop/facility/image3.jpg";
 
-// import Eyebrows from "../../photos/ServiceEyebrow.png";
-// import Eyeliner from "../../photos/ServiceEyeliner.png";
-// import Lips from "../../photos/ServiceLip.png";
-// import Hairline from "../../photos/hairline.png";
-import logo from "../../photos/logo6.png";
-import Hero1 from "../../photos/hero1.png";
-import Hero2 from "../../photos/hero1-2.png";
-import Hero3 from "../../photos/hero3.png";
-import Hero4 from "../../photos/hero4.png";
-import Hero5 from "../../photos/hero5.png";
 import "./styles/Home.css";
 
 const Home2 = () => {
@@ -67,44 +59,47 @@ const Home2 = () => {
 
   return (
     <div className="homepage-container">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-container">
-          <div className="hero-grid">
-            <img src={Hero1} alt="A" className="grid-item item-a" />
-            <img src={Hero2} alt="B" className="grid-item item-b" />
-            <img src={Hero3} alt="C" className="grid-item item-c" />
-            <img src={Hero4} alt="D" className="grid-item item-d" />
-            <img src={Hero5} alt="E" className="grid-item item-e" />
-          </div>
+      <section className="hero full-bleed">
+        <img
+          className="hero__image"
+          src={image3}
+          alt="Cosmetic tattoo studio interior at Chaeul Beauty"
+        />
+        <div className="hero__overlay" />
+        <div className="hero__content">
+          <h1 className="hero__title">Fill the Beauty</h1>
+          <p className="hero__subtitle">
+            Natural, elegant cosmetic tattooing — brows, lips, eyeliner.
+          </p>
+          {/* <div className="hero__cta">
+            <a className="btn btn--gold btn--lg" href="...">
+              Chat on KakaoTalk
+            </a>
+            <a className="btn btn--ghost" href="#gallery">
+              View Results
+            </a>
+          </div> */}
         </div>
       </section>
 
       {/* Brand Section */}
       <section className="brand-section">
-        <div className="brand-logo-centered">
-          <img src={logo} alt="Logo" className="circular-logo" />
+        <div className="logo-wrap">
+          <img src={logo} alt="채울 美 로고" className="brand-logo" />
         </div>
-        <div className="brand-info">
-          <h2 className="brand-title">{t("home.title")}</h2>
-          <p className="brand-subtitle">{t("home.subtitle")}</p>
-          <div className="brand-description">
-            <p className="brand-description-title">
-              {t("home.description.title")}
-            </p>
-            <p className="brand-description-body">
-              {t("home.description.body")}
-            </p>
-            <p className="brand-description-body">
-              {t("home.description.sub.body")}
-            </p>
-            <p className="brand-description-end">{t("home.description.end")}</p>
-          </div>
+
+        <p className="brand-subtitle">{t("home.subtitle")}</p>
+        <div className="brand-description">
+          <p className="brand-description-title">
+            {t("home.description.title")}
+          </p>
+          <p className="brand-description-body">{t("home.description.body")}</p>
+          <p className="brand-description-end">{t("home.description.end")}</p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services-section wrap">
+      <section className="services-section">
         <h2 className="services-title">{t("home.semiPermanentMakeup")}</h2>
 
         <div className="services-grid">
@@ -121,11 +116,11 @@ const Home2 = () => {
               <h3 className="service-name">{service.name}</h3>
 
               {service.description && (
-                <ul className="service-description">
+                <ol className="service-description">
                   {service.description.split(" / ").map((line) => (
                     <li key={line}>{line}</li>
                   ))}
-                </ul>
+                </ol>
               )}
 
               <motion.button
@@ -141,6 +136,29 @@ const Home2 = () => {
           ))}
         </div>
       </section>
+      {/* <section id="services" className="section container">
+        <h2 className="h2">Our Services</h2>
+        <ul className="cards">
+          <li className="card">
+            <h3 className="card__title">Brows</h3>
+            <p className="card__text">
+              Soft, natural definition customised to your features.
+            </p>
+          </li>
+          <li className="card">
+            <h3 className="card__title">Lips</h3>
+            <p className="card__text">
+              Blushed lips that enhance your everyday tone.
+            </p>
+          </li>
+          <li className="card">
+            <h3 className="card__title">Eyeliner</h3>
+            <p className="card__text">
+              Subtle lash-line enhancement for brighter eyes.
+            </p>
+          </li>
+        </ul>
+      </section> */}
     </div>
   );
 };
