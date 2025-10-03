@@ -12,24 +12,6 @@
   text-align: center;
 }
 
-/* Slider */
-.slide-container {
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.slide-image {
-  width: 80%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  outline: 2px solid #000;
-  outline-offset: -5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
 /* Location & Map */
 .location-hours {
   display: flex;
@@ -68,8 +50,8 @@
 .address-title {
   display: flex;
   align-items: center;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .location-dot {
@@ -101,13 +83,14 @@
 /* Trading Hours */
 .trading-container {
   max-width: 300px;
-  height: 350px;
+  height: 400px;
 }
 
 .trading-hours {
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .trading-days-times {
@@ -121,6 +104,7 @@
 .times {
   display: flex;
   flex-direction: column;
+  font-size: 18px;
 }
 
 .days div {
@@ -143,13 +127,14 @@
 }
 
 .consultation-title {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .kakao-link {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 18px;
 }
 
 .icon {
@@ -157,32 +142,7 @@
   height: 50px;
 }
 
-/* Zoom Image */
-.zoomed-image-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.9);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.zoomed-image {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
 @media (max-width: 768px) {
-  .slide-image {
-    height: 300px;
-  }
-
   .location-hours {
     flex-direction: column;
   }
@@ -211,10 +171,6 @@
 }
 
 @media (max-width: 576px) {
-  .slide-image {
-    height: 150px;
-  }
-
   .map-wrapper {
     height: 200px;
   }
