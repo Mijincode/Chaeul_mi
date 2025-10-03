@@ -19,8 +19,8 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="home-section">
-      <div className="home-container">
+    <section className="about-section">
+      <div className="about-container">
         <h2 className="about">{t("home.about")}</h2>
         <div className="mikyung-container">
           <div className="mikyung-content">

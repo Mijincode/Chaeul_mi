@@ -85,7 +85,7 @@ const Home2 = () => {
       {/* Brand Section */}
       <section className="brand-section">
         <div className="logo-wrap">
-          <img src={logo} alt="채울 美 로고" className="brand-logo" />
+          <img src={logo} alt="채울 美 로고" className="korean-logo" />
         </div>
 
         <p className="brand-subtitle">{t("home.subtitle")}</p>
