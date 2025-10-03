@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import kakaotalk from "../../photos/kakao-talk1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,15 +7,8 @@ import markerImage from "../../photos/marker.png";
 import facility from "../../photos/shop/entrance.png";
 import "./styles/Contact.css";
 
-const directions = require.context("../../photos/directions", true);
-const getDirectionsImages = directions.keys().map(directions);
-
 const Contact = () => {
   const { t } = useTranslation();
-  const [zoomedImage, setZoomedImage] = useState(null);
-
-  const openZoomedImage = (image) => setZoomedImage(image);
-  const closeZoomedImage = () => setZoomedImage(null);
 
   return (
     <div className="contact-container">
@@ -82,12 +74,6 @@ const Contact = () => {
           </a>
         </div>
       </div>
-
-      {zoomedImage && (
-        <div className="zoomed-image-container" onClick={closeZoomedImage}>
-          <img src={zoomedImage} alt="zoomed" className="zoomed-image" />
-        </div>
-      )}
     </div>
   );
 };
