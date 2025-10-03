@@ -45,11 +45,10 @@
   margin: 1rem;
 }
 
-.footer-title,
-.footer-text {
-  font-size: 1.1rem;
+.footer-title {
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 16px;
   color: rgb(188, 185, 185);
 }
 
@@ -57,6 +56,7 @@
   font-size: 0.95rem;
   color: #878787;
   line-height: 1.6;
+  font-size: 14px;
 }
 
 .footer-link {
