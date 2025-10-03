@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import kakaotalk from "../../photos/kakao-talk1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
