@@ -20,6 +20,12 @@ body {
   --muted: #c7c7cb;
 }
 
+@font-face {
+  font-family: "Holland";
+  src: url("/fonts/Holland.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 /* 골드 버튼 */
 .btn-gold {
   background: var(--gold); /* #D4AF37 */
@@ -133,7 +139,11 @@ a {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.62));
+  background: linear-gradient(
+    180deg,
+    rgba(50, 50, 50, 0.45),
+    rgba(0, 0, 0, 0.62)
+  );
 
   z-index: 1;
 }
@@ -230,7 +240,7 @@ a {
   padding: 1.5rem 1.5rem;
   border-radius: 8px;
   line-height: 1.8;
-  font-size: 17px;
+  font-size: 17ßpx;
   color: #555;
   font-weight: 300;
   letter-spacing: 0.02em;
@@ -238,18 +248,10 @@ a {
   color: rgb(241, 238, 238);
 }
 
-.brand-description-end,
-.brand-description-title,
-.brand-description-body {
-  font-size: 24px;
-}
-
-.brand-description-body {
-  text-align: left;
-  color: #c2c1bf;
-}
 .brand-description-title {
   margin-top: 1rem;
+  font-size: 22px;
+  color: #cbcbcb;
 }
 
 .brand-description-end {
@@ -257,6 +259,7 @@ a {
   margin-top: 40px;
   /* color: #eae9e9; */
   color: var(--gold);
+  font-size: 22px;
 }
 
 :focus-visible {
@@ -352,8 +355,10 @@ a {
   min-height: 300px;
   width: 400px;
   font-size: 22px;
-  background: linear-gradient(180deg, var(--card), #212329);
-  border: 2px solid color-mix(in oklab, var(--stroke) 85%, #242323);
+  /* background: linear-gradient(180deg, var(--card), #969696); */
+  background-color: #f9f1e6;
+  /* border: 2px solid color-mix(in oklab, var(--stroke) 85%, #6c6c6c); */
+  border: 2px solid white;
   border-radius: 16px;
   padding: clamp(16px, 2.4vw, 22px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
@@ -363,24 +368,36 @@ a {
 
 .service-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 16px 34px rgba(228, 188, 41, 0.28);
   border-color: color-mix(in oklab, var(--stroke) 70%, var(--gold));
 }
 
 /* Card typography */
 .service-name {
-  color: #d4af37;
+  /* color: #d4af37; */
+  color: #111;
   margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  font-size: 30px;
+  font-family: "Nanum Brush Script", "Nanum Pen Script", "East Sea Dokdo",
+    cursive;
+
+  /* font-family: "Holland", cursive; */
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  /* letter-spacing: 0.2px; */
+  line-height: 1.2;
 }
 .service-description {
   /* remove bullets/numbers + tidy spacing */
   list-style: none;
   padding-left: 0;
   margin: 0.75rem 0 1.2rem;
-  color: var(--muted);
+  /* color: var(--muted); */
+  color: #212329;
   text-align: center;
   line-height: 1.6;
+  font-family: "Libre Baskerville", "Baskervville", Baskerville,
+    "Times New Roman", serif;
 }
 .service-description li::marker {
   content: "";
@@ -400,16 +417,21 @@ a {
   border-radius: 12px;
   border: 1px solid;
   border-color: color-mix(in oklab, var(--stroke) 70%, var(--gold));
-  background: linear-gradient(180deg, var(--card), #212329);
-  color: var(--gold);
+
+  /* background: linear-gradient(180deg, var(--card), #212329); */
+  background-color: #100f0f;
+  color: #e5d180;
   font-weight: 300;
   transition: transform 0.12s ease, background 0.18s ease,
     border-color 0.18s ease, color 0.18s ease;
 }
 .learn-more-btn:hover {
-  background: #e8aa46;
-  border-color: var(--gold-d);
-  color: #111 !important;
+  /* background: #c09b22; */
+  background-color: var(--gold);
+  /* border-color: var(--gold-d); */
+  border-color: #dfa932;
+  /* color: #111 !important; */
+  color: #100f0f;
   font-weight: 400;
   transform: translateY(-1px);
 }
