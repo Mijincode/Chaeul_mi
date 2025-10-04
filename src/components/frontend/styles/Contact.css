@@ -12,6 +12,16 @@
   text-align: center;
 }
 
+.facility-wrapper {
+  max-width: 350px;
+}
+.facility {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 /* Location & Map */
 .location-hours {
   display: flex;
@@ -35,8 +45,8 @@
 
 .map-container {
   flex: 2;
-  min-width: 450px;
-  max-width: 700px;
+
+  max-width: 350px;
   align-items: center;
   margin: 0 40px;
 }
@@ -64,10 +74,11 @@
   flex: 1;
   max-height: 60vh;
   margin: 0 auto;
+  max-width: 350px;
 }
 
 .map-iframe {
-  width: 500px;
+  width: 320px;
   height: 400px;
   border: 0;
 }
@@ -148,7 +159,7 @@
   }
 
   .map-wrapper {
-    height: 300px;
+    border-radius: 8px;
   }
 
   .marker-img {
@@ -160,8 +171,8 @@
   .map-container {
     margin-bottom: 20px;
     min-width: unset;
-    max-width: 90%;
-    width: 100%;
+    max-width: 80%;
+    width: 90%;
   }
 
   .consultation {

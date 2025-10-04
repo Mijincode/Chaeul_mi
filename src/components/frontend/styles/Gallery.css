@@ -36,8 +36,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start;
-  padding: 5rem 20px;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
 .gallery-wrapper {

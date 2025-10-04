@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import kakaotalk from "../../photos/kakao-talk1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import markerImage from "../../photos/marker.png";
+
 import facility from "../../photos/shop/entrance.png";
 import "./styles/Contact.css";
 
@@ -13,7 +13,10 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <h3 className="contact-title">{t("contact.title")}</h3>
-      <img className="facility" src={facility} alt="facility" />
+      <div className="facility-wrapper">
+        <img className="facility" src={facility} alt="facility" />
+      </div>
+
       <div className="location-hours">
         <div className="map-container">
           <h5 className="address-title">
@@ -29,8 +32,6 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Google Map location"
             ></iframe>
-
-            <img src={markerImage} alt="marker" className="marker-img" />
           </div>
         </div>
 
