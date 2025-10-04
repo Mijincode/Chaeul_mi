@@ -101,8 +101,10 @@
 }
 
 .booking-button {
-  background-color: #eab648;
-  color: rgb(55, 54, 54);
+  background-color: #dfa932;
+
+  color: rgb(42, 42, 42);
+
   font-size: 22px !important;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -112,6 +114,7 @@
   /* box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4); */
   transition: all 0.3s ease;
   text-decoration: none;
+  margin-left: 20px;
 }
 
 .brand-button:hover {

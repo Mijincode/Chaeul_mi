@@ -6,16 +6,16 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: initial;
-  margin-bottom: 70px;
 }
 
 .about {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 50px;
   color: #1a1a1a;
+
   text-align: center;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .mikyung-container {
@@ -29,7 +29,7 @@
   width: 100%;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px #a8a8a8;
   padding: 2rem;
   display: flex;
   gap: 2rem;
@@ -83,6 +83,7 @@
   flex-direction: column;
   text-align: center;
   padding: 1.5rem;
+  margin-top: 30px;
 }
 
 .introduction {
@@ -91,7 +92,8 @@
 }
 
 .facility-section {
-  margin-top: 50px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 .facility-title {
   text-align: center;
