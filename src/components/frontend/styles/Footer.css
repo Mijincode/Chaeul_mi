@@ -10,12 +10,28 @@
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(300px, 1.4fr) 1fr 1fr; /* 3 columns */
+  gap: 48px;
+  align-items: start;
 }
 
+.footer-introdution {
+  display: flex;
+  flex-direction: column;
+}
 .logo-wrapper {
   display: flex;
   flex-direction: row;
-  margin-bottom: 2rem;
+}
+
+.footer-divider {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  height: 1px;
+  background: #edca90; /* soft gold line */
+
+  opacity: 0.7;
 }
 
 .footer-logo {
@@ -34,7 +50,7 @@
 
 .footer-content-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: row;
   justify-content: space-around;
   text-align: center;
   margin-bottom: 2rem;
@@ -51,12 +67,24 @@
   margin-bottom: 16px;
   color: rgb(188, 185, 185);
 }
+.footer-section .footer-link {
+  display: block;
+  margin: 6px 0;
+  color: #c2c1bf;
+}
+
+.footer-section .footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 
 .footer-text {
   font-size: 16px;
-  color: #878787;
+  /* color: #878787; */
+  color: #c2c1bf;
   line-height: 1.6;
   font-size: 16px;
+  text-align: left;
 }
 
 .footer-link {
@@ -79,6 +107,7 @@
 .instaIcon {
   width: 38px;
   height: 34px;
+  color: #c2c1bf;
 }
 
 .naver-icon {
