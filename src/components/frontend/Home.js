@@ -91,9 +91,9 @@ const Home2 = () => {
         <p className="brand-subtitle">{t("home.subtitle")}</p>
         <div className="brand-description">
           <p className="brand-description-title">
-            {t("home.description.title")}
+            {t("home.description.title")} {t("home.description.body")}
           </p>
-          <p className="brand-description-body">{t("home.description.body")}</p>
+
           <p className="brand-description-end">{t("home.description.end")}</p>
         </div>
       </section>
