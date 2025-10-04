@@ -108,6 +108,7 @@
   .review-phone {
     max-width: 70%;
     padding: 0 5px;
+    margin-bottom: 50px;
   }
 
   .review-valuable,
@@ -140,11 +141,11 @@
   }
 
   .arrow-left {
-    left: -2rem;
+    left: -40px;
   }
 
   .arrow-right {
-    right: -2rem;
+    right: -40px;
   }
   .indicators {
     display: none;
