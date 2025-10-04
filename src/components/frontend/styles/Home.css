@@ -350,7 +350,6 @@ a {
   content: "";
 }
 
-/* CTA pill (neutral → gold on hover) */
 .learn-more-btn {
   display: inline-flex;
   height: 42px;
@@ -365,7 +364,6 @@ a {
   border: 1px solid;
   border-color: color-mix(in oklab, var(--stroke) 70%, var(--gold));
 
-  /* background: linear-gradient(180deg, var(--card), #212329); */
   background-color: #100f0f;
   color: #e5d180;
   font-weight: 300;
@@ -398,10 +396,19 @@ a {
 @media (max-width: 768px) {
   .full-bleed,
   .hero__image {
-    height: 500px;
+    height: 300px;
   }
   .hero-container {
     padding: 1rem;
+  }
+
+  .hero__content {
+    padding-bottom: 24px;
+    place-content: end;
+  }
+  .hero__subtitle {
+    text-align: center;
+    padding: 0 2rem 0;
   }
 
   .brand-subtitle {
@@ -422,11 +429,11 @@ a {
 
   .services-grid {
     flex-direction: column;
-    align-items: stretch; /* let children stretch to container */
+    align-items: stretch;
     gap: 1.25rem;
-    max-width: none; /* remove the 250px clamp */
+    max-width: none;
     width: 100%;
-    padding-inline: 16px; /* a little breathing room from the edges */
+    padding-inline: 16px;
     margin-inline: auto;
   }
 
@@ -440,11 +447,8 @@ a {
   }
 
   .service-item {
-    /* font-size: 1.1rem;
-    width: 300px;
-    margin-left: 10px; */
-    width: 100%; /* was: 250px */
-    min-height: auto; /* avoid tall empty space */
+    width: 100%;
+    min-height: auto;
     padding: 16px;
     font-size: clamp(16px, 4.2vw, 18px);
   }

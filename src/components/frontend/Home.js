@@ -14,23 +14,15 @@ const Home2 = () => {
     {
       name: t("home.eyebrows.name"),
       description: t("home.eyebrows.description"),
-      // image: Eyebrows,
     },
     {
       name: t("home.eyeliner.name"),
       description: t("home.eyeliner.description"),
-      // image: Eyeliner,
     },
     {
       name: t("home.lips.name"),
       description: t("home.lips.description"),
-      // image: Lips,
     },
-    // {
-    //   name: t("home.hairline.name"),
-    //   description: t("home.hairline.description"),
-    //   image: Hairline,
-    // },
   ];
 
   const fadeUp = {
@@ -71,14 +63,6 @@ const Home2 = () => {
           <p className="hero__subtitle">
             Natural, elegant cosmetic tattooing — brows, lips, eyeliner.
           </p>
-          {/* <div className="hero__cta">
-            <a className="btn btn--gold btn--lg" href="...">
-              Chat on KakaoTalk
-            </a>
-            <a className="btn btn--ghost" href="#gallery">
-              View Results
-            </a>
-          </div> */}
         </div>
       </section>
 
