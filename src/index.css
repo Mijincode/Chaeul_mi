@@ -34,15 +34,6 @@ body {
   --body: clamp(15px, 1rem, 18px);
   --label: clamp(14px, 0.95rem, 16px);
 }
-.services-title {
-  font-size: var(--title);
-}
-.service-item {
-  font-size: clamp(16px, 1.125rem, 20px);
-} /* was 1.25rem */
-.nav-link {
-  font-size: clamp(14px, 1rem, 18px);
-}
 
 /* 4) Optional: make different fonts feel the same height if a fallback kicks in */
 body {

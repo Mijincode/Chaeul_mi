@@ -87,8 +87,8 @@ const Home2 = () => {
         <div className="logo-wrap">
           <img src={logo} alt="채울 美 로고" className="korean-logo" />
         </div>
-
         <p className="brand-subtitle">{t("home.subtitle")}</p>
+
         <div className="brand-description">
           <p className="brand-description-title">
             {t("home.description.title")} {t("home.description.body")}
@@ -150,29 +150,6 @@ const Home2 = () => {
           </motion.a>
         </div>
       </section>
-      {/* <section id="services" className="section container">
-        <h2 className="h2">Our Services</h2>
-        <ul className="cards">
-          <li className="card">
-            <h3 className="card__title">Brows</h3>
-            <p className="card__text">
-              Soft, natural definition customised to your features.
-            </p>
-          </li>
-          <li className="card">
-            <h3 className="card__title">Lips</h3>
-            <p className="card__text">
-              Blushed lips that enhance your everyday tone.
-            </p>
-          </li>
-          <li className="card">
-            <h3 className="card__title">Eyeliner</h3>
-            <p className="card__text">
-              Subtle lash-line enhancement for brighter eyes.
-            </p>
-          </li>
-        </ul>
-      </section> */}
     </div>
   );
 };

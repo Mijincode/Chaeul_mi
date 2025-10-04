@@ -11,9 +11,28 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(300px, 1.4fr) 1fr 1fr; /* 3 columns */
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
   align-items: start;
+  padding-inline: 16px;
+}
+
+.footer-section,
+.footer-introdution {
+  min-width: 0;
+}
+
+/* Long text/URLs won’t push layout wide */
+.footer-text,
+.footer-link {
+  overflow-wrap: anywhere;
+}
+
+/* Logos never overflow their cell */
+.footer-logo,
+.footer-logo2 {
+  max-width: 100%;
+  height: auto;
 }
 
 .footer-introdution {
@@ -51,6 +70,7 @@
 .footer-content-wrapper {
   display: flex;
   flex-wrap: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
   margin-bottom: 2rem;
@@ -123,6 +143,24 @@
 }
 
 @media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-title {
+    font-size: 17px;
+  }
+  .footer-text {
+    font-size: 13px;
+  }
+
+  .footer-link {
+    font-size: 15px;
+  }
+  .custom-footer {
+    overflow-x: clip;
+  }
   .footer-logo {
     width: 80px;
   }
@@ -132,9 +170,6 @@
     height: auto;
   }
 
-  .footer-title {
-    font-size: 14px;
-  }
   .footer-text {
     font-size: 13px;
   }
