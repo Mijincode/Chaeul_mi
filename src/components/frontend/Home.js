@@ -100,7 +100,8 @@ const Home2 = () => {
 
       {/* Services Section */}
       <section className="services-section">
-        <h2 className="services-title">{t("home.semiPermanentMakeup")}</h2>
+        <h2 className="services-title">{t("home.services")}</h2>
+        <h3 className="services-subtitle">{t("home.services-sub")}</h3>
 
         <div className="services-grid">
           {services.map((service, index) => (
@@ -134,6 +135,19 @@ const Home2 = () => {
               </motion.button>
             </motion.div>
           ))}
+        </div>
+        <div className="home-button">
+          <motion.a
+            href="https://open.kakao.com/o/sJVFkuT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="booking-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            // onClick={closeMenu}
+          >
+            {t("home.button")}
+          </motion.a>
         </div>
       </section>
       {/* <section id="services" className="section container">
