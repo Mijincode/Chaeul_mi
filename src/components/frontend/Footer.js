@@ -49,7 +49,7 @@ const Footer = () => {
             </Link>
 
             <Link to="/faqs" className="footer-link">
-              FAQS
+              {t("navbar.faqs")}
             </Link>
           </div>
         </nav>
