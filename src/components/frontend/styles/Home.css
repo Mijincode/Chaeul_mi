@@ -230,9 +230,9 @@ a {
   padding: 1.5rem 1.5rem;
   border-radius: 8px;
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 17px;
   color: #555;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.02em;
   text-align: center;
   color: rgb(241, 238, 238);
@@ -246,6 +246,7 @@ a {
 
 .brand-description-body {
   text-align: left;
+  color: #c2c1bf;
 }
 .brand-description-title {
   margin-top: 1rem;
@@ -254,6 +255,8 @@ a {
 .brand-description-end {
   text-align: center;
   margin-top: 40px;
+  /* color: #eae9e9; */
+  color: var(--gold);
 }
 
 :focus-visible {
@@ -271,6 +274,12 @@ a {
   font-size: clamp(26px, 3vw, 34px);
   line-height: 1.2;
   color: white;
+}
+
+.services-subtitle {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #c2c1bf;
 }
 
 .services-grid {
@@ -343,7 +352,7 @@ a {
   min-height: 300px;
   width: 400px;
   font-size: 22px;
-  background: linear-gradient(180deg, var(--card), #40434d);
+  background: linear-gradient(180deg, var(--card), #212329);
   border: 2px solid color-mix(in oklab, var(--stroke) 85%, #242323);
   border-radius: 16px;
   padding: clamp(16px, 2.4vw, 22px);
@@ -360,7 +369,7 @@ a {
 
 /* Card typography */
 .service-name {
-  color: #fff;
+  color: #d4af37;
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
 }
@@ -389,10 +398,11 @@ a {
   padding: 0 18px;
   font-size: 1.1rem;
   border-radius: 12px;
-  border: 1px solid #2d2e34;
-  background: #e9e9ea;
-  color: #111 !important;
-  font-weight: 700;
+  border: 1px solid;
+  border-color: color-mix(in oklab, var(--stroke) 70%, var(--gold));
+  background: linear-gradient(180deg, var(--card), #212329);
+  color: var(--gold);
+  font-weight: 300;
   transition: transform 0.12s ease, background 0.18s ease,
     border-color 0.18s ease, color 0.18s ease;
 }
@@ -400,9 +410,14 @@ a {
   background: #e8aa46;
   border-color: var(--gold-d);
   color: #111 !important;
+  font-weight: 400;
   transform: translateY(-1px);
 }
 
+.home-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 /* -------------------- a11y helpers -------------------- */
 @media (prefers-reduced-motion: reduce) {
   * {

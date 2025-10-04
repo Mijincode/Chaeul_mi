@@ -56,7 +56,7 @@
   font-size: 16px;
   color: #878787;
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .footer-link {
@@ -87,7 +87,7 @@
 }
 
 .footer-bottom {
-  font-size: 0.85rem;
+  font-size: 14px;
   color: #777;
   border-top: 1px solid #edca90;
   padding-top: 1rem;
