@@ -411,6 +411,10 @@ a {
     padding: 0 2rem 0;
   }
 
+  .korean-logo {
+    width: 150px;
+  }
+
   .brand-subtitle {
     font-size: 22px;
   }
@@ -419,6 +423,10 @@ a {
   .brand-description-title,
   .brand-description-end {
     font-size: 18px;
+  }
+
+  .services-subtitle {
+    padding: 0 2rem 0;
   }
 
   .brand-description {
