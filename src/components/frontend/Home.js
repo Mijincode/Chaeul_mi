@@ -12,14 +12,17 @@ const Home2 = () => {
 
   const services = [
     {
+      key: "female",
       name: t("home.eyebrows.name"),
       description: t("home.eyebrows.description"),
     },
     {
+      key: "eye",
       name: t("home.eyeliner.name"),
       description: t("home.eyeliner.description"),
     },
     {
+      key: "lips",
       name: t("home.lips.name"),
       description: t("home.lips.description"),
     },
@@ -43,10 +46,14 @@ const Home2 = () => {
     Hairline: "male",
   };
 
+  // const handleViewGallery = (tabKey) => {
+  //   const mappedTab = categoryMap[tabKey] || "female";
+  //   console.log("Navigating to tab:", mappedTab);
+  //   navigate(`/gallery?tab=${mappedTab}`);
+  // };
+
   const handleViewGallery = (tabKey) => {
-    const mappedTab = categoryMap[tabKey] || "female";
-    console.log("Navigating to tab:", mappedTab);
-    navigate(`/gallery?tab=${mappedTab}`);
+    navigate(`/gallery?tab=${encodeURIComponent(tabKey)}`);
   };
 
   return (
@@ -112,8 +119,8 @@ const Home2 = () => {
                 className="learn-more-btn"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => handleViewGallery(service.name)}
-                aria-label={`View ${service.name} gallery`}
+                onClick={() => handleViewGallery(service.key)}
+                aria-label={`View ${service.key} gallery`}
               >
                 {t("common.viewGallery", "View Gallery")}
               </motion.button>
