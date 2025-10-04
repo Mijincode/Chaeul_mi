@@ -39,12 +39,12 @@ const Home2 = () => {
 
   const navigate = useNavigate();
 
-  const categoryMap = {
-    Eyebrows: "female",
-    Eyeliner: "eye",
-    Lips: "lips",
-    Hairline: "male",
-  };
+  // const categoryMap = {
+  //   Eyebrows: "female",
+  //   Eyeliner: "eye",
+  //   Lips: "lips",
+  //   Hairline: "male",
+  // };
 
   // const handleViewGallery = (tabKey) => {
   //   const mappedTab = categoryMap[tabKey] || "female";
