@@ -29,7 +29,7 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 5rem 10px;
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -57,7 +57,7 @@
 .slide {
   position: absolute;
   width: 88%;
-  top: 54%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -108,7 +108,7 @@
   .review-phone {
     max-width: 70%;
     padding: 0 5px;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
   }
 
   .review-valuable,
@@ -131,13 +131,17 @@
     max-width: 40%;
   }
 
+  .phone-frame {
+    height: 480px;
+  }
+
   .review-phone-images {
     width: 20%;
   }
 
   .slide {
     width: 89%;
-    top: 55%;
+    top: 58%;
   }
 
   .arrow-left {

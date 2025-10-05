@@ -11,7 +11,6 @@
 .navbar .nav-link {
   font-size: clamp(15px, 1.6vw, 24px);
 }
-
 .navbar {
   position: sticky;
   top: 0;
@@ -104,10 +103,13 @@
 }
 
 .booking-button {
+  display: inline-flex; /* or flex */
+  align-items: center; /* vertical center */
+  justify-content: center;
   background-color: #dfa932;
 
   color: rgb(42, 42, 42);
-
+  height: 45px;
   font-size: 22px;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -117,7 +119,7 @@
   /* box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4); */
   transition: all 0.3s ease;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 120px;
 }
 
 .brand-button:hover {
@@ -129,7 +131,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-left: 80px;
+  margin-left: 0px;
 }
 
 .flag-icon {
@@ -165,8 +167,10 @@
   }
   .booking-button {
     width: 90%;
-    max-width: 240px;
+    max-width: 200px;
+    margin-left: 10px;
   }
+
   .language-switcher {
     margin-left: 0;
     justify-content: center;
@@ -217,7 +221,7 @@
 
   .booking-button {
     width: 90%;
-    max-width: 200px;
+    max-width: 180px;
     height: 44px;
     font-size: 16px;
   }
@@ -234,6 +238,7 @@
 
 @media (max-width: 576px) {
   .brand-logo {
+    margin-left: 10px;
     width: 104px;
   }
 
@@ -245,7 +250,6 @@
 
   .booking-button {
     font-size: 16px;
-    text-align: center;
   }
 
   .flag-icon {
