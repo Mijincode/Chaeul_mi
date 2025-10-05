@@ -78,13 +78,17 @@
 }
 
 .arrow-left {
-  left: -3rem;
+  left: -10rem;
 }
 
 .arrow-right {
-  right: -3rem;
+  right: -10rem;
 }
 
+.swipe-gesture {
+  display: none;
+  pointer-events: none;
+}
 .indicators {
   display: none;
 }
@@ -125,14 +129,19 @@
   }
 
   .swipe-gesture {
+    display: block;
     position: absolute;
-    bottom: 0% !important;
+
+    bottom: -15% !important;
     left: 50%;
+    transform: translateX(-50%); /* center horizontally */
+    width: min(220px, 50%);
+    z-index: 3;
     max-width: 40%;
   }
 
   .phone-frame {
-    height: 480px;
+    height: 460px;
   }
 
   .review-phone-images {
@@ -141,15 +150,17 @@
 
   .slide {
     width: 89%;
-    top: 58%;
+    top: 63%;
   }
 
   .arrow-left {
     left: -40px;
+    top: 300px;
   }
 
   .arrow-right {
     right: -40px;
+    top: 300px;
   }
   .indicators {
     display: none;
@@ -159,7 +170,7 @@
 /* =================================================================== */
 @media (max-width: 480px) {
   .swipe-gesture {
-    max-width: 50%;
+    max-width: 40%;
   }
 
   .indicators {
