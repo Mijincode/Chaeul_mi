@@ -384,6 +384,9 @@ a {
 .home-button {
   margin-top: 70px;
   margin-bottom: 30px;
+  /* display: inline-flex;
+  align-items: center;
+  justify-content: center; */
 }
 /* -------------------- a11y helpers -------------------- */
 @media (prefers-reduced-motion: reduce) {
@@ -471,6 +474,16 @@ a {
     max-width: none;
     height: 44px;
     font-size: 1rem;
+  }
+  .home-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 300px;
+    height: 44px;
+    font-size: 16px;
   }
 }
 

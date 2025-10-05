@@ -112,14 +112,14 @@
   height: 45px;
   font-size: 22px;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
+  padding: 0 1.2rem;
   border-radius: 10px;
   transition: background-color 0.3s ease;
   border: none;
   /* box-shadow: 0px 4px 10px rgba(179, 129, 109, 0.4); */
   transition: all 0.3s ease;
   text-decoration: none;
-  margin-left: 110px;
+  margin-left: 80px;
 }
 
 .brand-button:hover {
@@ -166,9 +166,15 @@
     margin-top: 8px;
   }
   .booking-button {
-    width: 90%;
-    max-width: 200px;
-    margin-left: 10px;
+    /* center in the menu stack */
+    align-self: center;
+    margin-inline: auto;
+
+    /* allow enough width for EN text but still look tidy */
+    width: 100%;
+    max-width: 300px; /* was 200px */
+    height: 44px;
+    font-size: 16px;
   }
 
   .language-switcher {
@@ -250,6 +256,7 @@
 
   .booking-button {
     font-size: 16px;
+    max-width: 230px;
   }
 
   .flag-icon {
