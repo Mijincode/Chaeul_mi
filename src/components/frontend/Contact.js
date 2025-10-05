@@ -58,22 +58,17 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="consultation">
-        <h4 className="consultation-title">| {t("contact.consultation")}</h4>
-        <div className="kakao-link">
-          {t("contact.kakaoTalk")}
-          <a
-            className="text-reset fw-bold"
-            href="https://open.kakao.com/o/sJVFkuT"
-            aria-label={t("contact.kakaoContact")}
-          >
-            <img
-              src={kakaotalk}
-              alt={t("contact.kakaoIconAlt")}
-              className="icon"
-            />
-          </a>
-        </div>
+      <div className="cta-wrap">
+        <a
+          href="https://open.kakao.com/o/sJVFkuT"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-btn"
+          aria-label="카카오톡으로 무료 상담하기"
+        >
+          <img src={kakaotalk} alt="" className="cta-icon" />
+          {t("contact.consultation")}
+        </a>
       </div>
     </div>
   );

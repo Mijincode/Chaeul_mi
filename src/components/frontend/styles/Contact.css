@@ -128,32 +128,6 @@
   margin-left: 10px;
 }
 
-/* Consultation */
-.consultation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 60px auto 30px;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.consultation-title {
-  font-size: 20px;
-}
-
-.kakao-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-}
-
 /* container */
 .cta-wrap {
   max-width: 720px;
