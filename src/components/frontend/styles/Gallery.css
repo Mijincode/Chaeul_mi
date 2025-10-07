@@ -36,8 +36,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
 .gallery-wrapper {
@@ -112,6 +113,9 @@
 
 /* ============================================================================================== */
 @media (max-width: 768px) {
+  .gallery-container {
+    margin-bottom: 30px;
+  }
   .text-container {
     text-align: center;
     margin-bottom: 40px;
