@@ -1,0 +1,139 @@
+/* ===== Journey Map ===== */
+.journey-map {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.jm-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.jm-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.jm-toggle {
+  display: inline-flex;
+  gap: 6px;
+  background: #f6f6f6;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.jm-tab {
+  border: 0;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+.jm-tab.is-active {
+  background: #e3ad39;
+  color: #131212;
+}
+
+.jm-grid {
+  display: grid;
+  grid-auto-rows: minmax(0, auto);
+  gap: 10px;
+  overflow-x: auto; /* horizontal scroll for small screens */
+  padding-bottom: 6px;
+}
+
+.jm-col-head {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, minmax(220px, 1fr)); /* 6 stages */
+}
+
+.jm-col-title {
+  background: #fffdf7;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.jm-stage {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.jm-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, minmax(220px, 1fr));
+}
+
+.jm-cell {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 90px;
+}
+
+.jm-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.jm-mood {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.jm-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid #c9c9c9;
+  background: #fff;
+}
+.jm-dot.is-filled {
+  background: #e3ad39;
+  border-color: #e3ad39;
+}
+
+.jm-metrics {
+  margin-top: 14px;
+}
+.jm-metrics h4 {
+  margin: 0 0 6px;
+}
+.jm-metrics ul {
+  margin: 0 0 6px 1.1rem;
+}
+.jm-footnote {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive: compress columns on narrower viewports */
+@media (max-width: 1024px) {
+  .jm-col-head,
+  .jm-row {
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .jm-col-head,
+  .jm-row {
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
+  }
+}
