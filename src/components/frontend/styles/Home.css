@@ -366,7 +366,7 @@ a {
 
   background-color: #100f0f;
   color: #e5d180;
-  font-weight: 300;
+  font-weight: 400;
   transition: transform 0.12s ease, background 0.18s ease,
     border-color 0.18s ease, color 0.18s ease;
 }
